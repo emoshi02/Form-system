@@ -1,0 +1,20 @@
+.form-header {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  margin: 16px 0;
+  border-radius: 8px;
+  max-width: 768px;
+  width: 100%;
+  padding: 20px;
+}
+
+.form-title {
+  font-size: 24pt;
+}
+
+.form-desc,
+.form-title,
+#user-email {
+  margin: 8px 0;
+}

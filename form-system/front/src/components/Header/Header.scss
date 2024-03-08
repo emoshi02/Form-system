@@ -1,0 +1,32 @@
+.main-page-header {
+  height: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 20px;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-page-body {
+  height: 100vh;
+}
+
+.header-title {
+  color: #5f6368;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-icon {
+  width: 30px;
+  cursor: pointer;
+}

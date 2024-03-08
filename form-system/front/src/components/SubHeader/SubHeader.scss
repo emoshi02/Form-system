@@ -1,0 +1,32 @@
+.secondary-header {
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+  background-color: white;
+}
+
+.header-nav-item {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  width: 61px;
+}
+
+.header-nav-item:hover {
+  border-bottom: 3px solid rgb(76, 43, 135);
+}
+
+.active {
+  border-bottom: 3px solid rgb(76, 43, 135);
+}
+
+.header-nav-item-p {
+  position: absolute;
+  top: 5px;
+}

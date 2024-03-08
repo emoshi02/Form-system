@@ -1,0 +1,87 @@
+.main-page-sub-title {
+  font-size: 14px;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.create-form-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid white;
+  box-shadow: 0 5px 5px 0 #8a919a;
+}
+
+.create-form-btn:hover {
+  background: #eef0f3;
+  border-color: #eef0f3;
+  box-shadow: none;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.create-form-img {
+  width: 50px;
+  height: 50px;
+}
+
+.main-body {
+  height: calc(100vh - 57px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.create-form {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.sub-header {
+  align-items: flex-start;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.sub-header-item {
+  min-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sub-header-item:first-child {
+  border-right: 2px solid #d9dbdf;
+}
+
+.create-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-forms,
+.received-forms {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px;
+}
+
+.form-item-received,
+.form-item-answer {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+}

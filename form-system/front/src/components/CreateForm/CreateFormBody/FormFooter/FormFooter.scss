@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 50px;
+  gap: auto;
+  width: 100%;
+  max-width: 768px;
+}
+
+.btn {
+  position: absolute;
+  right: 0;
+}
