@@ -1,0 +1,17 @@
+:root {
+  --main-bg: #fff;
+  --btn-bg: #673ab7;
+  --btn-text-color: #fff;
+  --btn-border: #fff;
+  --heading-text: #5f6368;
+  --p-text: #5f6368;
+  --input-outline: #e6e9ea;
+  --input-on-focus: #e7e0eb45;
+  --btn-on-focus: #7a4bcc;
+  --footer-p-color: #b7babb;
+  --shadow: #8a919a;
+  --create-form-btn-on-focus: #eef0f3;
+  --form-item-img: rgb(225, 216, 241);
+  --form-item-border: rgb(203, 201, 201);
+  --border-bottom: rgb(76, 43, 135);
+}
