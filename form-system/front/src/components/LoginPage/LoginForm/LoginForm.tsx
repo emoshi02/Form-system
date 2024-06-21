@@ -1,4 +1,4 @@
-import './LoginForm.scss';
+import '../Login.scss';
 
 export const LoginForm = () => {
   return (
