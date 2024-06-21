@@ -11,7 +11,7 @@
 
 ::placeholder {
   font-family: 'Google Sans', Roboto, Arial, sans-serif;
-  color: #5f6368;
+  color: var(--p-text);
 }
 
 button,
@@ -20,16 +20,8 @@ input {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: var(--chip-hover);
-}
-
 p {
   background-color: inherit;
-}
-
-svg {
-  fill: var(--on-surface);
 }
 
 ul,
@@ -39,7 +31,7 @@ ol {
 
 input:focus {
   outline: none;
-  border-bottom: 2px solid rgb(76, 43, 135);
+  border-bottom: 2px solid var(--border-bottom);
   width: 100%;
 }
 
@@ -49,7 +41,7 @@ em {
 }
 
 .material-symbols-outlined {
-  color: #5f6368;
+  color: var(--p-text);
   font-variation-settings:
     'FILL' 0,
     'wght' 400,
@@ -58,5 +50,5 @@ em {
 }
 
 body {
-  background: rgb(225, 216, 241);
+  background: var(--body-bg);
 }
