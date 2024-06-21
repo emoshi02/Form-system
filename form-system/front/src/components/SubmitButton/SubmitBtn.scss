@@ -1,11 +1,11 @@
 .btn {
-  height: 30px;
-  width: 80px;
-  border-radius: 8px;
+  height: var(--button-height-sm);
+  width: var(--button-width-lg);
+  border-radius: var(--radius-md);
   color: var(--btn-text-color);
   background-color: var(--btn-bg);
-  cursor: pointer;
   position: absolute;
+  cursor: pointer;
 }
 
 .btn:hover {

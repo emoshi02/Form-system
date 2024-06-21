@@ -6,7 +6,7 @@
   font-family: 'Google Sans', Roboto, Arial, sans-serif;
   color: var(--on-surface);
   background-color: var(--surface);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
 }
 
 ::placeholder {
@@ -31,7 +31,7 @@ ol {
 
 input:focus {
   outline: none;
-  border-bottom: 2px solid var(--border-bottom);
+  border-bottom: var(--border-width-xsm) solid var(--border-bottom);
   width: 100%;
 }
 

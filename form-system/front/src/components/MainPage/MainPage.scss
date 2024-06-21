@@ -1,21 +1,13 @@
-.main-page-sub-title {
-  font-size: 14px;
-  width: 100%;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-}
-
 .create-form-btn {
-  width: 56px;
-  height: 56px;
+  width: var(--button-height-lg);
+  height: var(--button-height-lg);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--main-bg);
-  border: 1px solid var(--btn-border);
-  box-shadow: 0 5px 5px 0 var(--shadow);
+  border: var(--border-width-xs) solid var(--btn-border);
+  box-shadow: 0 var(--shadow-xs) var(--shadow-xs) 0 var(--shadow);
 }
 
 .create-form-btn:hover {
@@ -26,12 +18,14 @@
 }
 
 .create-form-img {
-  width: 50px;
-  height: 50px;
+  width: var(--image-height-sm);
+  height: var(--image-height-sm);
 }
 
 .main-body {
-  height: calc(100vh - 66px);
+  height: calc(
+    100vh - var(--container-height-xs) - var(--container-height-xxs)
+  );
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -44,5 +38,5 @@
 }
 
 .create-form {
-  margin-bottom: 10px;
+  margin-bottom: var(--spacing-md);
 }

@@ -3,10 +3,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 50px;
+  height: var(--container-height-sm);
   gap: auto;
   width: 100%;
-  max-width: 768px;
+  max-width: var(--container-width-xl);
 }
 
 .btn {

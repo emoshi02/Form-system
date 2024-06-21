@@ -4,8 +4,9 @@
 
 .option-wrapper {
   display: flex;
-  gap: 10px;
+  gap: var(--spacing-md);
   align-items: center;
+  width: 100%;
 }
 
 .option-block {

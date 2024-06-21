@@ -1,33 +1,35 @@
 .form-item-wrapper {
-  width: 200px;
-  height: 200px;
+  width: var(--container-height-md);
+  height: var(--container-height-md);
+}
+
+.form-item-image,
+.form-item-title {
+  display: flex;
+  cursor: pointer;
 }
 
 .form-item-image {
   height: 80%;
   background-color: var(--body-bg);
-  border-radius: 10px 10px 0 0;
-  border: 1px solid var(--form-item-border);
+  border-radius: var(--radius-lg) 0;
+  border: var(--border-width-xs) solid var(--form-item-border);
   border-bottom: 0;
-  display: flex;
   justify-content: center;
-  cursor: pointer;
 }
 
 .form-item-title {
-  display: flex;
   align-items: center;
   justify-content: space-between;
   height: 20%;
-  border: 1px solid var(--form-item-border);
-  border-radius: 0 0 5px 5px;
-  cursor: pointer;
+  border: var(--border-width-xs) solid var(--form-item-border);
+  border-radius: 0 var(--radius-sm);
 }
 
 .form-item-text {
-  margin-left: 5px;
-  font-weight: 600;
-  font-size: 14px;
+  margin-left: var(--spacing-xs);
+  font-weight: var(--font-weight-md);
+  font-size: var(----font-size-sm);
   color: var(--p-text);
 }
 

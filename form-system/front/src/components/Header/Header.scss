@@ -1,18 +1,18 @@
 .main-page-header {
-  height: 40px;
+  height: var(--container-height-xs);
   background-color: var(--main-bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  padding: 0 20px;
+  padding: 0 var(--spacing-xl);
 }
 
 .nav-wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 10px;
+  gap: var(--spacing-md);
 }
 
 .main-page-body {
@@ -21,12 +21,12 @@
 
 .header-title {
   color: var(--heading-text);
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: var(--font-weight-md);
+  font-size: var(--font-size-md);
   cursor: pointer;
 }
 
 .form-icon {
-  width: 30px;
+  width: var(--button-width-sm);
   cursor: pointer;
 }

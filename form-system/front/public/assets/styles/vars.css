@@ -1,4 +1,5 @@
 :root {
+  /* colors */
   --main-bg: #fff;
   --btn-bg: #673ab7;
   --btn-text-color: #fff;
@@ -14,4 +15,59 @@
   --body-bg: rgb(225, 216, 241);
   --form-item-border: rgb(203, 201, 201);
   --border-bottom: rgb(76, 43, 135);
+
+  /* sizes */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24pt;
+  --letter-spacing-sm: 0.2px;
+  --font-weight-md: 600;
+
+  --blur-size: 15px;
+  --grayscale: 20%;
+  --shadow-xs: 5px;
+
+  --spacing-xxs: 3px;
+  --spacing-xs: 5px;
+  --spacing-sm: 8px;
+  --spacing-md: 10px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-xxl: 30px;
+
+  --radius-xs: 3px;
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+
+  --border-width-xs: 1px;
+  --border-width-xsm: 2px;
+  --border-width-sm: 3px;
+
+  --button-height-sm: 30px;
+  --button-height-md: 35px;
+  --button-height-lg: 56px;
+
+  --button-width-sm: 30px;
+  --button-width-lg: 80px;
+
+  --image-height-sm: 50px;
+  --image-height-md: 120px;
+  --image-height-lg: 250px;
+  --image-bg-size-lg: 375px;
+
+  --container-height-xxs: 26px;
+  --container-height-xs: 40px;
+  --container-height-sm: 50px;
+  --container-height-md: 200px;
+  --container-height-lg: 350px;
+  --container-height-xl: 430px;
+
+  --container-width-xs: 62px;
+  --container-width-sm: 120px;
+  --container-width-md: 280px;
+  --container-width-lg: 320px;
+  --container-width-xl: 768px;
 }
