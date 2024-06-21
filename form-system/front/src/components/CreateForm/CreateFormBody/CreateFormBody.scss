@@ -2,45 +2,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 5px;
+  margin: 0 var(--spacing-xl);
 }
 
 .form-image {
   background-image: url(assets/images/form-bg.jpg);
-  height: 120px;
-  max-height: 250px;
+  height: var(--image-height-md);
+  max-height: var(--image-height-lg);
   background-size: cover;
-  margin: 8px 0;
-  border-radius: 8px;
+  margin: var(--spacing-sm) 0;
+  border-radius: var(--radius-md);
   background-repeat: no-repeat;
-  max-width: 768px;
-  width: calc(100% - 5px);
+  max-width: var(--container-width-xl);
+  width: calc(100% - var(--spacing-xs));
 }
 
 .add-option {
-  background: white;
-  border-width: 0 0 2px 0;
-  border-color: azure;
-  width: 120px;
+  background: var(--main-bg);
+  border-width: 0 0 var(--border-width-xsm) 0;
+  width: var(--container-width-sm);
   display: flex;
   cursor: pointer;
 }
 
 .form {
-  background: white;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  padding: 20px;
+  background: var(--main-bg);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-xl);
 }
 
 form {
-  max-width: 768px;
+  max-width: var(--container-width-xl);
   width: 100%;
-  margin: 0 5px;
-}
-
-.delete-option,
-.delete-btn,
-.add {
-  cursor: pointer;
+  margin: 0 var(--spacing-xs);
 }

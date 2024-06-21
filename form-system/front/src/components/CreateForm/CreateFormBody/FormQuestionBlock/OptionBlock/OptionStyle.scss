@@ -1,11 +1,12 @@
 .add-option {
-  color: #5f6368;
+  color: var(--p-text);
 }
 
 .option-wrapper {
   display: flex;
-  gap: 10px;
+  gap: var(--spacing-md);
   align-items: center;
+  width: 100%;
 }
 
 .option-block {
