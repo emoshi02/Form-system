@@ -6,7 +6,7 @@ export const CreateFormPage = () => {
   return (
     <>
       <Header />
-      <SubHeader item1="Questions" item2="Answers" />
+      <SubHeader sections={['Questions', 'Answers']} />
       <CreateFormBody />
     </>
   );

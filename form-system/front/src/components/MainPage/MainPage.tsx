@@ -6,7 +6,7 @@ export const MainPage = () => {
   return (
     <main className="main-page">
       <Header />
-      <SubHeader item1="Recent" item2="Received" />
+      <SubHeader sections={['Recent', 'Received']} />
       <MainBody />
     </main>
   );
