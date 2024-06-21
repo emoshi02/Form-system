@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 5px;
+  margin: 0 20px;
 }
 
 .form-image {
@@ -18,16 +18,15 @@
 }
 
 .add-option {
-  background: white;
+  background: var(--main-bg);
   border-width: 0 0 2px 0;
-  border-color: azure;
   width: 120px;
   display: flex;
   cursor: pointer;
 }
 
 .form {
-  background: white;
+  background: var(--main-bg);
   border-radius: 10px;
   margin-bottom: 16px;
   padding: 20px;
@@ -37,10 +36,4 @@ form {
   max-width: 768px;
   width: 100%;
   margin: 0 5px;
-}
-
-.delete-option,
-.delete-btn,
-.add {
-  cursor: pointer;
 }

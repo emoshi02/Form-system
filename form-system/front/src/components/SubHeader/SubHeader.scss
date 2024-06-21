@@ -5,7 +5,7 @@
   align-items: center;
   gap: 20px;
   font-size: 12px;
-  background-color: white;
+  background-color: var(--main-bg);
 }
 
 .header-nav-item {
@@ -18,12 +18,9 @@
   width: 61px;
 }
 
-.header-nav-item:hover {
-  border-bottom: 3px solid rgb(76, 43, 135);
-}
-
+.header-nav-item:hover,
 .active {
-  border-bottom: 3px solid rgb(76, 43, 135);
+  border-bottom: 3px solid var(--border-bottom);
 }
 
 .header-nav-item-p {

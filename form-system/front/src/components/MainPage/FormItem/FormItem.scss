@@ -5,9 +5,9 @@
 
 .form-item-image {
   height: 80%;
-  background-color: rgb(225, 216, 241);
+  background-color: var(--form-item-img);
   border-radius: 10px 10px 0 0;
-  border: 1px solid rgb(203, 201, 201);
+  border: 1px solid var(--form-item-border);
   border-bottom: 0;
   display: flex;
   justify-content: center;
@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: space-between;
   height: 20%;
-  border: 1px solid rgb(203, 201, 201);
+  border: 1px solid var(--form-item-border);
   border-radius: 0 0 5px 5px;
   cursor: pointer;
 }
@@ -28,7 +28,7 @@
   margin-left: 5px;
   font-weight: 600;
   font-size: 14px;
-  color: #5f6368;
+  color: var(--p-text);
 }
 
 .form-image--small {

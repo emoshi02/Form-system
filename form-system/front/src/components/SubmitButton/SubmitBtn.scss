@@ -2,12 +2,12 @@
   height: 30px;
   width: 80px;
   border-radius: 8px;
-  color: white;
-  background-color: #673ab7;
+  color: var(--btn-text-color);
+  background-color: var(--btn-bg);
   cursor: pointer;
   position: absolute;
 }
 
 .btn:hover {
-  background-color: #7a4bcc;
+  background-color: var(--btn-on-focus);
 }
