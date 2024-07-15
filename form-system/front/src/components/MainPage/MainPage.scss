@@ -14,7 +14,7 @@
   background: var(--create-form-btn-on-focus);
   border-color: var(--create-form-btn-on-focus);
   box-shadow: none;
-  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow var(--transition-sm) ease-in-out;
 }
 
 .create-form-img {
@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .create-form {
@@ -39,4 +39,11 @@
 
 .create-form {
   margin-bottom: var(--spacing-md);
+}
+
+.forms {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

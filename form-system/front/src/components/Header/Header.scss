@@ -19,14 +19,17 @@
   height: 100vh;
 }
 
+.nav-wrapper,
+.user-icon {
+  cursor: pointer;
+}
+
 .header-title {
   color: var(--heading-text);
   font-weight: var(--font-weight-md);
   font-size: var(--font-size-md);
-  cursor: pointer;
 }
 
 .form-icon {
   width: var(--button-width-sm);
-  cursor: pointer;
 }

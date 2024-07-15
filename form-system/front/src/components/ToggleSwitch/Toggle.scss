@@ -1,0 +1,66 @@
+.switch,
+.slider {
+  cursor: pointer;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--shadow);
+  -webkit-transition: var(--transition-md);
+  transition: var(--transition-md);
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: var(--slider-height);
+  width: var(--slider-width);
+  left: var(--spacing-xxxs);
+  bottom: var(--spacing-xxxs);
+  background-color: var(--main-bg);
+  -webkit-transition: var(--transition-md);
+  transition: var(--transition-md);
+}
+
+input:checked + .slider {
+  background-color: var(--btn-on-focus);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 var(--shadow-xxs) var(--btn-on-focus);
+}
+
+input:checked + .slider:before {
+  transform: translateX(var((--spacing-lg)));
+}
+
+.slider.round {
+  border-radius: var(--radius-xl);
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}

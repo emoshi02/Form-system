@@ -15,6 +15,7 @@
   --body-bg: rgb(225, 216, 241);
   --form-item-border: rgb(203, 201, 201);
   --border-bottom: rgb(76, 43, 135);
+  --secondary-btn-hover: #f1f3f4;
 
   /* sizes */
   --font-size-xs: 12px;
@@ -22,13 +23,18 @@
   --font-size-md: 16px;
   --font-size-lg: 18px;
   --font-size-xl: 24pt;
+  --font-size-xxxl: 98px;
   --letter-spacing-sm: 0.2px;
   --font-weight-md: 600;
 
   --blur-size: 15px;
   --grayscale: 20%;
+
+  --shadow-xxs: 1px;
   --shadow-xs: 5px;
 
+  --spacing-xxxxs: 1px;
+  --spacing-xxxs: 2px;
   --spacing-xxs: 3px;
   --spacing-xs: 5px;
   --spacing-sm: 8px;
@@ -41,22 +47,32 @@
   --radius-sm: 5px;
   --radius-md: 8px;
   --radius-lg: 10px;
+  --radius-xl: 34px;
 
   --border-width-xs: 1px;
   --border-width-xsm: 2px;
   --border-width-sm: 3px;
 
+  --button-height-xs: 25px;
   --button-height-sm: 30px;
   --button-height-md: 35px;
   --button-height-lg: 56px;
 
+  --icon-size: 24px;
+
   --button-width-sm: 30px;
+  --button-width-md: 70px;
   --button-width-lg: 80px;
 
   --image-height-sm: 50px;
   --image-height-md: 120px;
   --image-height-lg: 250px;
   --image-bg-size-lg: 375px;
+
+  --image-input-height-md: 200px;
+  --image-input-width-md: 200px;
+
+  --input-height-md: 36px;
 
   --container-height-xxs: 26px;
   --container-height-xs: 40px;
@@ -70,4 +86,13 @@
   --container-width-md: 280px;
   --container-width-lg: 320px;
   --container-width-xl: 768px;
+
+  /*Toggle*/
+  --toggle-width: 40px;
+  --toggle-height: 20px;
+  --slider-height: 16px;
+  --slider-width: 16px;
+
+  --transition-sm: 0.2s;
+  --transition-md: 0.4s;
 }

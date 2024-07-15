@@ -1,0 +1,47 @@
+.custom-select {
+  position: relative;
+  width: 50%;
+  border: var(--border-width-xs) solid var(--input-outline);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.selected-option {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-xs);
+  background-color: var(--main-bg);
+  column-gap: var(--spacing-md);
+}
+
+.options {
+  position: absolute;
+  width: calc(100% + var(--border-width-xs) * 2);
+  left: calc(-1 * var(--spacing-xxxxs));
+  border: var(--border-width-xs) solid var(--input-outline);
+  background-color: var(--main-bg);
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 0 var(--shadow-xs) var(--btn-on-focus);
+}
+
+.custom-select.open,
+.custom-select:hover {
+  box-shadow: 0 0 var(--shadow-xs) var(--btn-on-focus);
+}
+
+.custom-select.open .options {
+  display: flex;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-xs);
+  column-gap: var(--spacing-md);
+}
+
+.option:hover {
+  background-color: var(--secondary-btn-hover);
+  box-shadow: 0 0 var(--shadow-xs) var(--btn-on-focus);
+}
