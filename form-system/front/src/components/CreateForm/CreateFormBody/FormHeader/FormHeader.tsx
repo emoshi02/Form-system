@@ -1,13 +1,21 @@
+import { useState } from 'react';
 import './FormHeader.scss';
 
 export const FormHeader = () => {
+  const [title, setTitle] = useState('Untitled Form');
+
+  const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTitle(event.target.value);
+  };
+
   return (
     <section className="form-header">
       <input
         type="text"
-        value="Untitled Form"
+        value={title}
         className="form-title"
         id="title"
+        onChange={handleTitleChange}
       />
       <input
         type="text"
