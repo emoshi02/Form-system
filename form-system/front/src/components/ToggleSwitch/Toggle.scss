@@ -48,7 +48,7 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(var((--spacing-lg)));
+  transform: translateX(var(--spacing-xl));
 }
 
 .slider.round {

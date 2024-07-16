@@ -1,0 +1,32 @@
+.form-image {
+  background-image: url(assets/images/form-bg.jpg);
+  height: var(--image-height-md);
+  max-height: var(--image-height-lg);
+  background-size: cover;
+  margin: var(--spacing-sm) 0;
+  border-radius: var(--radius-md);
+  background-repeat: no-repeat;
+  max-width: var(--container-width-xl);
+  width: calc(100% - var(--spacing-xs));
+}
+
+.add-option {
+  background: var(--main-bg);
+  border-width: 0 0 var(--border-width-xsm) 0;
+  width: var(--container-width-sm);
+  display: flex;
+  cursor: pointer;
+}
+
+.form {
+  background: var(--main-bg);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-xl);
+}
+
+form {
+  max-width: var(--container-width-xl);
+  width: 100%;
+  margin: 0 var(--spacing-xs);
+}
