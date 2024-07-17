@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { FormFooter } from '../FormFooter/FormFooter';
 import { Question } from './Question';
+import { FormDataType } from '../../../MainPage/FormItem/FormItem';
 
-interface QstProps {
-  questions?: string[];
-}
-
-export const FormQuestionBlock = ({ questions = [''] }: QstProps) => {
+export const FormQuestionBlock = ({
+  questions = [''],
+  optionType = [''],
+  image = [null],
+  isRequired = [false],
+  options = [['']],
+}: Partial<FormDataType>) => {
   const [questionValues, setQuestionValues] = useState<string[]>(questions);
 
   const handleAddOptionBtnClick = () => {
@@ -19,9 +22,14 @@ export const FormQuestionBlock = ({ questions = [''] }: QstProps) => {
 
   return (
     <>
-      {questionValues.map((_, index: number) => (
+      {questionValues.map((title, index: number) => (
         <Question
+          title={title}
           index={index}
+          optionType={optionType[index]}
+          image={image[index]}
+          isRequired={isRequired[index]}
+          options={options[index]}
           onDeleteBtnClick={handleDeleteBtnClick}
           key={index}
         />

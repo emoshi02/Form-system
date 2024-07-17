@@ -5,18 +5,35 @@ import { Option } from './OptionBlock/Option';
 import { useState } from 'react';
 import './Question.scss';
 
-export const Question = ({
-  index,
-  onDeleteBtnClick,
-}: {
+type QuestionProps = {
+  title: string;
   index: number;
+  optionType: string;
+  image: string | null;
+  isRequired: boolean;
+  options: string[];
   onDeleteBtnClick: (index: number) => void;
-}) => {
-  const [optionSettingSelect, setOptionSettingSelect] = useState(OPTIONS[0]);
+};
 
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
+export const Question = ({
+  title,
+  index,
+  optionType,
+  image,
+  isRequired,
+  options,
+  onDeleteBtnClick,
+}: QuestionProps) => {
+  const initialOptionSetting =
+    OPTIONS.find((option) => option.optionIcon === optionType) || OPTIONS[0];
+  const [optionSettingSelect, setOptionSettingSelect] =
+    useState(initialOptionSetting);
+  const [questionTitle, setQuestionTitle] = useState(title);
 
-  const [isRequired, setIsRequired] = useState<boolean>(false);
+  const [imagePreview, setImagePreview] = useState<string | null>(image);
+
+  const [isQuestionRequired, setIsQuestionRequired] =
+    useState<boolean>(isRequired);
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
@@ -51,7 +68,7 @@ export const Question = ({
   };
 
   const handleToggleChange = (required: boolean) => {
-    setIsRequired(required);
+    setIsQuestionRequired(required);
   };
 
   return (
@@ -61,6 +78,10 @@ export const Question = ({
           type="text"
           placeholder={`Question ${index + 1}`}
           className="question-input"
+          value={questionTitle}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            setQuestionTitle(event.target.value);
+          }}
         />
         <span
           className="material-symbols-outlined question-image"
@@ -95,6 +116,7 @@ export const Question = ({
         <Option
           optionIcon={optionSettingSelect.optionIcon}
           type={optionSettingSelect.type}
+          options={options}
         />
       </span>
       <span className="question-footer">
@@ -106,7 +128,7 @@ export const Question = ({
         </span>
         <Toggle
           label="Required"
-          isRequired={isRequired}
+          isRequired={isQuestionRequired}
           setRequired={handleToggleChange}
         />
       </span>

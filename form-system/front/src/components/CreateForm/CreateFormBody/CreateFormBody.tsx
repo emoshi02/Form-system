@@ -2,11 +2,14 @@ import { useEffect, useState } from 'react';
 import './CreateFormBody.scss';
 import { CreateForm } from './CreateForm';
 import { Answers } from '../Answers/Answers';
+import { FormDataType } from '../../MainPage/FormItem/FormItem';
 
 export const CreateFormBody = ({
   activeSectionIndex,
+  formData,
 }: {
   activeSectionIndex: number;
+  formData: FormDataType | null;
 }) => {
   const [isCreateForm, setIsCreateForm] = useState(activeSectionIndex === 0);
 
@@ -16,7 +19,7 @@ export const CreateFormBody = ({
 
   return (
     <section className="main">
-      {isCreateForm ? <CreateForm /> : <Answers />}
+      {isCreateForm ? <CreateForm formData={formData} /> : <Answers />}
     </section>
   );
 };
