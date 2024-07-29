@@ -8,6 +8,7 @@ type answerFormQstProps = {
   image: string | null;
   isRequired: boolean;
   options: string[];
+  onChange: (value: string | string[]) => void;
 };
 
 export const AnswerFormQuestions = ({
@@ -16,23 +17,32 @@ export const AnswerFormQuestions = ({
   image,
   isRequired,
   options,
+  onChange,
 }: answerFormQstProps) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
   const optionSetting =
     OPTIONS.find((option) => option.optionIcon === optionType) || OPTIONS[0];
 
   const handleCheckboxChange = (option: string) => {
-    setSelectedOptions((prev) =>
-      prev.includes(option)
-        ? prev.filter((item) => item !== option)
-        : [...prev, option],
-    );
+    const updatedSelectedOptions = selectedOptions.includes(option)
+      ? selectedOptions.filter((item) => item !== option)
+      : [...selectedOptions, option];
+    setSelectedOptions(updatedSelectedOptions);
+    onChange(updatedSelectedOptions);
   };
 
   const handleSingleOptionChange = (option: string) => {
     setSelectedOption(option);
+    onChange(option);
+  };
+
+  const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const dateValue = event.target.value;
+    setSelectedDate(dateValue);
+    onChange(dateValue);
   };
 
   return (
@@ -42,6 +52,7 @@ export const AnswerFormQuestions = ({
         {isRequired && <p className="required">{` *`}</p>}
       </span>
       {image && <img src={image} className="answer-form-image" />}
+
       {options.map((option, index) => (
         <div className="option-wrapper" key={index}>
           <input
@@ -53,10 +64,15 @@ export const AnswerFormQuestions = ({
                 ? selectedOptions.includes(option)
                 : selectedOption === option
             }
-            onChange={() =>
+            value={
+              optionSetting.value === 'date' ? selectedDate || '' : undefined
+            }
+            onChange={
               optionSetting.value === 'checkbox'
-                ? handleCheckboxChange(option)
-                : handleSingleOptionChange(option)
+                ? () => handleCheckboxChange(option)
+                : optionSetting.value === 'radio'
+                  ? () => handleSingleOptionChange(option)
+                  : handleDateChange
             }
           />
           <p>{option}</p>
