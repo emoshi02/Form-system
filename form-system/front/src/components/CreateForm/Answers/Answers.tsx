@@ -260,13 +260,23 @@ const processAnswerData = (
 };
 
 export const Answers = () => {
+  if (!DATA) {
+    return (
+      <section className="form-header">
+        <h1 className="answers" id="answers">
+          {`0 Answers`}
+        </h1>
+      </section>
+    );
+  }
+
   const processedData = processAnswerData(DATA);
 
   return (
     <>
       <section className="form-header">
         <h1 className="answers" id="answers">
-          {`${Object.keys(processedData).length} Questions`}
+          {`${Object.keys(processedData).length} Answers`}
         </h1>
       </section>
       {Object.values(processedData).map((questionData) => {
