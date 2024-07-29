@@ -16,6 +16,7 @@
   --form-item-border: rgb(203, 201, 201);
   --border-bottom: rgb(76, 43, 135);
   --secondary-btn-hover: #f1f3f4;
+  --required: #ff3333;
 
   /* sizes */
   --font-size-xs: 12px;
