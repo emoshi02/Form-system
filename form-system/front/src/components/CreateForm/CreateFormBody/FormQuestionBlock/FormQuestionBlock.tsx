@@ -66,7 +66,7 @@ export const FormQuestionBlock = ({
     });
   };
 
-  const handleChanges = (
+  const updateFormState = (
     index: number,
     field: string,
     value: string | boolean | null | string[],
@@ -126,7 +126,7 @@ export const FormQuestionBlock = ({
           options={options[index]}
           onDeleteBtnClick={handleDeleteBtnClick}
           key={index}
-          onChange={handleChanges}
+          onChange={updateFormState}
         />
       ))}
       <FormFooter onAddQuestionClick={handleAddOptionBtnClick} />
