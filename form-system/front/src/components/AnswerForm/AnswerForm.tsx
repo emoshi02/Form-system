@@ -9,12 +9,16 @@ type AnswerFormProps = {
 };
 
 export const AnswerForm = ({ formData }: AnswerFormProps) => {
+  const handleSubmit = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+  };
+
   if (!formData) {
     return (
       <section className="main">
         <img src="/assets/images/form-bg.jpg" className="form-image" />
         <AnswerFormHeader title={undefined} desc={undefined} user={undefined} />
-        <AnswerFormBody />
+        <AnswerFormBody onSubmit={handleSubmit} />
       </section>
     );
   }
@@ -40,6 +44,7 @@ export const AnswerForm = ({ formData }: AnswerFormProps) => {
         image={image}
         isRequired={isRequired}
         options={options}
+        onSubmit={handleSubmit}
       />
       <AnswerFormFooter />
     </section>
