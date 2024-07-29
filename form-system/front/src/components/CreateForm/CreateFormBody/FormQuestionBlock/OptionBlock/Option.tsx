@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './OptionStyle.scss';
 import { OptionBtn } from './OptionBtn';
 
@@ -11,6 +11,12 @@ interface OptProps {
 export const Option = ({ optionIcon, type, options = [''] }: OptProps) => {
   const [optionValues, setOptionValues] = useState<string[]>(options);
 
+  useEffect(() => {
+    if (type === 'date' && optionValues.length > 1) {
+      setOptionValues(['']);
+    }
+  }, [type]);
+
   const handleOptionInputChange = (index: number, newValue: string) => {
     const updatedOptions = [...optionValues];
     updatedOptions[index] = newValue;
@@ -18,7 +24,7 @@ export const Option = ({ optionIcon, type, options = [''] }: OptProps) => {
   };
 
   const handleDeleteBtnClick = (index: number) => {
-    const updatedOptions = optionValues.filter((_, i) => i != index);
+    const updatedOptions = optionValues.filter((_, i) => i !== index);
     setOptionValues(updatedOptions);
   };
 
@@ -38,17 +44,22 @@ export const Option = ({ optionIcon, type, options = [''] }: OptProps) => {
               placeholder={`Option ${index + 1}`}
               value={opt ?? ''}
               onChange={(e) => handleOptionInputChange(index, e.target.value)}
+              disabled={type === 'date'}
             />
           </span>
-          <button onClick={() => handleDeleteBtnClick(index)}>
-            <span className="material-symbols-outlined">close</span>
-          </button>
+          {optionValues.length > 1 && (
+            <button onClick={() => handleDeleteBtnClick(index)}>
+              <span className="material-symbols-outlined">close</span>
+            </button>
+          )}
         </span>
       ))}
-      <OptionBtn
-        onAddOption={handleAddOptionBtnClick}
-        optionIcon={optionIcon}
-      />
+      {type !== 'date' && (
+        <OptionBtn
+          onAddOption={handleAddOptionBtnClick}
+          optionIcon={optionIcon}
+        />
+      )}
     </>
   );
 };

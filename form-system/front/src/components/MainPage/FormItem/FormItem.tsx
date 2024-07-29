@@ -16,9 +16,11 @@ export type FormDataType = {
 export const FormItem = ({
   formData,
   onDeleteBtn,
+  isAnswerForm,
 }: {
   formData: FormDataType;
   onDeleteBtn: () => void;
+  isAnswerForm: boolean;
 }) => {
   const navigate = useNavigate();
 
@@ -26,7 +28,10 @@ export const FormItem = ({
     <div
       className="form-item-wrapper"
       onClick={() =>
-        navigate(`/updateForm/${formData.id}`, { state: { formData } })
+        navigate(
+          `${isAnswerForm ? `/answerForm/${formData.id}` : `/updateForm/${formData.id}`}`,
+          { state: { formData } },
+        )
       }
     >
       <div className="form-item-image" id={`form-image ${formData.id}`}>

@@ -6,6 +6,7 @@ import { useState } from 'react';
 import './Question.scss';
 
 type QuestionProps = {
+  id: number;
   title: string;
   index: number;
   optionType: string;
@@ -13,6 +14,11 @@ type QuestionProps = {
   isRequired: boolean;
   options: string[];
   onDeleteBtnClick: (index: number) => void;
+  onChange: (
+    index: number,
+    field: string,
+    value: boolean | string | null | string[],
+  ) => void;
 };
 
 export const Question = ({
@@ -23,9 +29,11 @@ export const Question = ({
   isRequired,
   options,
   onDeleteBtnClick,
+  onChange,
 }: QuestionProps) => {
   const initialOptionSetting =
     OPTIONS.find((option) => option.optionIcon === optionType) || OPTIONS[0];
+
   const [optionSettingSelect, setOptionSettingSelect] =
     useState(initialOptionSetting);
   const [questionTitle, setQuestionTitle] = useState(title);
@@ -35,12 +43,9 @@ export const Question = ({
   const [isQuestionRequired, setIsQuestionRequired] =
     useState<boolean>(isRequired);
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
-    event.preventDefault();
-  };
-
   const handleOptionChange = (option: (typeof OPTIONS)[0]) => {
     setOptionSettingSelect(option);
+    onChange(index, 'optionType', option.optionIcon);
   };
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,6 +54,7 @@ export const Question = ({
       const objectUrl = URL.createObjectURL(file);
       setImagePreview(objectUrl);
       event.target.value = '';
+      onChange(index, 'image', objectUrl);
     }
   };
 
@@ -64,15 +70,17 @@ export const Question = ({
 
     if (confirm('Are you sure you want to remove this image?')) {
       setImagePreview(null);
+      onChange(index, 'image', null);
     }
   };
 
   const handleToggleChange = (required: boolean) => {
     setIsQuestionRequired(required);
+    onChange(index, 'isRequired', required);
   };
 
   return (
-    <form className="question" onSubmit={handleSubmit}>
+    <section className="question">
       <span className="input-setting-wrapper">
         <input
           type="text"
@@ -81,6 +89,7 @@ export const Question = ({
           value={questionTitle}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
             setQuestionTitle(event.target.value);
+            onChange(index, 'questions', event.target.value);
           }}
         />
         <span
@@ -132,6 +141,6 @@ export const Question = ({
           setRequired={handleToggleChange}
         />
       </span>
-    </form>
+    </section>
   );
 };

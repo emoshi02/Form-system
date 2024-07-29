@@ -1,14 +1,19 @@
 import { useState } from 'react';
 import './FormHeader.scss';
+import { FormDataType } from '../../../MainPage/FormItem/FormItem';
 
 export const FormHeader = ({
+  id,
   title = 'Untitled Form',
   desc = '',
   user = '',
+  onChange,
 }: {
+  id: number;
   title: string | undefined;
   desc: string | undefined;
   user: string | undefined;
+  onChange: (newState: FormDataType) => void;
 }) => {
   const [formTitle, setFormTitle] = useState(title);
   const [formDesc, setFormDesc] = useState(desc);
@@ -23,6 +28,12 @@ export const FormHeader = ({
         id="title"
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
           setFormTitle(event.target.value);
+          onChange({
+            id,
+            title: event.target.value,
+            desc: formDesc,
+            user: formUser,
+          });
         }}
       />
       <input
@@ -33,6 +44,12 @@ export const FormHeader = ({
         value={formDesc}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
           setFormDesc(event.target.value);
+          onChange({
+            id,
+            title: formTitle,
+            desc: event.target.value,
+            user: formUser,
+          });
         }}
       />
       <input
@@ -43,6 +60,12 @@ export const FormHeader = ({
         value={formUser}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
           setFormUser(event.target.value);
+          onChange({
+            id,
+            title: formTitle,
+            desc: formDesc,
+            user: event.target.value,
+          });
         }}
       />
     </section>
