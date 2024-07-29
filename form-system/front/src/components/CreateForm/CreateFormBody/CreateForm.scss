@@ -1,8 +1,7 @@
 .form-image {
-  background-image: url(assets/images/form-bg.jpg);
   height: var(--image-height-md);
   max-height: var(--image-height-lg);
-  background-size: cover;
+  object-fit: cover;
   margin: var(--spacing-sm) 0;
   border-radius: var(--radius-md);
   background-repeat: no-repeat;
