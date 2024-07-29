@@ -1,0 +1,17 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 var(--spacing-xl);
+}
+
+.form-image {
+  height: var(--image-height-md);
+  max-height: var(--image-height-lg);
+  margin: var(--spacing-sm) 0;
+  border-radius: var(--radius-md);
+  background-repeat: no-repeat;
+  max-width: var(--container-width-xl);
+  width: calc(100% - var(--spacing-xs));
+  object-fit: cover;
+}

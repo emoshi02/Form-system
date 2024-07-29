@@ -1,0 +1,40 @@
+.answer-form-header {
+  display: flex;
+  flex-direction: column;
+  background: var(--main-bg);
+  margin: var(--spacing-lg) 0;
+  border-radius: var(--radius-md);
+  max-width: var(--container-width-xl);
+  width: 100%;
+  padding: var(--spacing-xl);
+}
+
+.answer-form-title {
+  font-size: var(--font-size-xl);
+}
+
+.answer-form-desc,
+.answer-form-title,
+.answer-form-user,
+.required {
+  margin: var(--spacing-sm) 0;
+}
+
+.answer-form-user {
+  font-weight: var(--font-weight-md);
+  color: var(--p-text);
+}
+
+.required {
+  color: var(--required);
+}
+
+.answer-input-type.radio:focus,
+.answer-input-type.checkbox:focus {
+  width: 13px;
+}
+
+.answer-input-type.date,
+.answer-input-type.date:focus {
+  width: 120px;
+}
