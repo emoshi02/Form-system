@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
   background: var(--main-bg);
-  margin: var(--spacing-lg) 0;
-  border-radius: var(--radius-md);
+  margin: var(--spacing-l) 0;
+  border-radius: var(--radius-m);
   max-width: var(--container-width-xl);
   width: 100%;
   padding: var(--spacing-xl);
@@ -17,11 +17,11 @@
 .answer-form-title,
 .answer-form-user,
 .required {
-  margin: var(--spacing-sm) 0;
+  margin: var(--spacing-s) 0;
 }
 
 .answer-form-user {
-  font-weight: var(--font-weight-md);
+  font-weight: var(--font-weight-m);
   color: var(--p-text);
 }
 
@@ -31,10 +31,10 @@
 
 .answer-input-type.radio:focus,
 .answer-input-type.checkbox:focus {
-  width: 13px;
+  width: var(--input-focus-width-s);
 }
 
 .answer-input-type.date,
 .answer-input-type.date:focus {
-  width: 120px;
+  width: var(--container-width-s);
 }

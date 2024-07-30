@@ -11,7 +11,7 @@
   align-items: center;
   padding: var(--spacing-xs);
   background-color: var(--main-bg);
-  column-gap: var(--spacing-md);
+  column-gap: var(--spacing-m);
 }
 
 .options {
@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;
   padding: var(--spacing-xs);
-  column-gap: var(--spacing-md);
+  column-gap: var(--spacing-m);
 }
 
 .option:hover {

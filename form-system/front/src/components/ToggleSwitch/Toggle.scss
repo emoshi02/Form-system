@@ -23,8 +23,8 @@
   right: 0;
   bottom: 0;
   background-color: var(--shadow);
-  -webkit-transition: var(--transition-md);
-  transition: var(--transition-md);
+  -webkit-transition: var(--transition-m);
+  transition: var(--transition-m);
 }
 
 .slider:before {
@@ -35,8 +35,8 @@
   left: var(--spacing-xxxs);
   bottom: var(--spacing-xxxs);
   background-color: var(--main-bg);
-  -webkit-transition: var(--transition-md);
-  transition: var(--transition-md);
+  -webkit-transition: var(--transition-m);
+  transition: var(--transition-m);
 }
 
 input:checked + .slider {
@@ -62,5 +62,5 @@ input:checked + .slider:before {
 .toggle-wrapper {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-m);
 }

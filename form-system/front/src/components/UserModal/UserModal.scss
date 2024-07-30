@@ -1,11 +1,11 @@
 .user-modal-wrapper {
-  height: var(--container-height-md);
-  width: var(--container-width-md);
+  height: var(--container-height-m);
+  width: var(--container-width-m);
   background: var(--main-bg);
   position: absolute;
   top: var(--container-height-xs);
   right: var(--spacing-xl);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-l);
   box-shadow: 0 var(--shadow-xs) var(--shadow-xs) 0 var(--shadow);
   display: flex;
   flex-direction: column;
@@ -27,8 +27,8 @@
 .cancel-btn,
 .action-btn {
   height: var(--button-height-xs);
-  width: var(--button-width-md);
-  border-radius: var(--radius-sm);
+  width: var(--button-width-m);
+  border-radius: var(--radius-s);
 }
 
 .cancel-btn {

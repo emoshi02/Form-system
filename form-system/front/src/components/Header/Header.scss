@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-m);
 }
 
 .main-page-body {
@@ -26,10 +26,10 @@
 
 .header-title {
   color: var(--heading-text);
-  font-weight: var(--font-weight-md);
-  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-m);
+  font-size: var(--font-size-m);
 }
 
 .form-icon {
-  width: var(--button-width-sm);
+  width: var(--button-width-s);
 }
