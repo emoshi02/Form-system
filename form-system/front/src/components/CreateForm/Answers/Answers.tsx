@@ -11,6 +11,10 @@ import {
 } from 'recharts';
 import './Answers.scss';
 
+const CONTAINER_HEIGHT = 300;
+const CHART_SIZE = 500;
+const BAR_FILL_COLOR = '#673ab7';
+
 const DATA = [
   {
     answer: ['Lietuvoje'],
@@ -284,10 +288,10 @@ export const Answers = () => {
           <section className="form-answer">
             <h2 className="form-question">{questionData.questionName}</h2>
             <p className="answer-number">{`${questionData.answerCount} Answers`}</p>
-            <ResponsiveContainer height={300}>
+            <ResponsiveContainer height={CONTAINER_HEIGHT}>
               <BarChart
-                width={500}
-                height={500}
+                width={CHART_SIZE}
+                height={CHART_SIZE}
                 data={Object.entries(questionData.groupedData).map(
                   ([answer, count]) => ({
                     answer,
@@ -304,7 +308,7 @@ export const Answers = () => {
                   className="bar"
                   dataKey="Number of Votes"
                   activeBar={<Rectangle className="rectangle" />}
-                  fill="#673ab7"
+                  fill={BAR_FILL_COLOR}
                 />
               </BarChart>
             </ResponsiveContainer>
