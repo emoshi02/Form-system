@@ -13,10 +13,6 @@ export const CreateForm = ({ formData }: { formData: FormDataType | null }) => {
     }
   }, [formData]);
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
-    event.preventDefault();
-  };
-
   const handleChanges = (newState: FormDataType) => {
     if (formState) {
       setFormState((prevState) => ({
@@ -28,15 +24,13 @@ export const CreateForm = ({ formData }: { formData: FormDataType | null }) => {
 
   if (!formData) {
     return (
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={(event: { preventDefault: () => void }) =>
+          event.preventDefault()
+        }
+      >
         <img src="/assets/images/form-bg.jpg" className="form-image" />
-        <FormHeader
-          id={0}
-          title={undefined}
-          desc={undefined}
-          user={undefined}
-          onChange={handleChanges}
-        />
+        <FormHeader id={0} onChange={handleChanges} />
         <FormQuestionBlock
           id={0}
           title={'Untitled Form'}
@@ -59,7 +53,11 @@ export const CreateForm = ({ formData }: { formData: FormDataType | null }) => {
   } = formData;
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={(event: { preventDefault: () => void }) =>
+        event.preventDefault()
+      }
+    >
       <img src="/assets/images/form-bg.jpg" className="form-image" />
       <FormHeader
         id={id}

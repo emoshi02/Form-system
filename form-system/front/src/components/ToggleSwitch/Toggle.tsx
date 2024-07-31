@@ -9,10 +9,6 @@ export const Toggle = ({
   isRequired: boolean;
   setRequired: (required: boolean) => void;
 }) => {
-  const handleToggleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setRequired(event.target.checked);
-  };
-
   return (
     <span className="toggle-wrapper">
       <p className="p-text">{label}</p>
@@ -20,7 +16,9 @@ export const Toggle = ({
         <input
           type="checkbox"
           checked={isRequired}
-          onChange={handleToggleChange}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            setRequired(event.target.checked)
+          }
         />
         <span className="slider round"></span>
       </label>
