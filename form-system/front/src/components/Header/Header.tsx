@@ -25,7 +25,7 @@ export const Header = () => {
     } else {
       document.removeEventListener('mousedown', handleOutsideClick);
     }
-  });
+  }, [openModal]);
 
   return (
     <>
