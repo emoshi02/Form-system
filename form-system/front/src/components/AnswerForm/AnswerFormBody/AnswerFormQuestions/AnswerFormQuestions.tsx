@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { OPTIONS } from '../../../CreateForm/CreateFormBody/FormQuestionBlock/constants';
 import './AnswerFormQuestions.scss';
 
-type answerFormQstProps = {
+type AnswerFormQuestionProps = {
   title: string;
   optionType: string;
   image: string | null;
@@ -18,7 +18,7 @@ export const AnswerFormQuestions = ({
   isRequired,
   options,
   onChange,
-}: answerFormQstProps) => {
+}: AnswerFormQuestionProps) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
