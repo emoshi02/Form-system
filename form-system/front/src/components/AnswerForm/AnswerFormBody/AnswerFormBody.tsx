@@ -1,42 +1,50 @@
 import { useState } from 'react';
-import { FormDataType } from '../../MainPage/FormItem/FormItem';
 import { AnswerFormQuestions } from './AnswerFormQuestions/AnswerFormQuestions';
 
-type AnswerFormBodyProps = Partial<FormDataType> & {
+type Question = {
+  question: string;
+  optionType: string;
+  image: string | null;
+  isRequired: boolean;
+  options: string[];
+};
+
+type AnswerProps = {
+  questionsData: Question[];
   onSubmit: (event: React.SyntheticEvent) => void;
 };
 
-export const AnswerFormBody = ({
-  questions = [''],
-  optionType = [''],
-  image = [null],
-  isRequired = [false],
-  options = [['']],
-  onSubmit,
-}: AnswerFormBodyProps) => {
-  const [answerFormState, setAnswerFormState] = useState([['']]);
+export const AnswerFormBody = ({ questionsData, onSubmit }: AnswerProps) => {
+  const [answerFormState, setAnswerFormState] = useState<(string | string[])[]>(
+    [''],
+  );
 
   const updateAnswerFormState = (index: number, value: string | string[]) => {
     const newOptions = [...answerFormState];
-    newOptions[index] = value as string[];
+    newOptions[index] = value;
     setAnswerFormState(newOptions);
   };
 
   return (
     <form onSubmit={onSubmit}>
-      {questions.map((title: string, index: number) => (
-        <AnswerFormQuestions
-          title={title}
-          optionType={optionType[index]}
-          image={image[index]}
-          isRequired={isRequired[index]}
-          options={options[index]}
-          key={index}
-          onChange={(value: string | string[]) =>
-            updateAnswerFormState(index, value)
-          }
-        />
-      ))}
+      {questionsData.map(
+        (
+          { question, optionType, image, isRequired, options }: Question,
+          index: number,
+        ) => (
+          <AnswerFormQuestions
+            title={question}
+            optionType={optionType}
+            image={image}
+            isRequired={isRequired}
+            options={options}
+            key={index}
+            onChange={(value: string | string[]) =>
+              updateAnswerFormState(index, value)
+            }
+          />
+        ),
+      )}
     </form>
   );
 };

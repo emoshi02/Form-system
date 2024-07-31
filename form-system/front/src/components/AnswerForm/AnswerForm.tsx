@@ -9,16 +9,17 @@ type AnswerFormProps = {
 };
 
 export const AnswerForm = ({ formData }: AnswerFormProps) => {
-  const handleSubmit = (event: { preventDefault: () => void }) => {
-    event.preventDefault();
-  };
-
   if (!formData) {
     return (
       <section className="main">
         <img src="/assets/images/form-bg.jpg" className="form-image" />
-        <AnswerFormHeader title={undefined} desc={undefined} user={undefined} />
-        <AnswerFormBody onSubmit={handleSubmit} />
+        <AnswerFormHeader />
+        <AnswerFormBody
+          onSubmit={(event: { preventDefault: () => void }) =>
+            event.preventDefault()
+          }
+          questionsData={[]}
+        />
       </section>
     );
   }
@@ -39,12 +40,18 @@ export const AnswerForm = ({ formData }: AnswerFormProps) => {
       <img src="/assets/images/form-bg.jpg" className="form-image" />
       <AnswerFormHeader title={title} desc={desc} user={user} />
       <AnswerFormBody
-        questions={questions}
-        optionType={optionType}
-        image={image}
-        isRequired={isRequired}
-        options={options}
-        onSubmit={handleSubmit}
+        questionsData={
+          questions?.map((question, index) => ({
+            question,
+            optionType: optionType ? optionType[index] : 'radio',
+            image: image ? image[index] : null,
+            isRequired: isRequired ? isRequired[index] : false,
+            options: options ? options[index] : [],
+          })) || []
+        }
+        onSubmit={(event: { preventDefault: () => void }) =>
+          event.preventDefault()
+        }
       />
       <AnswerFormFooter />
     </section>
