@@ -10,9 +10,9 @@ export const FormHeader = ({
   onChange,
 }: {
   id: number;
-  title: string | undefined;
-  desc: string | undefined;
-  user: string | undefined;
+  title?: string | undefined;
+  desc?: string | undefined;
+  user?: string | undefined;
   onChange: (newState: FormDataType) => void;
 }) => {
   const [formTitle, setFormTitle] = useState(title);
