@@ -3,6 +3,13 @@ import { FormFooter } from '../FormFooter/FormFooter';
 import { Question } from './Question';
 import { FormDataType } from '../../../MainPage/FormItem/FormItem';
 
+export type QuestionFieldProps =
+  | 'questions'
+  | 'optionType'
+  | 'image'
+  | 'isRequired'
+  | 'options';
+
 export const FormQuestionBlock = ({
   id,
   title,
@@ -68,7 +75,7 @@ export const FormQuestionBlock = ({
 
   const updateFormState = (
     index: number,
-    field: string,
+    field: QuestionFieldProps,
     value: string | boolean | null | string[],
   ) => {
     const newQuestions = [...questionValues];

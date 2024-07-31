@@ -1,4 +1,6 @@
-export const OPTIONS = [
+import { Option } from './optionSelect/optionSelect';
+
+export const OPTIONS: Option[] = [
   {
     value: 'radio',
     label: 'Radio Button',

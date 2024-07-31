@@ -4,6 +4,7 @@ import { OptionSelect } from './optionSelect/optionSelect';
 import { Option } from './OptionBlock/Option';
 import { useState } from 'react';
 import './Question.scss';
+import { QuestionFieldProps } from './FormQuestionBlock';
 
 type QuestionProps = {
   id: number;
@@ -16,7 +17,7 @@ type QuestionProps = {
   onDeleteBtnClick: (index: number) => void;
   onChange: (
     index: number,
-    field: string,
+    field: QuestionFieldProps,
     value: boolean | string | null | string[],
   ) => void;
 };

@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import './optionSelect.scss';
 
-interface Option {
-  value: string;
-  label: string;
-  selectedIcon: string;
-  optionIcon: string;
-  type: string;
-}
+export type Option = {
+  value: 'radio' | 'checkbox' | 'date';
+  label: 'Radio Button' | 'Checkbox' | 'Date';
+  selectedIcon: 'radio_button_checked' | 'check_box' | 'event';
+  optionIcon: 'circle' | 'check_box_outline_blank' | 'event';
+  type: 'text' | 'date';
+};
 
 interface OptSelectProps {
   options: Option[];

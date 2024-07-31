@@ -4,7 +4,7 @@ import { OptionBtn } from './OptionBtn';
 
 interface OptProps {
   optionIcon: string;
-  type: string;
+  type: 'date' | 'text';
   options?: string[];
 }
 
