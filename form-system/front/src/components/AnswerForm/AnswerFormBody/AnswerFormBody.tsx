@@ -21,7 +21,7 @@ export const AnswerFormBody = ({ questionsData, onSubmit }: AnswerProps) => {
 
   const updateAnswerFormState = (index: number, value: string | string[]) => {
     const newOptions = [...answerFormState];
-    newOptions[index] = value;
+    newOptions[index] = Array.isArray(value) ? value : [value];
     setAnswerFormState(newOptions);
   };
 
