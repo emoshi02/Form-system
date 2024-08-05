@@ -12,21 +12,24 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-m);
 }
 
 .main-page-body {
   height: 100vh;
 }
 
-.header-title {
-  color: var(--heading-text);
-  font-weight: var(--font-weight-md);
-  font-size: var(--font-size-md);
+.nav-wrapper,
+.user-icon {
   cursor: pointer;
 }
 
+.header-title {
+  color: var(--heading-text);
+  font-weight: var(--font-weight-m);
+  font-size: var(--font-size-m);
+}
+
 .form-icon {
-  width: var(--button-width-sm);
-  cursor: pointer;
+  width: var(--button-width-s);
 }

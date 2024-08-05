@@ -1,6 +1,6 @@
 .create-form-btn {
-  width: var(--button-height-lg);
-  height: var(--button-height-lg);
+  width: var(--button-height-l);
+  height: var(--button-height-l);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -14,12 +14,12 @@
   background: var(--create-form-btn-on-focus);
   border-color: var(--create-form-btn-on-focus);
   box-shadow: none;
-  transition: box-shadow 0.2s ease-in-out;
+  transition: box-shadow var(--transition-s) ease-in-out;
 }
 
 .create-form-img {
-  width: var(--image-height-sm);
-  height: var(--image-height-sm);
+  width: var(--image-height-s);
+  height: var(--image-height-s);
 }
 
 .main-body {
@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .create-form {
@@ -38,5 +38,12 @@
 }
 
 .create-form {
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-m);
+}
+
+.forms {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

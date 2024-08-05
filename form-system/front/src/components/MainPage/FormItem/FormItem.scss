@@ -1,6 +1,7 @@
 .form-item-wrapper {
-  width: var(--container-height-md);
-  height: var(--container-height-md);
+  width: var(--container-height-m);
+  height: var(--container-height-m);
+  margin: var(--spacing-m);
 }
 
 .form-item-image,
@@ -11,11 +12,15 @@
 
 .form-item-image {
   height: 80%;
-  background-color: var(--body-bg);
-  border-radius: var(--radius-lg) 0;
+  background: var(--main-bg);
+  border-radius: var(--radius-l) var(--radius-l) 0 0;
   border: var(--border-width-xs) solid var(--form-item-border);
   border-bottom: 0;
   justify-content: center;
+}
+
+.form-item-image img {
+  margin: var(--spacing-m);
 }
 
 .form-item-title {
@@ -23,13 +28,14 @@
   justify-content: space-between;
   height: 20%;
   border: var(--border-width-xs) solid var(--form-item-border);
-  border-radius: 0 var(--radius-sm);
+  border-radius: 0 0 var(--radius-s) var(--radius-s);
+  background: var(--main-bg);
 }
 
 .form-item-text {
   margin-left: var(--spacing-xs);
-  font-weight: var(--font-weight-md);
-  font-size: var(----font-size-sm);
+  font-weight: var(--font-weight-m);
+  font-size: var(----font-size-s);
   color: var(--p-text);
 }
 

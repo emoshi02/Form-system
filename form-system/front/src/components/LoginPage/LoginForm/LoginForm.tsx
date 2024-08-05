@@ -4,13 +4,14 @@ import { useNavigate } from 'react-router-dom';
 export const LoginForm = () => {
   const navigate = useNavigate();
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    navigate('/main');
-  };
-
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
+    <form
+      className="login-form"
+      onSubmit={(event: React.FormEvent) => {
+        event.preventDefault();
+        navigate('/main');
+      }}
+    >
       <label htmlFor="email" className="input-label">
         Email
       </label>
