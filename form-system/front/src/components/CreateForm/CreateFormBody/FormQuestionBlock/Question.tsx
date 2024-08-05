@@ -1,5 +1,5 @@
 import { Toggle } from '../../../ToggleSwitch/Toggle';
-import { OPTIONS } from './constants';
+import { OPTIONS, REMOVE_IMAGE_TEXT } from './constants';
 import { OptionSelect } from './optionSelect/optionSelect';
 import { Option } from './OptionBlock/Option';
 import { useState } from 'react';
@@ -69,7 +69,7 @@ export const Question = ({
   const handleImageClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
 
-    if (confirm('Are you sure you want to remove this image?')) {
+    if (confirm(REMOVE_IMAGE_TEXT)) {
       setImagePreview(null);
       onChange(index, 'image', null);
     }
