@@ -14,12 +14,7 @@ export const AnswerForm = ({ formData }: AnswerFormProps) => {
       <section className="main">
         <img src="/assets/images/form-bg.jpg" className="form-image" />
         <AnswerFormHeader />
-        <AnswerFormBody
-          onSubmit={(event: { preventDefault: () => void }) =>
-            event.preventDefault()
-          }
-          questionsData={[]}
-        />
+        <AnswerFormBody questionsData={[]} />
       </section>
     );
   }
@@ -48,9 +43,6 @@ export const AnswerForm = ({ formData }: AnswerFormProps) => {
             isRequired: isRequired ? isRequired[index] : false,
             options: options ? options[index] : [],
           })) || []
-        }
-        onSubmit={(event: { preventDefault: () => void }) =>
-          event.preventDefault()
         }
       />
       <AnswerFormFooter />

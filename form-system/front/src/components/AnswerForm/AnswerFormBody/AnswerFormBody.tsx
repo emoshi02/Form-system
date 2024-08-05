@@ -11,10 +11,9 @@ type Question = {
 
 type AnswerProps = {
   questionsData: Question[];
-  onSubmit: (event: React.SyntheticEvent) => void;
 };
 
-export const AnswerFormBody = ({ questionsData, onSubmit }: AnswerProps) => {
+export const AnswerFormBody = ({ questionsData }: AnswerProps) => {
   const [answerFormState, setAnswerFormState] = useState<(string | string[])[]>(
     [''],
   );
@@ -26,7 +25,11 @@ export const AnswerFormBody = ({ questionsData, onSubmit }: AnswerProps) => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form
+      onSubmit={(event: { preventDefault: () => void }) =>
+        event.preventDefault()
+      }
+    >
       {questionsData.map(
         (
           { question, optionType, image, isRequired, options }: Question,
