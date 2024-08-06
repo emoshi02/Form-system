@@ -27,6 +27,11 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["src", "./jest.setup.ts", "tests/UserModal.spec.tsx"],
+  "include": [
+    "src",
+    "./jest.setup.ts",
+    "tests/UserModal.spec.tsx",
+    "tests/Toggle.spec.tsx"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
