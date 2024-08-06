@@ -6,7 +6,7 @@ export const Toggle = ({
   setRequired,
 }: {
   label: string;
-  isRequired: boolean;
+  isRequired?: boolean;
   setRequired: (required: boolean) => void;
 }) => {
   return (
