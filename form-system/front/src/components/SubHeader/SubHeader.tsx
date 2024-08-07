@@ -1,7 +1,7 @@
 import './SubHeader.scss';
 
 interface SubHeaderProps {
-  sections: string[];
+  sections?: string[];
   activeSectionIndex: number;
   setActiveSectionIndex: (index: number) => void;
 }
