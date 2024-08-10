@@ -1,7 +1,7 @@
 import { describe, expect, test, jest } from '@jest/globals';
 import { render, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { UserModal } from '../src/components/UserModal/UserModal';
+import { UserModal } from '../src/components/Header/UserModal/UserModal';
 import * as router from 'react-router';
 
 describe('User Modal', () => {
