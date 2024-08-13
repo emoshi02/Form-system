@@ -283,9 +283,9 @@ export const Answers = () => {
           {`${Object.keys(processedData).length} Answers`}
         </h1>
       </section>
-      {Object.values(processedData).map((questionData) => {
+      {Object.values(processedData).map((questionData, index) => {
         return (
-          <section className="form-answer">
+          <section className="form-answer" key={index}>
             <h2 className="form-question">{questionData.questionName}</h2>
             <p className="answer-number">{`${questionData.answerCount} Answers`}</p>
             <ResponsiveContainer height={CONTAINER_HEIGHT}>
