@@ -56,6 +56,7 @@ export const FormHeader = ({
         type="text"
         placeholder="Send to"
         required
+        className="user-email"
         id="user-email"
         value={formUser}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
