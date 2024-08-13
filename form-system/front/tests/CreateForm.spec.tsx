@@ -28,11 +28,10 @@ describe('Create form', () => {
 
     const preventDefault = jest.fn();
 
-    fireEvent.submit(component.container.getElementsByTagName('form')[0], {
-      preventDefault,
-    });
-
-    expect(preventDefault).toHaveBeenCalledTimes(0);
+    const element = component.container.getElementsByTagName('form')[0];
+    element.addEventListener('submit', preventDefault);
+    fireEvent.submit(element);
+    expect(preventDefault).toHaveBeenCalledTimes(1);
   });
 
   test('Form on submit prevents default', async () => {
