@@ -105,8 +105,9 @@ export const FormQuestionBlock = ({
         newOptions[index] = value as string[];
         setOptionValues(newOptions);
         break;
+      /*istanbul ignore next*/
       default:
-        break;
+        throw new Error('Unrecognized field type');
     }
 
     onChange({
