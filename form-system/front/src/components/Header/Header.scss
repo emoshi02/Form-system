@@ -1,32 +1,35 @@
 .main-page-header {
-  height: 40px;
-  background-color: white;
+  height: var(--container-height-xs);
+  background-color: var(--main-bg);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  padding: 0 20px;
+  padding: 0 var(--spacing-xl);
 }
 
 .nav-wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 10px;
+  gap: var(--spacing-m);
 }
 
 .main-page-body {
   height: 100vh;
 }
 
-.header-title {
-  color: #5f6368;
-  font-weight: 600;
-  font-size: 16px;
+.nav-wrapper,
+.user-icon {
   cursor: pointer;
 }
 
+.header-title {
+  color: var(--heading-text);
+  font-weight: var(--font-weight-m);
+  font-size: var(--font-size-m);
+}
+
 .form-icon {
-  width: 30px;
-  cursor: pointer;
+  width: var(--button-width-s);
 }

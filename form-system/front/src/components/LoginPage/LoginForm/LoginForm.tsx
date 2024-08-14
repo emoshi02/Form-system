@@ -1,8 +1,17 @@
-import './LoginForm.scss';
+import '../Login.scss';
+import { useNavigate } from 'react-router-dom';
 
 export const LoginForm = () => {
+  const navigate = useNavigate();
+
   return (
-    <form className="login-form">
+    <form
+      className="login-form"
+      onSubmit={(event: React.FormEvent) => {
+        event.preventDefault();
+        navigate('/main');
+      }}
+    >
       <label htmlFor="email" className="input-label">
         Email
       </label>
