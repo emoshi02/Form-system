@@ -3,19 +3,37 @@ import { render, fireEvent } from '@testing-library/react';
 import { AnswerFormBody } from '../src/components/AnswerForm/AnswerFormBody/AnswerFormBody';
 
 describe('Answer Form body', () => {
-  const onSubmitMock = jest.fn();
+  test('Answer Form body state should update correctly', async () => {
+    const defaultProps = {
+      question: 'Do you like writing tests?',
+      optionType: 'radio',
+      image: null,
+      isRequired: true,
+      options: ['Yes', 'No'],
+    };
 
-  const defaultProps = {
-    question: 'Do you like writing tests?',
-    optionType: 'radio',
-    image: null,
-    isRequired: true,
-    options: ['Yes', 'No'],
-  };
-
-  test('Answer Form body state updates correctly', async () => {
     const { getByLabelText } = render(
-      <AnswerFormBody questionsData={[defaultProps]} onSubmit={onSubmitMock} />,
+      <AnswerFormBody questionsData={[defaultProps]} />,
+    );
+
+    const element = getByLabelText('Yes') as HTMLInputElement;
+
+    fireEvent.click(element);
+
+    expect(element.checked).toBe(true);
+  });
+
+  test('Answer Form body state should update correctly when multiple choices selected', async () => {
+    const defaultProps = {
+      question: 'Do you like writing tests?',
+      optionType: 'check_box_outline_blank',
+      image: null,
+      isRequired: true,
+      options: ['Yes', 'YESS'],
+    };
+
+    const { getByLabelText } = render(
+      <AnswerFormBody questionsData={[defaultProps]} />,
     );
 
     const element = getByLabelText('Yes') as HTMLInputElement;

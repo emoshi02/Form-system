@@ -8,7 +8,7 @@ describe('Answer form questions', () => {
 
     const defaultProps = {
       title: 'What are your favorite colors?',
-      optionType: 'checkbox',
+      optionType: 'check_box_outline_blank',
       image: null,
       isRequired: false,
       options: ['Red', 'Green', 'Blue'],
@@ -55,7 +55,7 @@ describe('Answer form questions', () => {
 
     const defaultProps = {
       title: 'What are your favorite colors?',
-      optionType: 'checkbox',
+      optionType: 'check_box_outline_blank',
       image: null,
       isRequired: false,
       options: ['Red', 'Green', 'Blue'],
@@ -83,7 +83,7 @@ describe('Answer form questions', () => {
 
     const defaultProps = {
       title: 'When were you born?',
-      optionType: 'date',
+      optionType: 'event',
       image: null,
       isRequired: false,
       options: [''],
@@ -107,7 +107,7 @@ describe('Answer form questions', () => {
 
     const defaultProps = {
       title: 'When were you born?',
-      optionType: 'date',
+      optionType: 'event',
       image: 'test.png',
       isRequired: false,
       options: [''],
