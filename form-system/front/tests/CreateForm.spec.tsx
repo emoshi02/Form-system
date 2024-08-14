@@ -24,12 +24,12 @@ describe('Create form', () => {
       </BrowserRouter>,
     );
 
-    const preventDefault = jest.fn();
+    const preventDefaultMock = jest.fn();
 
     const element = container.getElementsByTagName('form')[0];
-    element.addEventListener('submit', preventDefault);
+    element.addEventListener('submit', preventDefaultMock);
     fireEvent.submit(element);
-    expect(preventDefault).toHaveBeenCalledTimes(1);
+    expect(preventDefaultMock).toHaveBeenCalledTimes(1);
   });
 
   test('Form on submit prevents default', async () => {
@@ -39,13 +39,13 @@ describe('Create form', () => {
       </BrowserRouter>,
     );
 
-    const preventDefault = jest.fn();
+    const preventDefaultMock = jest.fn();
 
     const element = container.getElementsByTagName('form')[0];
-    element.addEventListener('submit', preventDefault);
+    element.addEventListener('submit', preventDefaultMock);
     fireEvent.submit(element);
 
-    expect(preventDefault).toHaveBeenCalledTimes(1);
+    expect(preventDefaultMock).toHaveBeenCalledTimes(1);
   });
 
   test('Form state updates correctly', async () => {

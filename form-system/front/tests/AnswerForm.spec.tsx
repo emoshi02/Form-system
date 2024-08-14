@@ -15,7 +15,7 @@ describe('Answer form', () => {
   });
 
   test('Null Form on submit prevents default', async () => {
-    const preventDefault = jest.fn();
+    const preventDefaultMock = jest.fn();
 
     const { container } = render(
       <BrowserRouter>
@@ -24,14 +24,14 @@ describe('Answer form', () => {
     );
 
     const element = container.getElementsByTagName('form')[0];
-    element.addEventListener('submit', preventDefault);
+    element.addEventListener('submit', preventDefaultMock);
     fireEvent.submit(element);
 
-    expect(preventDefault).toHaveBeenCalledTimes(1);
+    expect(preventDefaultMock).toHaveBeenCalledTimes(1);
   });
 
   test('Form on submit prevents default', async () => {
-    const preventDefault = jest.fn();
+    const preventDefaultMock = jest.fn();
 
     const { container } = render(
       <BrowserRouter>
@@ -40,10 +40,10 @@ describe('Answer form', () => {
     );
 
     const element = container.getElementsByTagName('form')[0];
-    element.addEventListener('submit', preventDefault);
+    element.addEventListener('submit', preventDefaultMock);
     fireEvent.submit(element);
 
-    expect(preventDefault).toHaveBeenCalledTimes(1);
+    expect(preventDefaultMock).toHaveBeenCalledTimes(1);
   });
 
   test('Empty optionType and image props should get default values', async () => {
