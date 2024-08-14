@@ -1,13 +1,13 @@
 import './SubHeader.scss';
 
 interface SubHeaderProps {
-  sections?: string[];
+  sections: string[];
   activeSectionIndex: number;
   setActiveSectionIndex: (index: number) => void;
 }
 
 export const SubHeader = ({
-  sections = [],
+  sections,
   activeSectionIndex,
   setActiveSectionIndex,
 }: SubHeaderProps) => {
