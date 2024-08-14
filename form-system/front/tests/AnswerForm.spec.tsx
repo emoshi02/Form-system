@@ -70,7 +70,7 @@ describe('Answer form', () => {
     ).toBeUndefined();
   });
 
-  test('Empty options should return []', async () => {
+  test('Empty options should return empty array', async () => {
     const formData = {
       id: 121,
       title: 'Test form',
@@ -89,7 +89,7 @@ describe('Answer form', () => {
     ).toBeUndefined();
   });
 
-  test('Empty questions should return []', async () => {
+  test('Empty questions should return empty array', async () => {
     const formData = {
       id: 121,
       title: 'Test form',
