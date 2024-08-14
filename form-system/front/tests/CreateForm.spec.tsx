@@ -4,7 +4,7 @@ import { CreateForm } from '../src/components/CreateForm/CreateFormBody/CreateFo
 import { BrowserRouter } from 'react-router-dom';
 import { FORM_DATA } from './testData';
 
-describe('Create form', () => {
+describe('CreateForm.tsx', () => {
   test('Form empty state renders when Form data is null', async () => {
     const { container } = render(
       <BrowserRouter>

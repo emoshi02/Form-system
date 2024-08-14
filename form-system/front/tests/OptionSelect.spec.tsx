@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import { OptionSelect } from '../src/components/CreateForm/CreateFormBody/FormQuestionBlock/optionSelect/optionSelect';
 import { OPTIONS } from '../src/components/CreateForm/CreateFormBody/FormQuestionBlock/constants';
 
-describe('Option select', () => {
+describe('OptionSelect.tsx', () => {
   const onChangeMock = jest.fn();
 
   beforeEach(() => {

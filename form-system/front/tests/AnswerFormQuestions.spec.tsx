@@ -2,7 +2,7 @@ import { describe, expect, test } from '@jest/globals';
 import { render, fireEvent } from '@testing-library/react';
 import { AnswerFormQuestions } from '../src/components/AnswerForm/AnswerFormBody/AnswerFormQuestions/AnswerFormQuestions';
 
-describe('Answer form questions', () => {
+describe('AnswerFormQuestions.tsx', () => {
   test('Checkbox should select multiple choices', async () => {
     const onChangeMock = jest.fn();
 

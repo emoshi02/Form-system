@@ -2,7 +2,7 @@ import { describe, expect, test } from '@jest/globals';
 import { render, fireEvent } from '@testing-library/react';
 import { FormHeader } from '../src/components/CreateForm/CreateFormBody/FormHeader/FormHeader';
 
-describe('Form header', () => {
+describe('FormHeader.tsx', () => {
   test('Form description sets correctly', async () => {
     const onChangeMock = jest.fn();
 

@@ -5,7 +5,7 @@ import * as router from 'react-router';
 import { FormItem } from '../src/components/MainPage/FormItem/FormItem';
 import { FORM_DATA } from './testData';
 
-describe('Form item', () => {
+describe('FormItem.tsx', () => {
   test('On form click navigate to Update form page', async () => {
     const navigateMock = jest.fn();
 

@@ -5,7 +5,7 @@ import * as router from 'react-router';
 import { MainBody } from '../src/components/MainPage/MainBody';
 import { RECEIVED_FORMS, RECENT_FORMS } from './testData';
 
-describe('Main page body', () => {
+describe('MainPageBody.tsx', () => {
   test('Navigate to Create Form Page', async () => {
     const navigateMock = jest.fn();
 

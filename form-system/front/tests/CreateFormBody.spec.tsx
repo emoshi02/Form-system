@@ -4,7 +4,7 @@ import { CreateFormBody } from '../src/components/CreateForm/CreateFormBody/Crea
 import { BrowserRouter } from 'react-router-dom';
 import { FORM_DATA } from './testData';
 
-describe('Create form body', () => {
+describe('CreateFormBody.tsx', () => {
   test('Navigate to Create form page initially', async () => {
     const { container } = render(
       <BrowserRouter>

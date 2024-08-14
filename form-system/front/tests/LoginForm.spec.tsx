@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import * as router from 'react-router';
 import { LoginForm } from '../src/components/LoginPage/LoginForm/LoginForm';
 
-describe('Login form', () => {
+describe('LoginForm.tsx', () => {
   test('Navigate to Main page', async () => {
     const navigateMock = jest.fn();
 

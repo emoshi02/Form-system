@@ -2,7 +2,7 @@ import { describe, expect, test } from '@jest/globals';
 import { render, fireEvent } from '@testing-library/react';
 import { Option } from '../src/components/CreateForm/CreateFormBody/FormQuestionBlock/OptionBlock/Option';
 
-describe('Option', () => {
+describe('Option.tsx', () => {
   const onChangeMock = jest.fn();
 
   test('Should handle option input change', () => {

@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import * as router from 'react-router';
 import { Header } from '../src/components/Header/Header';
 
-describe('Header', () => {
+describe('Header.tsx', () => {
   test('Navigate to Main page', async () => {
     const navigateMock = jest.fn();
 

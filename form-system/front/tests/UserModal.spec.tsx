@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { UserModal } from '../src/components/Header/UserModal/UserModal';
 import * as router from 'react-router';
 
-describe('User Modal', () => {
+describe('UserModal.tsx', () => {
   test('Navigate to Main page', async () => {
     const navigateMock = jest.fn();
 

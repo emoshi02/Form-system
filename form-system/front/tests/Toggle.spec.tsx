@@ -2,7 +2,7 @@ import { describe, expect, test, jest } from '@jest/globals';
 import { fireEvent, render } from '@testing-library/react';
 import { Toggle } from '../src/components/ToggleSwitch/Toggle';
 
-describe('Toggle switch', () => {
+describe('Toggle.tsx', () => {
   test('Passed props are initialized correctly', async () => {
     const setRequiredMock = jest.fn();
 

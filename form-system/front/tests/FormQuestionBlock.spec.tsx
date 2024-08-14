@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import { FormQuestionBlock } from '../src/components/CreateForm/CreateFormBody/FormQuestionBlock/FormQuestionBlock';
 import { BrowserRouter } from 'react-router-dom';
 
-describe('Form Question block', () => {
+describe('FormQuestionBlock.tsx', () => {
   const onChangeMock = jest.fn();
 
   const defaultProps = {

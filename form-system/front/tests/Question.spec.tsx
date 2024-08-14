@@ -2,7 +2,7 @@ import { describe, expect, test } from '@jest/globals';
 import { render, fireEvent } from '@testing-library/react';
 import { Question } from '../src/components/CreateForm/CreateFormBody/FormQuestionBlock/Question';
 
-describe('Question', () => {
+describe('Question.tsx', () => {
   const onChangeMock = jest.fn();
   const onDeleteMock = jest.fn();
 

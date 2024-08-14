@@ -4,7 +4,7 @@ import { AnswerForm } from '../src/components/AnswerForm/AnswerForm';
 import { FORM_DATA } from './testData';
 import { BrowserRouter } from 'react-router-dom';
 
-describe('Answer form', () => {
+describe('AnswerForm.tsx', () => {
   test('Should render empty form when there are no answers', async () => {
     const { getByText, container } = render(<AnswerForm formData={null} />);
 

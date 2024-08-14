@@ -4,7 +4,7 @@ import { render, fireEvent } from '@testing-library/react';
 import * as router from 'react-router';
 import { SubmitBtn } from '../src/components/SubmitButton/SubmitBtn';
 
-describe('Submit button', () => {
+describe('SubmitButton.tsx', () => {
   const value = 'Test Button Value';
   test('Navigate to Main page', async () => {
     const navigateMock = jest.fn();
