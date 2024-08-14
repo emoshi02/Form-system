@@ -24,9 +24,7 @@ export const AnswerFormQuestions = ({
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
   const optionSetting =
-    OPTIONS.find((option) => {
-      return option.value === optionType;
-    }) || OPTIONS[0];
+    OPTIONS.find((option) => option.value === optionType) || OPTIONS[0];
 
   const handleCheckboxChange = (option: string) => {
     const updatedSelectedOptions = selectedOptions.includes(option)
