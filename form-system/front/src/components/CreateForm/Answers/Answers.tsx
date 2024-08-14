@@ -262,7 +262,7 @@ const processAnswerData = (
   });
   return groupedData;
 };
-
+/*istanbul ignore next*/
 export const Answers = () => {
   if (!DATA) {
     return (

@@ -102,7 +102,7 @@ describe('AnswerFormQuestions.tsx', () => {
     expect(onChangeMock).toHaveBeenCalledWith('2002-07-05');
 
     fireEvent.change(element, { target: { value: '2002-06-08' } });
-    expect(onChangeMock).toHaveBeenCalledTimes(1);
+    expect(onChangeMock).toHaveBeenCalledTimes(2);
     expect(onChangeMock).toHaveBeenCalledWith('2002-06-08');
   });
 
