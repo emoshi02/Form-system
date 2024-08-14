@@ -50,7 +50,7 @@ describe('Answer form questions', () => {
     ).toBeDefined();
   });
 
-  test('Checkbox should unset', async () => {
+  test('Clickink on checked checkbox should uncheck it', async () => {
     const onChangeMock = jest.fn();
 
     const defaultProps = {
@@ -100,6 +100,10 @@ describe('Answer form questions', () => {
 
     expect(onChangeMock).toHaveBeenCalledTimes(1);
     expect(onChangeMock).toHaveBeenCalledWith('2002-07-05');
+
+    fireEvent.change(element, { target: { value: '2002-06-08' } });
+    expect(onChangeMock).toHaveBeenCalledTimes(1);
+    expect(onChangeMock).toHaveBeenCalledWith('2002-06-08');
   });
 
   test('Image should render correctly', async () => {
@@ -117,7 +121,9 @@ describe('Answer form questions', () => {
     const { container } = render(<AnswerFormQuestions {...defaultProps} />);
 
     expect(
-      container.getElementsByClassName('answer-form-image')[0],
-    ).toBeDefined();
+      container
+        .getElementsByClassName('answer-form-image')[0]
+        .getAttribute('src'),
+    ).toBe('test.png');
   });
 });
