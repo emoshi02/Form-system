@@ -55,7 +55,7 @@ describe('FormQuestionBlock.tsx', () => {
     expect(newState.questions.length).toBe(0);
   });
 
-  describe('Update form state on field change', () => {
+  describe('Updates form state on field change', () => {
     test('Updating a question title should call onChange with new title', async () => {
       const { container } = render(
         <BrowserRouter>
