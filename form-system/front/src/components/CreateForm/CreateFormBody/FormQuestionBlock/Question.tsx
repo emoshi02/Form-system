@@ -1,8 +1,8 @@
 import { Toggle } from '../../../ToggleSwitch/Toggle';
-import { OPTIONS } from './constants';
+import { OPTIONS, REMOVE_IMAGE_TEXT } from './constants';
 import { OptionSelect } from './optionSelect/optionSelect';
 import { Option } from './OptionBlock/Option';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './Question.scss';
 import { QuestionFieldProps } from './FormQuestionBlock';
 
@@ -44,6 +44,8 @@ export const Question = ({
   const [isQuestionRequired, setIsQuestionRequired] =
     useState<boolean>(isRequired);
 
+  const imageIconRef = useRef<HTMLInputElement>(null);
+
   const handleOptionChange = (option: (typeof OPTIONS)[0]) => {
     setOptionSettingSelect(option);
     onChange(index, 'optionType', option.optionIcon);
@@ -60,16 +62,13 @@ export const Question = ({
   };
 
   const handleImageIconClick = () => {
-    const fileInput = document.getElementById(`image-input ${index}`);
-    if (fileInput) {
-      fileInput.click();
-    }
+    imageIconRef.current?.click();
   };
 
   const handleImageClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
 
-    if (confirm('Are you sure you want to remove this image?')) {
+    if (confirm(REMOVE_IMAGE_TEXT)) {
       setImagePreview(null);
       onChange(index, 'image', null);
     }
@@ -106,6 +105,7 @@ export const Question = ({
         <input
           type="file"
           id={`image-input ${index}`}
+          ref={imageIconRef}
           accept="image/png, image/jpeg"
           className="image-input"
           onChange={handleImageChange}

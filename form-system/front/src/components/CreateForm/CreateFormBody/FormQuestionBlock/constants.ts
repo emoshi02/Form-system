@@ -23,3 +23,5 @@ export const OPTIONS: Option[] = [
     type: 'date',
   },
 ];
+
+export const REMOVE_IMAGE_TEXT = 'Are you sure you want to remove this image?';

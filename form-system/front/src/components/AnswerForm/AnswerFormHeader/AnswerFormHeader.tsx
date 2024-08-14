@@ -5,9 +5,9 @@ export const AnswerFormHeader = ({
   desc,
   user,
 }: {
-  title?: string | undefined;
-  desc?: string | undefined;
-  user?: string | undefined;
+  title?: string;
+  desc?: string;
+  user?: string;
 }) => {
   return (
     <section className="answer-form-header">
