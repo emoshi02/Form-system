@@ -25,6 +25,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
+    - run: cd .\form-system\front\ ; yarn
     # - run: cd .\form-system\front\ ; yarn ci
     - run: cd .\form-system\front\ ; yarn build --if-present
     # - run: cd .\form-system\front\ ; yarn test
