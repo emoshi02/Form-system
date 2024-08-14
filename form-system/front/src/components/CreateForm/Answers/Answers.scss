@@ -1,0 +1,29 @@
+.answers {
+  font-size: var(--font-size-xl);
+  font-weight: 100;
+}
+
+.form-answer {
+  background: var(--main-bg);
+  width: 100%;
+  max-width: var(--container-width-xl);
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-m);
+  margin-bottom: var(--spacing-l);
+  row-gap: var(--spacing-m);
+}
+
+.bar {
+  fill: var(--btn-bg);
+}
+
+.rectangle {
+  fill: var(--btn-on-focus);
+}
+
+.answer-number {
+  font-size: var(--font-size-xs);
+  color: var(--p-text);
+}

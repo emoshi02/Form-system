@@ -6,24 +6,22 @@
   font-family: 'Google Sans', Roboto, Arial, sans-serif;
   color: var(--on-surface);
   background-color: var(--surface);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
+}
+
+::placeholder {
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+  color: var(--p-text);
 }
 
 button,
-select {
+select,
+input {
   cursor: pointer;
-}
-
-button:hover {
-  background-color: var(--chip-hover);
 }
 
 p {
   background-color: inherit;
-}
-
-svg {
-  fill: var(--on-surface);
 }
 
 ul,
@@ -33,7 +31,7 @@ ol {
 
 input:focus {
   outline: none;
-  border-bottom: 2px solid rgb(76, 43, 135);
+  border-bottom: var(--border-width-xsm) solid var(--border-bottom);
   width: 100%;
 }
 
@@ -43,7 +41,7 @@ em {
 }
 
 .material-symbols-outlined {
-  color: #5f6368;
+  color: var(--p-text);
   font-variation-settings:
     'FILL' 0,
     'wght' 400,
@@ -52,5 +50,5 @@ em {
 }
 
 body {
-  background: rgb(225, 216, 241);
+  background: var(--body-bg);
 }

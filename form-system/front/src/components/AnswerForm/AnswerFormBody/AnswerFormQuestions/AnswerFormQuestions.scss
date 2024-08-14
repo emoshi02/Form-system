@@ -1,0 +1,29 @@
+.answer-form-question {
+  background: var(--main-bg);
+  width: 100%;
+  max-width: var(--container-width-xl);
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-m);
+  margin-bottom: var(--spacing-l);
+  row-gap: var(--spacing-m);
+}
+
+.question-wrapper {
+  display: flex;
+  gap: var(--spacing-xxs);
+  align-items: center;
+}
+
+.option-wrapper {
+  display: flex;
+  gap: var(--spacing-m);
+  margin: var(--spacing-s) 0;
+}
+
+.answer-form-image {
+  width: var(--image-input-height-m);
+  height: var(--image-input-width-m);
+  object-fit: cover;
+}

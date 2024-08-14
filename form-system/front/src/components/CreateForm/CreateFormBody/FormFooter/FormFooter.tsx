@@ -1,10 +1,16 @@
-import { SubmitBtn } from "../../../SubmitButton/SubmitBtn";
-import "./FormFooter.scss";
+import { SubmitBtn } from '../../../SubmitButton/SubmitBtn';
+import './FormFooter.scss';
 
-export const FormFooter = () => {
+export const FormFooter = ({
+  onAddQuestionClick,
+}: {
+  onAddQuestionClick: () => void;
+}) => {
   return (
     <footer className="footer">
-      <span className="material-symbols-outlined add">add</span>
+      <button onClick={onAddQuestionClick}>
+        <span className="material-symbols-outlined add">add</span>
+      </button>
       <SubmitBtn value="Submit" />
     </footer>
   );
