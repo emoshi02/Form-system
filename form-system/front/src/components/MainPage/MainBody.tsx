@@ -277,7 +277,7 @@ export const MainBody = ({
         {forms.map((form, index) => (
           <FormItem
             formData={form}
-            onDeleteBtn={() => handleDeleteBtnClick(index)}
+            onDeleteButtonClick={() => handleDeleteBtnClick(index)}
             key={form.id}
             isAnswerForm={forms === RECEIVED_FORMS}
           />

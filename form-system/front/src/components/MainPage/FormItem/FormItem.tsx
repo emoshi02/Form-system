@@ -15,11 +15,11 @@ export type FormDataType = {
 
 export const FormItem = ({
   formData,
-  onDeleteBtn,
+  onDeleteButtonClick,
   isAnswerForm,
 }: {
   formData: FormDataType;
-  onDeleteBtn: () => void;
+  onDeleteButtonClick: () => void;
   isAnswerForm: boolean;
 }) => {
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ export const FormItem = ({
         <span
           className="material-symbols-outlined form-item-delete-btn"
           id={`button${formData.id}`}
-          onClick={onDeleteBtn}
+          onClick={onDeleteButtonClick}
         >
           delete
         </span>

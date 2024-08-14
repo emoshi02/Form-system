@@ -15,7 +15,7 @@ describe('FormItem.tsx', () => {
       <BrowserRouter>
         <FormItem
           formData={FORM_DATA}
-          onDeleteBtn={() => {}}
+          onDeleteButtonClick={() => {}}
           isAnswerForm={false}
         />
       </BrowserRouter>,
@@ -40,7 +40,7 @@ describe('FormItem.tsx', () => {
       <BrowserRouter>
         <FormItem
           formData={FORM_DATA}
-          onDeleteBtn={() => {}}
+          onDeleteButtonClick={() => {}}
           isAnswerForm={true}
         />
       </BrowserRouter>,
