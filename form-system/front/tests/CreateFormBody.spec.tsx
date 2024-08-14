@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { FORM_DATA } from './testData';
 
 describe('CreateFormBody.tsx', () => {
-  test('Navigate to Create form page initially', async () => {
+  test('Should render CreateForm page when activeSectionIndex is 0', async () => {
     const { container } = render(
       <BrowserRouter>
         <CreateFormBody activeSectionIndex={0} formData={FORM_DATA} />
@@ -15,7 +15,7 @@ describe('CreateFormBody.tsx', () => {
     expect(container.getElementsByTagName('form')[0]).toBeDefined;
   });
 
-  test('Navigate to Answers page initially', async () => {
+  test('Should render Answer page when activeSectionIndex is 1', async () => {
     window.ResizeObserver =
       window.ResizeObserver ||
       jest.fn().mockImplementation(() => ({
