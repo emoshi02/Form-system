@@ -18,13 +18,13 @@ describe('Create form', () => {
   });
 
   test('Null Form on submit prevents default', async () => {
+    const preventDefaultMock = jest.fn();
+
     const { container } = render(
       <BrowserRouter>
         <CreateForm formData={null} />
       </BrowserRouter>,
     );
-
-    const preventDefaultMock = jest.fn();
 
     const element = container.getElementsByTagName('form')[0];
     element.addEventListener('submit', preventDefaultMock);
@@ -33,13 +33,13 @@ describe('Create form', () => {
   });
 
   test('Form on submit prevents default', async () => {
+    const preventDefaultMock = jest.fn();
+
     const { container } = render(
       <BrowserRouter>
         <CreateForm formData={FORM_DATA} />
       </BrowserRouter>,
     );
-
-    const preventDefaultMock = jest.fn();
 
     const element = container.getElementsByTagName('form')[0];
     element.addEventListener('submit', preventDefaultMock);

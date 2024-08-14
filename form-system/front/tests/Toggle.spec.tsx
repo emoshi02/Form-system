@@ -4,9 +4,10 @@ import { Toggle } from '../src/components/ToggleSwitch/Toggle';
 
 describe('Toggle switch', () => {
   test('Passed props are initialized correctly', async () => {
+    const setRequiredMock = jest.fn();
+
     const label = 'Test Label';
     const isRequired = false;
-    const setRequiredMock = jest.fn();
 
     const { container } = render(
       <Toggle
