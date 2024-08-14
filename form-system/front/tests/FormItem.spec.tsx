@@ -6,7 +6,7 @@ import { FormItem } from '../src/components/MainPage/FormItem/FormItem';
 import { FORM_DATA } from './testData';
 
 describe('FormItem.tsx', () => {
-  test('On form click navigate to Update form page', async () => {
+  test('On form click navigates to Update form page', async () => {
     const navigateMock = jest.fn();
 
     jest.spyOn(router, 'useNavigate').mockImplementation(() => navigateMock);
@@ -31,7 +31,7 @@ describe('FormItem.tsx', () => {
     });
   });
 
-  test('On form click navigate to Answer form page', async () => {
+  test('On form click navigates to Answer form page', async () => {
     const navigateMock = jest.fn();
 
     jest.spyOn(router, 'useNavigate').mockImplementation(() => navigateMock);
