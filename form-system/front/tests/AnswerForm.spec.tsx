@@ -6,24 +6,24 @@ import { BrowserRouter } from 'react-router-dom';
 
 describe('Answer form', () => {
   test('Should render empty form when there are no answers', async () => {
-    const component = render(<AnswerForm formData={null} />);
+    const { getByText, container } = render(<AnswerForm formData={null} />);
 
-    expect(component.getByText('Untitled Form')).toBeDefined();
+    expect(getByText('Untitled Form')).toBeDefined();
     expect(
-      component.container.getElementsByClassName('answer-form-question'),
+      container.getElementsByClassName('answer-form-question'),
     ).toHaveLength(0);
   });
 
   test('Null Form on submit prevents default', async () => {
     const preventDefault = jest.fn();
 
-    const component = render(
+    const { container } = render(
       <BrowserRouter>
         <AnswerForm formData={null} />
       </BrowserRouter>,
     );
 
-    const element = component.container.getElementsByTagName('form')[0];
+    const element = container.getElementsByTagName('form')[0];
     element.addEventListener('submit', preventDefault);
     fireEvent.submit(element);
 
@@ -33,13 +33,13 @@ describe('Answer form', () => {
   test('Form on submit prevents default', async () => {
     const preventDefault = jest.fn();
 
-    const component = render(
+    const { container } = render(
       <BrowserRouter>
         <AnswerForm formData={FORM_DATA} />
       </BrowserRouter>,
     );
 
-    const element = component.container.getElementsByTagName('form')[0];
+    const element = container.getElementsByTagName('form')[0];
     element.addEventListener('submit', preventDefault);
     fireEvent.submit(element);
 
@@ -55,18 +55,18 @@ describe('Answer form', () => {
       options: [['To keep code consistent', 'For fun']],
     };
 
-    const component = render(
+    const { container } = render(
       <BrowserRouter>
         <AnswerForm formData={formData} />
       </BrowserRouter>,
     );
 
     expect(
-      component.container.getElementsByClassName('answer-input-type radio'),
+      container.getElementsByClassName('answer-input-type radio'),
     ).toBeDefined();
 
     expect(
-      component.container.getElementsByClassName('answer-form-image')[0],
+      container.getElementsByClassName('answer-form-image')[0],
     ).toBeUndefined();
   });
 
@@ -78,14 +78,14 @@ describe('Answer form', () => {
       user: 'test@gmail.com',
     };
 
-    const component = render(
+    const { container } = render(
       <BrowserRouter>
         <AnswerForm formData={formData} />
       </BrowserRouter>,
     );
 
     expect(
-      component.container.getElementsByClassName('option-wrapper')[0],
+      container.getElementsByClassName('option-wrapper')[0],
     ).toBeUndefined();
   });
 
@@ -96,14 +96,14 @@ describe('Answer form', () => {
       user: 'test@gmail.com',
     };
 
-    const component = render(
+    const { container } = render(
       <BrowserRouter>
         <AnswerForm formData={formData} />
       </BrowserRouter>,
     );
 
     expect(
-      component.container.getElementsByClassName('answer-form-question')[0],
+      container.getElementsByClassName('answer-form-question')[0],
     ).toBeUndefined();
   });
 });

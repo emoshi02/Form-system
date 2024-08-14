@@ -15,14 +15,16 @@ describe('Answer form questions', () => {
       onChange: onChangeMock,
     };
 
-    const component = render(<AnswerFormQuestions {...defaultProps} />);
+    const { getByLabelText } = render(
+      <AnswerFormQuestions {...defaultProps} />,
+    );
 
-    fireEvent.click(component.getByLabelText('Red'));
+    fireEvent.click(getByLabelText('Red'));
 
     expect(onChangeMock).toHaveBeenCalledTimes(1);
     expect(onChangeMock).toHaveBeenCalledWith(['Red']);
 
-    fireEvent.click(component.getByLabelText('Blue'));
+    fireEvent.click(getByLabelText('Blue'));
 
     expect(onChangeMock).toHaveBeenCalledTimes(2);
 
@@ -41,10 +43,10 @@ describe('Answer form questions', () => {
       onChange: onChangeMock,
     };
 
-    const component = render(<AnswerFormQuestions {...defaultProps} />);
+    const { container } = render(<AnswerFormQuestions {...defaultProps} />);
 
     expect(
-      component.container.getElementsByClassName('answer-input-type radio')[0],
+      container.getElementsByClassName('answer-input-type radio')[0],
     ).toBeDefined();
   });
 
@@ -60,14 +62,16 @@ describe('Answer form questions', () => {
       onChange: onChangeMock,
     };
 
-    const component = render(<AnswerFormQuestions {...defaultProps} />);
+    const { getByLabelText } = render(
+      <AnswerFormQuestions {...defaultProps} />,
+    );
 
-    fireEvent.click(component.getByLabelText('Red'));
+    fireEvent.click(getByLabelText('Red'));
 
     expect(onChangeMock).toHaveBeenCalledTimes(1);
     expect(onChangeMock).toHaveBeenCalledWith(['Red']);
 
-    fireEvent.click(component.getByLabelText('Red'));
+    fireEvent.click(getByLabelText('Red'));
 
     expect(onChangeMock).toHaveBeenCalledTimes(2);
 
@@ -86,9 +90,9 @@ describe('Answer form questions', () => {
       onChange: onChangeMock,
     };
 
-    const component = render(<AnswerFormQuestions {...defaultProps} />);
+    const { container } = render(<AnswerFormQuestions {...defaultProps} />);
 
-    const element = component.container.getElementsByClassName(
+    const element = container.getElementsByClassName(
       'answer-input-type date',
     )[0];
 
@@ -110,10 +114,10 @@ describe('Answer form questions', () => {
       onChange: onChangeMock,
     };
 
-    const component = render(<AnswerFormQuestions {...defaultProps} />);
+    const { container } = render(<AnswerFormQuestions {...defaultProps} />);
 
     expect(
-      component.container.getElementsByClassName('answer-form-image')[0],
+      container.getElementsByClassName('answer-form-image')[0],
     ).toBeDefined();
   });
 });

@@ -22,13 +22,13 @@ describe('Form Question block', () => {
   });
 
   test('A new question was added', async () => {
-    const component = render(
+    const { getByText } = render(
       <BrowserRouter>
         <FormQuestionBlock {...defaultProps} />
       </BrowserRouter>,
     );
 
-    fireEvent.click(component.getByText('add'));
+    fireEvent.click(getByText('add'));
 
     expect(onChangeMock).toHaveBeenCalledTimes(1);
 
@@ -41,13 +41,13 @@ describe('Form Question block', () => {
   });
 
   test('A question was deleted', async () => {
-    const component = render(
+    const { getByText } = render(
       <BrowserRouter>
         <FormQuestionBlock {...defaultProps} />
       </BrowserRouter>,
     );
 
-    fireEvent.click(component.getByText('delete'));
+    fireEvent.click(getByText('delete'));
 
     expect(onChangeMock).toHaveBeenCalledTimes(1);
 
@@ -57,18 +57,15 @@ describe('Form Question block', () => {
 
   describe('Update form state on field change', () => {
     test('Update question title', async () => {
-      const component = render(
+      const { container } = render(
         <BrowserRouter>
           <FormQuestionBlock {...defaultProps} />
         </BrowserRouter>,
       );
 
-      fireEvent.change(
-        component.container.getElementsByClassName('question-input')[0],
-        {
-          target: { value: 'Updated question title' },
-        },
-      );
+      fireEvent.change(container.getElementsByClassName('question-input')[0], {
+        target: { value: 'Updated question title' },
+      });
 
       expect(onChangeMock).toHaveBeenCalledTimes(1);
       const newState = onChangeMock.mock.calls[0][0];
@@ -76,13 +73,13 @@ describe('Form Question block', () => {
     });
 
     test('Update option type', async () => {
-      const component = render(
+      const { getAllByText } = render(
         <BrowserRouter>
           <FormQuestionBlock {...defaultProps} />
         </BrowserRouter>,
       );
 
-      fireEvent.click(component.getAllByText('radio_button_checked')[1]);
+      fireEvent.click(getAllByText('radio_button_checked')[1]);
 
       expect(onChangeMock).toHaveBeenCalledTimes(1);
       const newState = onChangeMock.mock.calls[0][0];
@@ -93,7 +90,7 @@ describe('Form Question block', () => {
   test('Update question image', async () => {
     URL.createObjectURL = jest.fn(() => 'mocked-image-url');
 
-    const component = render(
+    const { container } = render(
       <BrowserRouter>
         <FormQuestionBlock {...defaultProps} />
       </BrowserRouter>,
@@ -101,10 +98,9 @@ describe('Form Question block', () => {
 
     const file = new File(['test'], 'test-image.png', { type: 'image/png' });
 
-    fireEvent.change(
-      component.container.getElementsByClassName('image-input')[0],
-      { target: { files: [file] } },
-    );
+    fireEvent.change(container.getElementsByClassName('image-input')[0], {
+      target: { files: [file] },
+    });
 
     expect(onChangeMock).toHaveBeenCalledTimes(1);
     const newState = onChangeMock.mock.calls[0][0];
@@ -112,13 +108,13 @@ describe('Form Question block', () => {
   });
 
   test('Update required state', async () => {
-    const component = render(
+    const { container } = render(
       <BrowserRouter>
         <FormQuestionBlock {...defaultProps} />
       </BrowserRouter>,
     );
 
-    fireEvent.click(component.container.getElementsByClassName('switch')[0]);
+    fireEvent.click(container.getElementsByClassName('switch')[0]);
 
     expect(onChangeMock).toHaveBeenCalledTimes(1);
     const newState = onChangeMock.mock.calls[0][0];
@@ -127,13 +123,13 @@ describe('Form Question block', () => {
   });
 
   test('Update options', async () => {
-    const component = render(
+    const { getByText } = render(
       <BrowserRouter>
         <FormQuestionBlock {...defaultProps} />
       </BrowserRouter>,
     );
 
-    fireEvent.click(component.getByText('Add option'));
+    fireEvent.click(getByText('Add option'));
 
     const newState = onChangeMock.mock.calls[0][0];
     expect(newState.options[0].length).toBe(2);

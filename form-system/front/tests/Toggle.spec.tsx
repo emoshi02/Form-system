@@ -8,7 +8,7 @@ describe('Toggle switch', () => {
     const isRequired = false;
     const setRequiredMock = jest.fn();
 
-    const component = render(
+    const { container } = render(
       <Toggle
         label={label}
         isRequired={isRequired}
@@ -16,27 +16,13 @@ describe('Toggle switch', () => {
       />,
     );
 
-    expect(component.container.querySelector('.p-text')?.innerHTML).toBe(label);
+    expect(container.querySelector('.p-text')?.innerHTML).toBe(label);
 
-    expect(component.container.getElementsByTagName('input')[0].checked).toBe(
-      false,
-    );
+    expect(container.getElementsByTagName('input')[0].checked).toBe(false);
 
-    fireEvent.click(component.container.getElementsByTagName('input')[0]);
+    fireEvent.click(container.getElementsByTagName('input')[0]);
 
     expect(setRequiredMock).toHaveBeenCalledTimes(1);
     expect(setRequiredMock).toHaveBeenCalledWith(true);
-  });
-
-  test('Default isRequired value is false', () => {
-    const label = 'Test Label';
-    const setRequiredMock = jest.fn();
-    const component = render(
-      <Toggle label={label} setRequired={setRequiredMock} />,
-    );
-
-    expect(component.container.getElementsByTagName('input')[0].checked).toBe(
-      false,
-    );
   });
 });

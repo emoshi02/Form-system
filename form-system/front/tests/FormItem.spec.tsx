@@ -11,7 +11,7 @@ describe('Form item', () => {
 
     jest.spyOn(router, 'useNavigate').mockImplementation(() => navigateMock);
 
-    const component = render(
+    const { container } = render(
       <BrowserRouter>
         <FormItem
           formData={FORM_DATA}
@@ -21,9 +21,7 @@ describe('Form item', () => {
       </BrowserRouter>,
     );
 
-    fireEvent.click(
-      component.container.getElementsByClassName('form-item-wrapper')[0],
-    );
+    fireEvent.click(container.getElementsByClassName('form-item-wrapper')[0]);
 
     const formData = FORM_DATA;
 
@@ -38,7 +36,7 @@ describe('Form item', () => {
 
     jest.spyOn(router, 'useNavigate').mockImplementation(() => navigateMock);
 
-    const component = render(
+    const { container } = render(
       <BrowserRouter>
         <FormItem
           formData={FORM_DATA}
@@ -48,9 +46,7 @@ describe('Form item', () => {
       </BrowserRouter>,
     );
 
-    fireEvent.click(
-      component.container.getElementsByClassName('form-item-wrapper')[0],
-    );
+    fireEvent.click(container.getElementsByClassName('form-item-wrapper')[0]);
 
     const formData = FORM_DATA;
 

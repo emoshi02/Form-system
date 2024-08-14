@@ -11,13 +11,13 @@ describe('Submit button', () => {
 
     jest.spyOn(router, 'useNavigate').mockImplementation(() => navigateMock);
 
-    const component = render(
+    const { getByText } = render(
       <BrowserRouter>
         <SubmitBtn value={value} />
       </BrowserRouter>,
     );
 
-    fireEvent.click(component.getByText(value));
+    fireEvent.click(getByText(value));
     expect(navigateMock).toHaveBeenCalledTimes(1);
     expect(navigateMock).toHaveBeenCalledWith('/main');
   });

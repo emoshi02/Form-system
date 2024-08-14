@@ -10,13 +10,13 @@ describe('Login form', () => {
 
     jest.spyOn(router, 'useNavigate').mockImplementation(() => navigateMock);
 
-    const component = render(
+    const { getByText } = render(
       <BrowserRouter>
         <LoginForm />
       </BrowserRouter>,
     );
 
-    fireEvent.submit(component.getByText('Login'));
+    fireEvent.submit(getByText('Login'));
     expect(navigateMock).toHaveBeenCalledTimes(1);
     expect(navigateMock).toHaveBeenCalledWith('/main');
   });

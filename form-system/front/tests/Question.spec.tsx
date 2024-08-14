@@ -26,10 +26,9 @@ describe('Question', () => {
   test('Image icon was clicked', async () => {
     const onClickMock = jest.fn();
 
-    const component = render(<Question {...defaultProps} />);
+    const { container } = render(<Question {...defaultProps} />);
 
-    const element =
-      component.container.getElementsByClassName('question-image')[0];
+    const element = container.getElementsByClassName('question-image')[0];
     element.addEventListener('click', onClickMock);
 
     fireEvent.click(element);
@@ -42,10 +41,9 @@ describe('Question', () => {
       .spyOn(window, 'confirm')
       .mockImplementation(() => true);
 
-    const component = render(<Question {...defaultProps} />);
+    const { container } = render(<Question {...defaultProps} />);
 
-    const element =
-      component.container.getElementsByClassName('image-wrapper')[0];
+    const element = container.getElementsByClassName('image-wrapper')[0];
 
     fireEvent.click(element);
 
@@ -57,7 +55,7 @@ describe('Question', () => {
       null,
     );
     expect(
-      component.container.getElementsByClassName('question-image-preview')[0],
+      container.getElementsByClassName('question-image-preview')[0],
     ).toBeUndefined();
 
     confirmSpy.mockRestore();

@@ -11,45 +11,43 @@ describe('Main page body', () => {
 
     jest.spyOn(router, 'useNavigate').mockImplementation(() => navigateMock);
 
-    const component = render(
+    const { container } = render(
       <BrowserRouter>
         <MainBody activeSectionIndex={0} />
       </BrowserRouter>,
     );
-    fireEvent.click(
-      component.container.getElementsByClassName('create-form-btn')[0],
-    );
+    fireEvent.click(container.getElementsByClassName('create-form-btn')[0]);
     expect(navigateMock).toHaveBeenCalledTimes(1);
     expect(navigateMock).toHaveBeenCalledWith('/createForm');
   });
 
   test('Forms change from RECENT to RECEIVED initially', async () => {
-    const component = render(
+    const { getByText, queryByText } = render(
       <BrowserRouter>
         <MainBody activeSectionIndex={1} />
       </BrowserRouter>,
     );
 
-    expect(component.getByText(RECEIVED_FORMS[0].title)).toBeDefined();
-    expect(component.queryByText(RECENT_FORMS[0].title)).toBeNull();
+    expect(getByText(RECEIVED_FORMS[0].title)).toBeDefined();
+    expect(queryByText(RECENT_FORMS[0].title)).toBeNull();
   });
 
   test('First form was deleted on click', async () => {
-    const component = render(
+    const { getByText, getAllByText, queryByText } = render(
       <BrowserRouter>
         <MainBody activeSectionIndex={0} />
       </BrowserRouter>,
     );
 
-    expect(component.getByText(RECENT_FORMS[0].title)).toBeDefined();
+    expect(getByText(RECENT_FORMS[0].title)).toBeDefined();
 
-    fireEvent.click(component.getAllByText('delete')[0]);
+    fireEvent.click(getAllByText('delete')[0]);
 
-    expect(component.queryByText(RECENT_FORMS[0].title)).toBeNull();
+    expect(queryByText(RECENT_FORMS[0].title)).toBeNull();
   });
 
   test('Middle element form was deleted on click', async () => {
-    const component = render(
+    const { getByText, getAllByText, queryByText } = render(
       <BrowserRouter>
         <MainBody activeSectionIndex={0} />
       </BrowserRouter>,
@@ -57,15 +55,15 @@ describe('Main page body', () => {
 
     const index = (RECENT_FORMS.length - 1) / 2;
 
-    expect(component.getByText(RECENT_FORMS[index].title)).toBeDefined();
+    expect(getByText(RECENT_FORMS[index].title)).toBeDefined();
 
-    fireEvent.click(component.getAllByText('delete')[index]);
+    fireEvent.click(getAllByText('delete')[index]);
 
-    expect(component.queryByText(RECENT_FORMS[index].title)).toBeNull();
+    expect(queryByText(RECENT_FORMS[index].title)).toBeNull();
   });
 
   test('Last form was deleted on click', async () => {
-    const component = render(
+    const { getByText, getAllByText, queryByText } = render(
       <BrowserRouter>
         <MainBody activeSectionIndex={0} />
       </BrowserRouter>,
@@ -73,10 +71,10 @@ describe('Main page body', () => {
 
     const index = RECENT_FORMS.length - 1;
 
-    expect(component.getByText(RECENT_FORMS[index].title)).toBeDefined();
+    expect(getByText(RECENT_FORMS[index].title)).toBeDefined();
 
-    fireEvent.click(component.getAllByText('delete')[index]);
+    fireEvent.click(getAllByText('delete')[index]);
 
-    expect(component.queryByText(RECENT_FORMS[index].title)).toBeNull();
+    expect(queryByText(RECENT_FORMS[index].title)).toBeNull();
   });
 });

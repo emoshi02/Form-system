@@ -13,14 +13,11 @@ describe('Option', () => {
       options: ['Option 1', 'Option 2'],
     };
 
-    const component = render(<Option {...defaultProps} />);
+    const { container } = render(<Option {...defaultProps} />);
 
-    fireEvent.change(
-      component.container.getElementsByClassName('add-option')[0],
-      {
-        target: { value: 'Updated option text' },
-      },
-    );
+    fireEvent.change(container.getElementsByClassName('add-option')[0], {
+      target: { value: 'Updated option text' },
+    });
 
     expect(onChangeMock).toHaveBeenCalledTimes(1);
     const newState = onChangeMock.mock.calls[0][0];
@@ -36,9 +33,9 @@ describe('Option', () => {
       options: ['Option 1', 'Option 2'],
     };
 
-    const component = render(<Option {...defaultProps} />);
+    const { container } = render(<Option {...defaultProps} />);
 
-    const element = component.container.getElementsByClassName('close')[0];
+    const element = container.getElementsByClassName('close-button')[0];
     fireEvent.click(element);
 
     expect(onChangeMock).toHaveBeenCalledTimes(2);
@@ -56,14 +53,10 @@ describe('Option', () => {
       options: ['2024.08.12'],
     };
 
-    const component = render(<Option {...defaultProps} />);
+    const { container } = render(<Option {...defaultProps} />);
 
-    expect(
-      component.container.getElementsByClassName('option-block').length,
-    ).toBe(1);
-    expect(
-      component.container.getElementsByClassName('add-option-btn').length,
-    ).toBe(0);
+    expect(container.getElementsByClassName('option-block').length).toBe(1);
+    expect(container.getElementsByClassName('add-option-btn').length).toBe(0);
   });
 
   test('When option type is changed to date there should be only one option block and other option blocks are cleared ', async () => {
@@ -74,12 +67,8 @@ describe('Option', () => {
       options: ['Option 1', 'Option 2'],
     };
 
-    const component = render(<Option {...defaultProps} />);
-    expect(
-      component.container.getElementsByClassName('option-block').length,
-    ).toBe(1);
-    expect(
-      component.container.getElementsByClassName('add-option-btn').length,
-    ).toBe(0);
+    const { container } = render(<Option {...defaultProps} />);
+    expect(container.getElementsByClassName('option-block').length).toBe(1);
+    expect(container.getElementsByClassName('add-option-btn').length).toBe(0);
   });
 });

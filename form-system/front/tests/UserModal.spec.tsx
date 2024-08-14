@@ -10,25 +10,25 @@ describe('User Modal', () => {
 
     jest.spyOn(router, 'useNavigate').mockImplementation(() => navigateMock);
 
-    const component = render(
+    const { getByText } = render(
       <BrowserRouter>
         <UserModal setOpenModal={() => true} />
       </BrowserRouter>,
     );
 
-    fireEvent.click(component.getByText('Logout'));
+    fireEvent.click(getByText('Logout'));
     expect(navigateMock).toHaveBeenCalledTimes(1);
     expect(navigateMock).toHaveBeenCalledWith('/');
   });
 
   test('Close User modal', async () => {
     const onModalCloseMock = jest.fn();
-    const component = render(
+    const { getByText } = render(
       <BrowserRouter>
         <UserModal setOpenModal={onModalCloseMock} />
       </BrowserRouter>,
     );
-    fireEvent.click(component.getByText('Cancel'));
+    fireEvent.click(getByText('Cancel'));
     expect(onModalCloseMock).toHaveBeenCalledTimes(1);
     expect(onModalCloseMock).toHaveBeenCalledWith(false);
   });

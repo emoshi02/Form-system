@@ -11,7 +11,7 @@ describe('Option select', () => {
   });
 
   test('Should close on outside click', async () => {
-    const component = render(
+    const { container } = render(
       <OptionSelect
         options={OPTIONS}
         onChange={onChangeMock}
@@ -19,19 +19,17 @@ describe('Option select', () => {
       />,
     );
 
-    fireEvent.click(
-      component.container.getElementsByClassName('selected-option')[0],
-    );
+    fireEvent.click(container.getElementsByClassName('selected-option')[0]);
 
     fireEvent.mouseDown(document.body);
 
     expect(
-      component.container.getElementsByClassName('custom-select open')[0],
+      container.getElementsByClassName('custom-select open')[0],
     ).toBeUndefined();
   });
 
   test('Should close on option select', async () => {
-    const component = render(
+    const { container } = render(
       <OptionSelect
         options={OPTIONS}
         onChange={onChangeMock}
@@ -39,16 +37,12 @@ describe('Option select', () => {
       />,
     );
 
-    fireEvent.click(
-      component.container.getElementsByClassName('selected-option')[0],
-    );
+    fireEvent.click(container.getElementsByClassName('selected-option')[0]);
 
-    fireEvent.click(
-      component.container.getElementsByClassName('selected-option')[0],
-    );
+    fireEvent.click(container.getElementsByClassName('selected-option')[0]);
 
     expect(
-      component.container.getElementsByClassName('custom-select open')[0],
+      container.getElementsByClassName('custom-select open')[0],
     ).toBeUndefined();
   });
 });

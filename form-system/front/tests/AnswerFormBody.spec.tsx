@@ -14,11 +14,11 @@ describe('Answer Form body', () => {
   };
 
   test('Answer Form body state updates correctly', async () => {
-    const component = render(
+    const { getByLabelText } = render(
       <AnswerFormBody questionsData={[defaultProps]} onSubmit={onSubmitMock} />,
     );
 
-    const element = component.getByLabelText('Yes') as HTMLInputElement;
+    const element = getByLabelText('Yes') as HTMLInputElement;
 
     fireEvent.click(element);
 
