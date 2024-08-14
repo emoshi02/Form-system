@@ -21,7 +21,7 @@ describe('FormQuestionBlock.tsx', () => {
     onChangeMock.mockClear();
   });
 
-  test('A new question was added', async () => {
+  test('Adding a new question should call onChange with new question', async () => {
     const { getByText } = render(
       <BrowserRouter>
         <FormQuestionBlock {...defaultProps} />
@@ -40,7 +40,7 @@ describe('FormQuestionBlock.tsx', () => {
     expect(newState.options.length).toBe(2);
   });
 
-  test('A question was deleted', async () => {
+  test('Deleting a question should call onChange with remaining questions', async () => {
     const { getByText } = render(
       <BrowserRouter>
         <FormQuestionBlock {...defaultProps} />
@@ -56,7 +56,7 @@ describe('FormQuestionBlock.tsx', () => {
   });
 
   describe('Update form state on field change', () => {
-    test('Update question title', async () => {
+    test('Updating a question title should call onChange with new title', async () => {
       const { container } = render(
         <BrowserRouter>
           <FormQuestionBlock {...defaultProps} />
@@ -72,7 +72,7 @@ describe('FormQuestionBlock.tsx', () => {
       expect(newState.questions[0]).toBe('Updated question title');
     });
 
-    test('Update option type', async () => {
+    test('Updating an option type should call onChange with updated option type', async () => {
       const { getAllByText } = render(
         <BrowserRouter>
           <FormQuestionBlock {...defaultProps} />
@@ -87,7 +87,7 @@ describe('FormQuestionBlock.tsx', () => {
     });
   });
 
-  test('Update question image', async () => {
+  test('Updating a question image should call onChange with updated image', async () => {
     URL.createObjectURL = jest.fn(() => 'mocked-image-url');
 
     const { container } = render(
@@ -107,7 +107,7 @@ describe('FormQuestionBlock.tsx', () => {
     expect(newState.image[0]).toBe('mocked-image-url');
   });
 
-  test('Update required state', async () => {
+  test('Updating required state should call onChange with new state', async () => {
     const { container } = render(
       <BrowserRouter>
         <FormQuestionBlock {...defaultProps} />
@@ -122,7 +122,7 @@ describe('FormQuestionBlock.tsx', () => {
     expect(newState.isRequired[0]).toBe(true);
   });
 
-  test('Update options', async () => {
+  test('Updating options should call onChange with updated options', async () => {
     const { getByText } = render(
       <BrowserRouter>
         <FormQuestionBlock {...defaultProps} />
