@@ -43,7 +43,7 @@ export const Option = ({
 
   return (
     <>
-      {optionValues.map((opt, index) => (
+      {optionValues.map((option, index) => (
         <span className="option-block" key={index}>
           <span className="option-wrapper">
             <span className="material-symbols-outlined">{optionIcon}</span>
@@ -51,7 +51,7 @@ export const Option = ({
               type={type}
               className="add-option"
               placeholder={`Option ${index + 1}`}
-              value={opt}
+              value={option}
               onChange={(e) => handleOptionInputChange(index, e.target.value)}
               disabled={type === 'date'}
             />
@@ -59,7 +59,7 @@ export const Option = ({
           {optionValues.length > 1 && (
             <button
               onClick={() => handleDeleteBtnClick(index)}
-              className="close"
+              className="close-button"
             >
               <span className="material-symbols-outlined">close</span>
             </button>
