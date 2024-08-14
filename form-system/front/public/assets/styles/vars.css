@@ -1,0 +1,100 @@
+:root {
+  /* colors */
+  --main-bg: #fff;
+  --btn-bg: #673ab7;
+  --btn-text-color: #fff;
+  --btn-border: #fff;
+  --heading-text: #5f6368;
+  --p-text: #5f6368;
+  --input-outline: #e6e9ea;
+  --input-on-focus: #e7e0eb45;
+  --btn-on-focus: #7a4bcc;
+  --footer-p-color: #b7babb;
+  --shadow: #8a919a;
+  --create-form-btn-on-focus: #eef0f3;
+  --body-bg: rgb(225, 216, 241);
+  --form-item-border: rgb(203, 201, 201);
+  --border-bottom: rgb(76, 43, 135);
+  --secondary-btn-hover: #f1f3f4;
+  --required: #ff3333;
+
+  /* sizes */
+  --font-size-xs: 12px;
+  --font-size-s: 14px;
+  --font-size-m: 16px;
+  --font-size-l: 18px;
+  --font-size-xl: 24pt;
+  --font-size-xxxl: 98px;
+  --letter-spacing-s: 0.2px;
+  --font-weight-m: 600;
+
+  --blur-size: 15px;
+  --grayscale: 20%;
+
+  --shadow-xxs: 1px;
+  --shadow-xs: 5px;
+
+  --spacing-xxxxs: 1px;
+  --spacing-xxxs: 2px;
+  --spacing-xxs: 3px;
+  --spacing-xs: 5px;
+  --spacing-s: 8px;
+  --spacing-m: 10px;
+  --spacing-l: 16px;
+  --spacing-xl: 20px;
+  --spacing-xxl: 30px;
+
+  --radius-xs: 3px;
+  --radius-s: 5px;
+  --radius-m: 8px;
+  --radius-l: 10px;
+  --radius-xl: 34px;
+
+  --border-width-xs: 1px;
+  --border-width-xsm: 2px;
+  --border-width-s: 3px;
+
+  --button-height-xs: 25px;
+  --button-height-s: 30px;
+  --button-height-m: 35px;
+  --button-height-l: 56px;
+
+  --icon-size: 24px;
+
+  --button-width-s: 30px;
+  --button-width-m: 70px;
+  --button-width-l: 80px;
+
+  --image-height-s: 50px;
+  --image-height-m: 120px;
+  --image-height-l: 250px;
+  --image-bg-size-l: 375px;
+
+  --image-input-height-m: 200px;
+  --image-input-width-m: 200px;
+
+  --input-height-m: 36px;
+
+  --container-height-xxs: 26px;
+  --container-height-xs: 40px;
+  --container-height-s: 50px;
+  --container-height-m: 200px;
+  --container-height-l: 350px;
+  --container-height-xl: 430px;
+
+  --container-width-xs: 62px;
+  --container-width-s: 120px;
+  --container-width-m: 280px;
+  --container-width-l: 320px;
+  --container-width-xl: 768px;
+
+  --input-focus-width-s: 13px;
+
+  --toggle-width: 40px;
+  --toggle-height: 20px;
+  --slider-height: 16px;
+  --slider-width: 16px;
+
+  --transition-s: 0.2s;
+  --transition-m: 0.4s;
+}

@@ -1,15 +1,25 @@
+import { useEffect, useState } from 'react';
 import './CreateFormBody.scss';
-import { FormFooter } from './FormFooter/FormFooter';
-import { FormHeader } from './FormHeader/FormHeader';
-import { FormQuestionBlock } from './FormQuestionBlock/FormQuestionBlock';
+import { CreateForm } from './CreateForm';
+import { Answers } from '../Answers/Answers';
+import { FormDataType } from '../../MainPage/FormItem/FormItem';
 
-export const CreateFormBody = () => {
+export const CreateFormBody = ({
+  activeSectionIndex,
+  formData,
+}: {
+  activeSectionIndex: number;
+  formData: FormDataType | null;
+}) => {
+  const [isCreateForm, setIsCreateForm] = useState(activeSectionIndex === 0);
+
+  useEffect(() => {
+    setIsCreateForm(activeSectionIndex === 0);
+  }, [activeSectionIndex]);
+
   return (
     <section className="main">
-      <div className="form-image"></div>
-      <FormHeader />
-      <FormQuestionBlock qst={1} />
-      <FormFooter />
+      {isCreateForm ? <CreateForm formData={formData} /> : <Answers />}
     </section>
   );
 };

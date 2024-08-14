@@ -1,13 +1,13 @@
 .btn {
-  height: 30px;
-  width: 80px;
-  border-radius: 8px;
-  color: white;
-  background-color: #673ab7;
-  cursor: pointer;
+  height: var(--button-height-s);
+  width: var(--button-width-l);
+  border-radius: var(--radius-m);
+  color: var(--btn-text-color);
+  background-color: var(--btn-bg);
   position: absolute;
+  cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #7a4bcc;
+  background-color: var(--btn-on-focus);
 }

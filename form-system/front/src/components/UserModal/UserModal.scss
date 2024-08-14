@@ -1,0 +1,51 @@
+.user-modal-wrapper {
+  height: var(--container-height-m);
+  width: var(--container-width-m);
+  background: var(--main-bg);
+  position: absolute;
+  top: var(--container-height-xs);
+  right: var(--spacing-xl);
+  border-radius: var(--radius-l);
+  box-shadow: 0 var(--shadow-xs) var(--shadow-xs) 0 var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xl);
+  z-index: 4;
+}
+
+.user-modal-icon {
+  font-size: var(--font-size-xxxl);
+}
+
+.btn-wrapper {
+  display: flex;
+  column-gap: var(--spacing-xl);
+}
+
+.cancel-btn,
+.action-btn {
+  height: var(--button-height-xs);
+  width: var(--button-width-m);
+  border-radius: var(--radius-s);
+}
+
+.cancel-btn {
+  border: var(--border-width-xs) solid var(--btn-bg);
+}
+
+.action-btn {
+  background: var(--btn-bg);
+  color: var(--btn-text-color);
+}
+
+.action-btn:hover,
+.cancel-btn:hover {
+  background: var(--btn-on-focus);
+}
+
+.cancel-btn:hover {
+  color: var(--btn-text-color);
+  border: var(--border-width-xs) solid var(--btn-on-focus);
+}

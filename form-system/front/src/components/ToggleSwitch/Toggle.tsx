@@ -1,0 +1,27 @@
+import './Toggle.scss';
+
+export const Toggle = ({
+  label,
+  isRequired = false,
+  setRequired,
+}: {
+  label: string;
+  isRequired: boolean;
+  setRequired: (required: boolean) => void;
+}) => {
+  return (
+    <span className="toggle-wrapper">
+      <p className="p-text">{label}</p>
+      <label className="switch">
+        <input
+          type="checkbox"
+          checked={isRequired}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            setRequired(event.target.checked)
+          }
+        />
+        <span className="slider round"></span>
+      </label>
+    </span>
+  );
+};

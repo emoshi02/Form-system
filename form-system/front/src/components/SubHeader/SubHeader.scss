@@ -1,11 +1,11 @@
 .secondary-header {
-  height: 26px;
+  height: var(--container-height-xxs);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  font-size: 12px;
-  background-color: white;
+  gap: var(--spacing-xl);
+  font-size: var(--font-size-xs);
+  background-color: var(--main-bg);
 }
 
 .header-nav-item {
@@ -13,20 +13,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   position: relative;
-  width: 61px;
+  width: var(--container-width-xs);
+  cursor: pointer;
 }
 
-.header-nav-item:hover {
-  border-bottom: 3px solid rgb(76, 43, 135);
-}
-
+.header-nav-item:hover,
 .active {
-  border-bottom: 3px solid rgb(76, 43, 135);
+  border-bottom: var(--border-width-s) solid var(--border-bottom);
 }
 
 .header-nav-item-p {
   position: absolute;
-  top: 5px;
+  top: var(--spacing-xs);
 }
