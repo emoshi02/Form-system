@@ -21,7 +21,7 @@ describe('UserModal.tsx', () => {
     expect(navigateMock).toHaveBeenCalledWith('/');
   });
 
-  test('Close User modal', async () => {
+  test('Closes User modal', async () => {
     const onModalCloseMock = jest.fn();
     const { getByText } = render(
       <BrowserRouter>
