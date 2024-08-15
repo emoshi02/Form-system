@@ -5,6 +5,10 @@ import { Option } from '../src/components/CreateForm/CreateFormBody/FormQuestion
 describe('Option.tsx', () => {
   const onChangeMock = jest.fn();
 
+  beforeEach(() => {
+    onChangeMock.mockClear();
+  });
+
   test('Should handle option input change', () => {
     const defaultProps = {
       optionIcon: 'circle',

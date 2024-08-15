@@ -21,6 +21,7 @@ describe('Question.tsx', () => {
 
   beforeEach(() => {
     onChangeMock.mockClear();
+    onDeleteMock.mockClear();
   });
 
   test('Image icon was clicked', async () => {
