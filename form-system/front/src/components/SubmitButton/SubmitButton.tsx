@@ -1,7 +1,7 @@
-import './SubmitBtn.scss';
+import './SubmitButton.scss';
 import { useNavigate } from 'react-router-dom';
 
-export const SubmitBtn = ({ value }: { value: string }) => {
+export const SubmitButton = ({ value }: { value: string }) => {
   const navigate = useNavigate();
 
   return (

@@ -1,9 +1,9 @@
-import { SubmitBtn } from '../../SubmitButton/SubmitBtn';
+import { SubmitButton } from '../../SubmitButton/SubmitButton';
 
 export const AnswerFormFooter = () => {
   return (
     <footer className="footer">
-      <SubmitBtn value="Submit" />
+      <SubmitButton value="Submit" />
     </footer>
   );
 };

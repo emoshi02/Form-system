@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { describe, expect, test, jest } from '@jest/globals';
 import { render, fireEvent } from '@testing-library/react';
 import * as router from 'react-router';
-import { SubmitBtn } from '../src/components/SubmitButton/SubmitBtn';
+import { SubmitButton } from '../src/components/SubmitButton/SubmitButton';
 
 describe('SubmitButton.tsx', () => {
   const value = 'Test Button Value';
@@ -13,7 +13,7 @@ describe('SubmitButton.tsx', () => {
 
     const { getByText } = render(
       <BrowserRouter>
-        <SubmitBtn value={value} />
+        <SubmitButton value={value} />
       </BrowserRouter>,
     );
 
