@@ -21,7 +21,7 @@ describe('MainPageBody.tsx', () => {
     expect(navigateMock).toHaveBeenCalledWith('/createForm');
   });
 
-  test('Forms change from RECENT to RECEIVED initially', async () => {
+  test('Should render RECEIVED forms when activeSectionIndex is 1', async () => {
     const { getByText, queryByText } = render(
       <BrowserRouter>
         <MainBody activeSectionIndex={1} />
