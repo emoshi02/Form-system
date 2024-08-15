@@ -5,7 +5,7 @@ import * as router from 'react-router';
 import { SubmitButton } from '../src/components/SubmitButton/SubmitButton';
 
 describe('SubmitButton.tsx', () => {
-  const value = 'Test Button Value';
+  const buttonValue = 'Test Button Value';
   test('Navigate to Main page', async () => {
     const navigateMock = jest.fn();
 
@@ -13,11 +13,11 @@ describe('SubmitButton.tsx', () => {
 
     const { getByText } = render(
       <BrowserRouter>
-        <SubmitButton value={value} />
+        <SubmitButton value={buttonValue} />
       </BrowserRouter>,
     );
 
-    fireEvent.click(getByText(value));
+    fireEvent.click(getByText(buttonValue));
     expect(navigateMock).toHaveBeenCalledTimes(1);
     expect(navigateMock).toHaveBeenCalledWith('/main');
   });
