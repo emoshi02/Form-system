@@ -42,9 +42,9 @@ describe('Option.tsx', () => {
     const element = container.getElementsByClassName('close-button')[0];
     fireEvent.click(element);
 
-    expect(onChangeMock).toHaveBeenCalledTimes(2);
+    expect(onChangeMock).toHaveBeenCalledTimes(1);
 
-    const newState = onChangeMock.mock.calls[1][0];
+    const newState = onChangeMock.mock.calls[0][0];
     expect(newState.length).toBe(1);
     expect(newState).toEqual(['Option 2']);
   });
