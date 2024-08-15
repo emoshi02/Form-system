@@ -55,12 +55,18 @@ describe('CreateForm.tsx', () => {
       </BrowserRouter>,
     );
 
-    fireEvent.change(container.getElementsByClassName('form-title')[0], {
+    const element = container.getElementsByClassName('form-title')[0];
+
+    fireEvent.change(element, {
       target: { value: 'Test Title' },
     });
 
-    expect(
-      container.getElementsByClassName('form-title')[0].getAttribute('value'),
-    ).toBe('Test Title');
+    expect(element.getAttribute('value')).toBe('Test Title');
+
+    fireEvent.change(element, {
+      target: { value: 'New Title' },
+    });
+
+    expect(element.getAttribute('value')).not.toBe('Test Title');
   });
 });
