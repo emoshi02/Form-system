@@ -22,7 +22,7 @@ describe('FormQuestionBlock.tsx', () => {
   });
 
   test('Adding a new question should call onChange with new question', async () => {
-    const { getByText } = render(
+    const { container, getByText } = render(
       <BrowserRouter>
         <FormQuestionBlock {...defaultProps} />
       </BrowserRouter>,
@@ -38,10 +38,15 @@ describe('FormQuestionBlock.tsx', () => {
     expect(newState.image.length).toBe(2);
     expect(newState.isRequired.length).toBe(2);
     expect(newState.options.length).toBe(2);
+    expect(
+      container
+        .getElementsByClassName('question-input')[1]
+        .getAttribute('value'),
+    ).toBe('');
   });
 
   test('Deleting a question should call onChange with remaining questions', async () => {
-    const { getByText } = render(
+    const { container, getByText } = render(
       <BrowserRouter>
         <FormQuestionBlock {...defaultProps} />
       </BrowserRouter>,
@@ -53,6 +58,9 @@ describe('FormQuestionBlock.tsx', () => {
 
     const newState = onChangeMock.mock.calls[0][0];
     expect(newState.questions.length).toBe(0);
+    expect(
+      container.getElementsByClassName('question-input')[1],
+    ).toBeUndefined();
   });
 
   describe('Updates form state on field change', () => {
@@ -63,13 +71,16 @@ describe('FormQuestionBlock.tsx', () => {
         </BrowserRouter>,
       );
 
-      fireEvent.change(container.getElementsByClassName('question-input')[0], {
+      const element = container.getElementsByClassName('question-input')[0];
+
+      fireEvent.change(element, {
         target: { value: 'Updated question title' },
       });
 
       expect(onChangeMock).toHaveBeenCalledTimes(1);
       const newState = onChangeMock.mock.calls[0][0];
       expect(newState.questions[0]).toBe('Updated question title');
+      expect(element.getAttribute('value')).toBe('Updated question title');
     });
 
     test('Updating an option type should call onChange with updated option type', async () => {
@@ -79,11 +90,14 @@ describe('FormQuestionBlock.tsx', () => {
         </BrowserRouter>,
       );
 
-      fireEvent.click(getAllByText('radio_button_checked')[1]);
+      const element = getAllByText('radio_button_checked')[1];
+
+      fireEvent.click(element);
 
       expect(onChangeMock).toHaveBeenCalledTimes(1);
       const newState = onChangeMock.mock.calls[0][0];
       expect(newState.optionType[0]).toBe('circle');
+      expect(getAllByText('circle')[0]).toBeDefined();
     });
   });
 
@@ -105,6 +119,11 @@ describe('FormQuestionBlock.tsx', () => {
     expect(onChangeMock).toHaveBeenCalledTimes(1);
     const newState = onChangeMock.mock.calls[0][0];
     expect(newState.image[0]).toBe('mocked-image-url');
+    expect(
+      container
+        .getElementsByClassName('question-image-preview')[0]
+        .getAttribute('src'),
+    ).toBe('mocked-image-url');
   });
 
   test('Updating required state should call onChange with new state', async () => {
@@ -120,10 +139,17 @@ describe('FormQuestionBlock.tsx', () => {
     const newState = onChangeMock.mock.calls[0][0];
 
     expect(newState.isRequired[0]).toBe(true);
+    expect(
+      (
+        container.getElementsByClassName(
+          'required-toggle-input',
+        )[0] as HTMLInputElement
+      ).checked,
+    ).toBe(true);
   });
 
   test('Updating options should call onChange with updated options', async () => {
-    const { getByText } = render(
+    const { container, getByText } = render(
       <BrowserRouter>
         <FormQuestionBlock {...defaultProps} />
       </BrowserRouter>,
@@ -133,5 +159,8 @@ describe('FormQuestionBlock.tsx', () => {
 
     const newState = onChangeMock.mock.calls[0][0];
     expect(newState.options[0].length).toBe(2);
+    expect(
+      container.getElementsByClassName('add-option')[1].getAttribute('value'),
+    ).toBe('');
   });
 });
