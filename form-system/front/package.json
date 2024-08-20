@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "test": "jest --coverage",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "build-storybook -o docs-build"
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@jest/globals": "^29.7.0",
