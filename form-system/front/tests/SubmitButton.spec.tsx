@@ -5,11 +5,12 @@ import * as router from 'react-router';
 import { SubmitButton } from '../src/components/SubmitButton/SubmitButton';
 
 describe('SubmitButton.tsx', () => {
-  const buttonValue = 'Test Button Value';
   test('Navigate to Main page', async () => {
     const navigateMock = jest.fn();
 
     jest.spyOn(router, 'useNavigate').mockImplementation(() => navigateMock);
+
+    const buttonValue = 'Test Button Value';
 
     const { getByText } = render(
       <BrowserRouter>
