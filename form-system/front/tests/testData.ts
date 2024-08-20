@@ -1,9 +1,4 @@
-import { useEffect, useState } from 'react';
-import { FormItem } from './FormItem/FormItem';
-import { useNavigate } from 'react-router-dom';
-import './MainPage.scss';
-
-const RECENT_FORMS = [
+export const RECENT_FORMS = [
   {
     id: 1,
     title: 'AAA',
@@ -140,7 +135,7 @@ const RECENT_FORMS = [
   },
 ];
 
-const RECEIVED_FORMS = [
+export const RECEIVED_FORMS = [
   {
     id: 11,
     title: 'Travel Preferences',
@@ -246,52 +241,14 @@ const RECEIVED_FORMS = [
   },
 ];
 
-export const MainBody = ({
-  activeSectionIndex,
-}: {
-  activeSectionIndex: number;
-}) => {
-  const navigate = useNavigate();
-
-  const [forms, setForms] = useState(
-    activeSectionIndex === 0 ? RECENT_FORMS : RECEIVED_FORMS,
-  );
-
-  useEffect(() => {
-    setForms(activeSectionIndex === 0 ? RECENT_FORMS : RECEIVED_FORMS);
-  }, [activeSectionIndex]);
-
-  const onBtnClick = (event: React.MouseEvent) => {
-    event.preventDefault();
-    navigate('/createForm');
-  };
-
-  const handleDeleteBtnClick = (index: number) => {
-    const updatedForms = forms.filter((_, i) => i !== index);
-    setForms(updatedForms);
-  };
-
-  return (
-    <main className="main-body">
-      <section className="forms">
-        {forms.map((form, index) => (
-          <FormItem
-            formData={form}
-            onDeleteButtonClick={() => handleDeleteBtnClick(index)}
-            key={form.id}
-            isAnswerForm={forms === RECEIVED_FORMS}
-          />
-        ))}
-      </section>
-      <section className="create-form">
-        <button className="create-form-btn" onClick={onBtnClick}>
-          <img
-            alt="create form"
-            className="create-form-img"
-            src="../../assets/images/sign.png"
-          />
-        </button>
-      </section>
-    </main>
-  );
+export const FORM_DATA = {
+  id: 11,
+  title: 'Test form',
+  desc: 'This is a test form',
+  user: 'test@gmail.com',
+  questions: ['Why testing is important?'],
+  optionType: ['checkbox'],
+  image: [null],
+  isRequired: [false],
+  options: [['Test is amazing', 'I do not know that']],
 };

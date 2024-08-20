@@ -1,7 +1,7 @@
 import './Header.scss';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
-import { UserModal } from '../UserModal/UserModal';
+import { UserModal } from './UserModal/UserModal';
 
 export const Header = () => {
   const navigate = useNavigate();

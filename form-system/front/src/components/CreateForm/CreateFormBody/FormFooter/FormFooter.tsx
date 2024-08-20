@@ -1,4 +1,4 @@
-import { SubmitBtn } from '../../../SubmitButton/SubmitBtn';
+import { SubmitButton } from '../../../SubmitButton/SubmitButton';
 import './FormFooter.scss';
 
 export const FormFooter = ({
@@ -11,7 +11,7 @@ export const FormFooter = ({
       <button onClick={onAddQuestionClick}>
         <span className="material-symbols-outlined add">add</span>
       </button>
-      <SubmitBtn value="Submit" />
+      <SubmitButton value="Submit" />
     </footer>
   );
 };

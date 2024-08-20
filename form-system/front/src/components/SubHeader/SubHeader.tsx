@@ -7,7 +7,7 @@ interface SubHeaderProps {
 }
 
 export const SubHeader = ({
-  sections = [],
+  sections,
   activeSectionIndex,
   setActiveSectionIndex,
 }: SubHeaderProps) => {

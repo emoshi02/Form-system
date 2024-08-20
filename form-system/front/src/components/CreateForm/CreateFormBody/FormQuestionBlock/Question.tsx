@@ -79,6 +79,10 @@ export const Question = ({
     onChange(index, 'isRequired', required);
   };
 
+  const handleOptionLengthChanges = (newOptions: string[]) => {
+    onChange(index, 'options', newOptions);
+  };
+
   return (
     <section className="question">
       <span className="input-setting-wrapper">
@@ -127,6 +131,7 @@ export const Question = ({
           optionIcon={optionSettingSelect.optionIcon}
           type={optionSettingSelect.type}
           options={options}
+          onChange={handleOptionLengthChanges}
         />
       </span>
       <span className="question-footer">

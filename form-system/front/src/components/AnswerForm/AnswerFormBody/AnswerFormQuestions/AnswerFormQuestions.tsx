@@ -56,6 +56,7 @@ export const AnswerFormQuestions = ({
       {options.map((option, index) => (
         <div className="option-wrapper" key={index}>
           <input
+            id={`input-element ${index}`}
             className={`answer-input-type ${optionSetting.value}`}
             type={optionSetting.value}
             required={isRequired}
@@ -75,7 +76,7 @@ export const AnswerFormQuestions = ({
                   : handleDateChange
             }
           />
-          <p>{option}</p>
+          <label htmlFor={`input-element ${index}`}>{option}</label>
         </div>
       ))}
     </section>

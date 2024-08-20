@@ -14,6 +14,7 @@ export const Toggle = ({
       <p className="p-text">{label}</p>
       <label className="switch">
         <input
+          className="required-toggle-input"
           type="checkbox"
           checked={isRequired}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
