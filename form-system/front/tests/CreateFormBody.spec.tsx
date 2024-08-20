@@ -16,13 +16,11 @@ describe('CreateFormBody.tsx', () => {
   });
 
   test('Should render Answer page when activeSectionIndex is 1', async () => {
-    window.ResizeObserver =
-      window.ResizeObserver ||
-      jest.fn().mockImplementation(() => ({
-        disconnect: jest.fn(),
-        observe: jest.fn(),
-        unobserve: jest.fn(),
-      }));
+    window.ResizeObserver = jest.fn().mockImplementation(() => ({
+      disconnect: jest.fn(),
+      observe: jest.fn(),
+      unobserve: jest.fn(),
+    }));
 
     const { container } = render(
       <BrowserRouter>
