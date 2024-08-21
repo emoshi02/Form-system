@@ -54,7 +54,7 @@ export const AnswerFormQuestions = ({
       {image && <img src={image} className="answer-form-image" />}
 
       {options.map((option, index) => (
-        <div className="option-wrapper" key={index}>
+        <div className="answer-option-wrapper" key={index}>
           <input
             id={`input-element ${index}`}
             className={`answer-input-type ${optionSetting.value}`}

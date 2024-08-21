@@ -13,7 +13,9 @@
   background: var(--main-bg);
   border-width: 0 0 var(--border-width-xsm) 0;
   display: flex;
-  cursor: pointer;
+  width: 100%;
+  overflow: hidden;
+  resize: vertical;
 }
 
 .form {

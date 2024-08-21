@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './OptionStyle.scss';
 import { OptionBtn } from './OptionBtn';
+import TextareaAutosize from 'react-textarea-autosize';
 
 interface OptProps {
   optionIcon: string;
@@ -47,8 +48,7 @@ export const Option = ({
         <span className="option-block" key={index}>
           <span className="option-wrapper">
             <span className="material-symbols-outlined">{optionIcon}</span>
-            <input
-              type={type}
+            <TextareaAutosize
               className="add-option"
               placeholder={`Option ${index + 1}`}
               value={option}

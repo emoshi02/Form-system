@@ -60,7 +60,9 @@ describe('Option.tsx', () => {
     const { container } = render(<Option {...defaultProps} />);
 
     expect(container.getElementsByClassName('option-block').length).toBe(1);
-    expect(container.getElementsByClassName('add-option-btn').length).toBe(0);
+    expect(container.getElementsByClassName('add-option-button').length).toBe(
+      0,
+    );
   });
 
   test('When option type is changed to date there should be only one option block and other option blocks are cleared ', async () => {
@@ -73,6 +75,8 @@ describe('Option.tsx', () => {
 
     const { container } = render(<Option {...defaultProps} />);
     expect(container.getElementsByClassName('option-block').length).toBe(1);
-    expect(container.getElementsByClassName('add-option-btn').length).toBe(0);
+    expect(container.getElementsByClassName('add-option-button').length).toBe(
+      0,
+    );
   });
 });

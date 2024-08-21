@@ -10,7 +10,7 @@ export const OptionBtn = ({
   return (
     <span className="option-wrapper">
       <span className="material-symbols-outlined">{optionIcon}</span>
-      <button className="add-option-btn" onClick={onAddOption}>
+      <button className="add-option-button" onClick={onAddOption}>
         Add option
       </button>
     </span>

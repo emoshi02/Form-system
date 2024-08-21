@@ -1,15 +1,19 @@
 .add-option {
   color: var(--p-text);
+  margin-top: var(--spacing-xxxs);
+}
+
+.add-option-button {
+  margin-top: var(--spacing-xxs);
+}
+
+.option-block,
+.option-wrapper {
+  display: flex;
+  align-items: start;
 }
 
 .option-wrapper {
-  display: flex;
   gap: var(--spacing-m);
-  align-items: center;
   width: 100%;
-}
-
-.option-block {
-  display: flex;
-  justify-content: space-between;
 }
