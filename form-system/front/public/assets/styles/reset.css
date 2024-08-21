@@ -18,7 +18,8 @@
 
 button,
 select,
-input {
+input,
+textarea {
   cursor: pointer;
 }
 
@@ -31,7 +32,8 @@ ol {
   list-style: none;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border-bottom: var(--border-width-xsm) solid var(--border-bottom);
   width: 100%;

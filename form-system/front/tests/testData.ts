@@ -247,7 +247,7 @@ export const FORM_DATA = {
   desc: 'This is a test form',
   user: 'test@gmail.com',
   questions: ['Why testing is important?'],
-  optionType: ['checkbox'],
+  optionType: ['check_box_outline_blank'],
   image: [null],
   isRequired: [false],
   options: [['Test is amazing', 'I do not know that']],

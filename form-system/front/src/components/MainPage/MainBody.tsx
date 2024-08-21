@@ -5,6 +5,19 @@ import './MainPage.scss';
 
 const RECENT_FORMS = [
   {
+    id: 1111,
+    title: 'Test form',
+    desc: 'This is a test form',
+    user: 'test@gmail.com',
+    questions: [
+      'In what ways does the implementation of comprehensive testing methodologies, including unit testing, integration testing, system testing, and user acceptance testing, contribute to the overall success of a software development project by ensuring functionality, reliability, security, and user satisfaction, while also mitigating potential risks, reducing long-term costs, and enhancing the quality of the final product in an increasingly competitive and fast-paced technological environment?',
+    ],
+    optionType: ['check_box_outline_blank'],
+    image: [null],
+    isRequired: [false],
+    options: [['Test is amazing', 'I do not know that']],
+  },
+  {
     id: 1,
     title: 'AAA',
     desc: 'New form about cats',
@@ -141,6 +154,19 @@ const RECENT_FORMS = [
 ];
 
 const RECEIVED_FORMS = [
+  {
+    id: 11,
+    title: 'Test form',
+    desc: 'This is a test form',
+    user: 'test@gmail.com',
+    questions: [
+      'In what ways does the implementation of comprehensive testing methodologies, including unit testing, integration testing, system testing, and user acceptance testing, contribute to the overall success of a software development project by ensuring functionality, reliability, security, and user satisfaction, while also mitigating potential risks, reducing long-term costs, and enhancing the quality of the final product in an increasingly competitive and fast-paced technological environment?',
+    ],
+    optionType: ['check_box_outline_blank'],
+    image: [null],
+    isRequired: [false],
+    options: [['Test is amazing', 'I do not know that']],
+  },
   {
     id: 11,
     title: 'Travel Preferences',

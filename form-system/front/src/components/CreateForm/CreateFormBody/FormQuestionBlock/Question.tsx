@@ -5,6 +5,7 @@ import { Option } from './OptionBlock/Option';
 import { useRef, useState } from 'react';
 import './Question.scss';
 import { QuestionFieldProps } from './FormQuestionBlock';
+import TextareaAutosize from 'react-textarea-autosize';
 
 type QuestionProps = {
   id: number;
@@ -86,12 +87,11 @@ export const Question = ({
   return (
     <section className="question">
       <span className="input-setting-wrapper">
-        <input
-          type="text"
+        <TextareaAutosize
           placeholder={`Question ${index + 1}`}
           className="question-input"
           value={questionTitle}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+          onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
             setQuestionTitle(event.target.value);
             onChange(index, 'questions', event.target.value);
           }}
