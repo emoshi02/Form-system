@@ -39,9 +39,7 @@ describe('FormQuestionBlock.tsx', () => {
     expect(newState.isRequired.length).toBe(2);
     expect(newState.options.length).toBe(2);
     expect(
-      container
-        .getElementsByClassName('question-input')[1]
-        .getAttribute('value'),
+      container.getElementsByClassName('question-input')[1].innerHTML,
     ).toBe('');
   });
 
@@ -80,7 +78,7 @@ describe('FormQuestionBlock.tsx', () => {
       expect(onChangeMock).toHaveBeenCalledTimes(1);
       const newState = onChangeMock.mock.calls[0][0];
       expect(newState.questions[0]).toBe('Updated question title');
-      expect(element.getAttribute('value')).toBe('Updated question title');
+      expect(element.innerHTML).toBe('Updated question title');
     });
 
     test('Updating an option type should call onChange with updated option type', async () => {
@@ -159,8 +157,8 @@ describe('FormQuestionBlock.tsx', () => {
 
     const newState = onChangeMock.mock.calls[0][0];
     expect(newState.options[0].length).toBe(2);
-    expect(
-      container.getElementsByClassName('add-option')[1].getAttribute('value'),
-    ).toBe('');
+    expect(container.getElementsByClassName('add-option')[1].innerHTML).toBe(
+      '',
+    );
   });
 });

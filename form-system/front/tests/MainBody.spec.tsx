@@ -53,7 +53,7 @@ describe('MainPageBody.tsx', () => {
       </BrowserRouter>,
     );
 
-    const index = (RECENT_FORMS.length - 1) / 2;
+    const index = Math.floor((RECENT_FORMS.length - 1) / 2);
 
     expect(getByText(RECENT_FORMS[index].title)).toBeDefined();
 

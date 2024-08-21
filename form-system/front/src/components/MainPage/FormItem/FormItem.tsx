@@ -43,9 +43,12 @@ export const FormItem = ({
       <div className="form-item-title">
         <p className="form-item-text">{formData.title}</p>
         <span
-          className="material-symbols-outlined form-item-delete-btn"
+          className="material-symbols-outlined"
           id={`button${formData.id}`}
-          onClick={onDeleteButtonClick}
+          onClick={(event) => {
+            event.stopPropagation();
+            onDeleteButtonClick();
+          }}
         >
           delete
         </span>
