@@ -49,14 +49,13 @@
 .question-input:focus {
   width: 50%;
   height: var(--input-height-m);
-  min-height: var(--input-height-m);
-  resize: vertical;
+  resize: none;
   overflow: hidden;
   word-wrap: break-word;
 }
 
 .question-input {
-  padding: var(--spacing-xs) var(--spacing-m);
+  padding: var(--spacing-xs);
 }
 
 .question-image-preview {
