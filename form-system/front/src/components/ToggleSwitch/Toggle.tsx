@@ -2,7 +2,7 @@ import './Toggle.scss';
 
 export const Toggle = ({
   label,
-  isRequired = false,
+  isRequired,
   setRequired,
 }: {
   label: string;
