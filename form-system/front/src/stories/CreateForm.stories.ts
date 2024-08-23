@@ -20,7 +20,7 @@ export const EmptyState: Story = {
 export const UpdateState: Story = {
   args: {
     formData: {
-      id: 11,
+      id: '11',
       title: 'Test form',
       desc: 'This is a test form',
       user: 'test@gmail.com',
