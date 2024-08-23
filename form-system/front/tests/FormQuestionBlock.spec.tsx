@@ -7,7 +7,7 @@ describe('FormQuestionBlock.tsx', () => {
   const onChangeMock = jest.fn();
 
   const defaultProps = {
-    id: 121,
+    id: '121',
     title: 'Test Form',
     questions: ['Question 1'],
     optionType: ['circle'],

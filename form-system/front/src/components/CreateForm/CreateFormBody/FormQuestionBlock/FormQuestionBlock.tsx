@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FormFooter } from '../FormFooter/FormFooter';
 import { Question } from './Question';
 import { FormDataType } from '../../../MainPage/FormItem/FormItem';
+import { v4 as uuid } from 'uuid';
 
 export type QuestionFieldProps =
   | 'questions'
@@ -20,6 +21,7 @@ export const FormQuestionBlock = ({
   options = [['']],
   onChange,
 }: FormDataType & { onChange: (newState: FormDataType) => void }) => {
+  const [questionIds, setQuestionIds] = useState([uuid()]);
   const [questionValues, setQuestionValues] = useState<string[]>(questions);
   const [optionTypeValues, setOptionTypeValues] =
     useState<string[]>(optionType);
@@ -27,12 +29,16 @@ export const FormQuestionBlock = ({
   const [requiredValues, setRequiredValues] = useState<boolean[]>(isRequired);
   const [optionValues, setOptionValues] = useState<string[][]>(options);
 
-  const handleAddOptionBtnClick = () => {
+  const handleAddQuestionBtnClick = () => {
+    const newId = uuid();
     const newQuestions = [...questionValues, ''];
     const newOptionTypes = [...optionTypeValues, 'circle'];
     const newImages = [...imageValues, null];
     const newRequired = [...requiredValues, false];
     const newOptions = [...optionValues, ['']];
+    const newIds = [...questionIds, newId];
+
+    setQuestionIds(newIds);
     setQuestionValues(newQuestions);
     setOptionTypeValues(newOptionTypes);
     setImageValues(newImages);
@@ -56,6 +62,9 @@ export const FormQuestionBlock = ({
     const newImages = imageValues.filter((_, i) => i !== index);
     const newRequired = requiredValues.filter((_, i) => i !== index);
     const newOptions = optionValues.filter((_, i) => i !== index);
+    const newIds = questionIds.filter((_, i) => i !== index);
+
+    setQuestionIds(newIds);
     setQuestionValues(newQuestions);
     setOptionTypeValues(newOptionTypes);
     setImageValues(newImages);
@@ -125,19 +134,19 @@ export const FormQuestionBlock = ({
     <>
       {questionValues.map((title, index: number) => (
         <Question
-          id={id}
+          id={questionIds[index]}
           title={title}
           index={index}
-          optionType={optionType[index]}
-          image={image[index]}
-          isRequired={isRequired[index]}
-          options={options[index]}
-          onDeleteBtnClick={handleDeleteBtnClick}
-          key={index}
+          optionType={optionTypeValues[index]}
+          image={imageValues[index]}
+          isRequired={requiredValues[index]}
+          options={optionValues[index]}
+          onDeleteBtnClick={() => handleDeleteBtnClick(index)}
+          key={questionIds[index]}
           onChange={updateFormState}
         />
       ))}
-      <FormFooter onAddQuestionClick={handleAddOptionBtnClick} />
+      <FormFooter onAddQuestionClick={handleAddQuestionBtnClick} />
     </>
   );
 };

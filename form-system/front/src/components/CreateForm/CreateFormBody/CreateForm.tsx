@@ -3,6 +3,7 @@ import { FormQuestionBlock } from './FormQuestionBlock/FormQuestionBlock';
 import './CreateForm.scss';
 import { FormDataType } from '../../MainPage/FormItem/FormItem';
 import { useEffect, useState } from 'react';
+import { v4 as uuid } from 'uuid';
 
 export const CreateForm = ({ formData }: { formData: FormDataType | null }) => {
   const [formState, setFormState] = useState<FormDataType | null>(formData);
@@ -23,6 +24,7 @@ export const CreateForm = ({ formData }: { formData: FormDataType | null }) => {
   };
 
   if (!formData) {
+    const newQuestionId = uuid();
     return (
       <form
         onSubmit={(event: { preventDefault: () => void }) =>
@@ -30,9 +32,9 @@ export const CreateForm = ({ formData }: { formData: FormDataType | null }) => {
         }
       >
         <img src="/assets/images/form-bg.jpg" className="form-image" />
-        <FormHeader id={0} onChange={handleChanges} />
+        <FormHeader id={newQuestionId} onChange={handleChanges} />
         <FormQuestionBlock
-          id={0}
+          id={newQuestionId}
           title={'Untitled Form'}
           onChange={handleChanges}
         />

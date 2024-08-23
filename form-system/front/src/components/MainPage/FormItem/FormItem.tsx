@@ -2,7 +2,7 @@ import './FormItem.scss';
 import { useNavigate } from 'react-router-dom';
 
 export type FormDataType = {
-  id: number;
+  id: string;
   title: string;
   desc?: string;
   user?: string;

@@ -1,6 +1,6 @@
 export const RECENT_FORMS = [
   {
-    id: 1111,
+    id: 'A1B2C3D4',
     title: 'Test form',
     desc: 'This is a test form',
     user: 'test@gmail.com',
@@ -18,7 +18,7 @@ export const RECENT_FORMS = [
     ],
   },
   {
-    id: 1,
+    id: 'E5F6G7H8',
     title: 'AAA',
     desc: 'New form about cats',
     user: 'richard@gmail.com',
@@ -32,7 +32,7 @@ export const RECENT_FORMS = [
     ],
   },
   {
-    id: 11,
+    id: 'I9J0K1L2',
     title: 'BBB',
     desc: 'Survey on travel preferences',
     user: 'emily@gmail.com',
@@ -46,7 +46,7 @@ export const RECENT_FORMS = [
     ],
   },
   {
-    id: 2,
+    id: 'M3N4O5P6',
     title: 'CCC',
     desc: 'Feedback form for new product',
     user: 'john@gmail.com',
@@ -63,7 +63,7 @@ export const RECENT_FORMS = [
     ],
   },
   {
-    id: 3,
+    id: 'Q7R8S9T0',
     title: 'DDD',
     desc: 'Employee satisfaction survey',
     user: 'sarah@gmail.com',
@@ -74,7 +74,7 @@ export const RECENT_FORMS = [
     options: [[''], ['']],
   },
   {
-    id: 4,
+    id: 'U1V2W3X4',
     title: 'EEE',
     desc: 'Event feedback form',
     user: 'alex@gmail.com',
@@ -88,7 +88,7 @@ export const RECENT_FORMS = [
     ],
   },
   {
-    id: 5,
+    id: 'Y5Z6A7B8',
     title: 'FFF',
     desc: 'Market research survey',
     user: 'david@gmail.com',
@@ -99,7 +99,7 @@ export const RECENT_FORMS = [
     options: [['Yes', 'No'], ['']],
   },
   {
-    id: 6,
+    id: 'C9D0E1F2',
     title: 'GGG',
     desc: 'Fitness habits questionnaire',
     user: 'lisa@gmail.com',
@@ -113,7 +113,7 @@ export const RECENT_FORMS = [
     options: [['Yes', 'No'], ['']],
   },
   {
-    id: 7,
+    id: 'G3H4I5J6',
     title: 'HHH',
     desc: 'Customer service evaluation',
     user: 'mike@gmail.com',
@@ -130,7 +130,7 @@ export const RECENT_FORMS = [
     ],
   },
   {
-    id: 8,
+    id: 'K7L8M9N0',
     title: 'III',
     desc: 'Website usability survey',
     user: 'anna@gmail.com',
@@ -155,7 +155,7 @@ export const RECENT_FORMS = [
 
 export const RECEIVED_FORMS = [
   {
-    id: 1111,
+    id: 'Z1A2B3C4',
     title: 'Received Test form',
     desc: 'This is a test form',
     user: 'test@gmail.com',
@@ -173,7 +173,7 @@ export const RECEIVED_FORMS = [
     ],
   },
   {
-    id: 11,
+    id: 'D5E6F7G8',
     title: 'Travel Preferences',
     desc: 'Survey on travel preferences',
     user: 'emily@gmail.com',
@@ -187,7 +187,7 @@ export const RECEIVED_FORMS = [
     ],
   },
   {
-    id: 3,
+    id: 'H9I0J1K2',
     title: 'Satisfaction',
     desc: 'Employee satisfaction survey',
     user: 'sarah@gmail.com',
@@ -198,7 +198,7 @@ export const RECEIVED_FORMS = [
     options: [[''], ['']],
   },
   {
-    id: 4,
+    id: 'L3M4N5O6',
     title: 'Feedback',
     desc: 'Event feedback form',
     user: 'alex@gmail.com',
@@ -212,7 +212,7 @@ export const RECEIVED_FORMS = [
     ],
   },
   {
-    id: 5,
+    id: 'P7Q8R9S0',
     title: 'Research',
     desc: 'Market research survey',
     user: 'david@gmail.com',
@@ -223,7 +223,7 @@ export const RECEIVED_FORMS = [
     options: [['Yes', 'No'], ['']],
   },
   {
-    id: 6,
+    id: 'T1U2V3W4',
     title: 'Fitness Habits',
     desc: 'Fitness habits questionnaire',
     user: 'lisa@gmail.com',
@@ -237,7 +237,7 @@ export const RECEIVED_FORMS = [
     options: [['Yes', 'No'], ['']],
   },
   {
-    id: 7,
+    id: 'X5Y6Z7A8',
     title: 'Customer service',
     desc: 'Customer service evaluation',
     user: 'mike@gmail.com',
@@ -254,7 +254,7 @@ export const RECEIVED_FORMS = [
     ],
   },
   {
-    id: 8,
+    id: 'B9C0D1E2',
     title: 'Website usability',
     desc: 'Website usability survey',
     user: 'anna@gmail.com',
@@ -278,7 +278,7 @@ export const RECEIVED_FORMS = [
 ];
 
 export const FORM_DATA = {
-  id: 11,
+  id: '412154884554',
   title: 'Test form',
   desc: 'This is a test form',
   user: 'test@gmail.com',

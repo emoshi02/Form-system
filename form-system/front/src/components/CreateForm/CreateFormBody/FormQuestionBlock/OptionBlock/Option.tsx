@@ -7,15 +7,10 @@ interface OptProps {
   optionIcon: string;
   type: 'date' | 'text';
   onChange: (value: string[]) => void;
-  options?: string[];
+  options: string[];
 }
 
-export const Option = ({
-  optionIcon,
-  type,
-  onChange,
-  options = [''],
-}: OptProps) => {
+export const Option = ({ optionIcon, type, onChange, options }: OptProps) => {
   const [optionValues, setOptionValues] = useState<string[]>(options);
 
   useEffect(() => {

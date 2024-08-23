@@ -8,7 +8,7 @@ import { QuestionFieldProps } from './FormQuestionBlock';
 import TextareaAutosize from 'react-textarea-autosize';
 
 type QuestionProps = {
-  id: number;
+  id: string;
   title: string;
   index: number;
   optionType: string;

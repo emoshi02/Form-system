@@ -9,7 +9,7 @@ export const FormHeader = ({
   user = '',
   onChange,
 }: {
-  id: number;
+  id: string;
   title?: string;
   desc?: string;
   user?: string;
