@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FormItem } from './FormItem/FormItem';
 import { useNavigate } from 'react-router-dom';
-import './MainPage.scss';
+import classes from './MainBody.module.scss';
 
 const RECENT_FORMS = [
   {
@@ -308,8 +308,8 @@ export const MainBody = ({
   };
 
   return (
-    <main className="main-body">
-      <section className="forms">
+    <main className={classes.mainBody}>
+      <section className={classes.forms}>
         {forms.map((form, index) => (
           <FormItem
             formData={form}
@@ -319,11 +319,15 @@ export const MainBody = ({
           />
         ))}
       </section>
-      <section className="create-form">
-        <button className="create-form-btn" onClick={onBtnClick}>
+      <section className={classes.createForm}>
+        <button
+          className={classes.createFormButton}
+          onClick={onBtnClick}
+          data-hook="create-form-button"
+        >
           <img
             alt="create form"
-            className="create-form-img"
+            className={classes.createFormImage}
             src="../../assets/images/sign.png"
           />
         </button>

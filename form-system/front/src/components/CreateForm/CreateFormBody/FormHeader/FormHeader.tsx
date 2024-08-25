@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './FormHeader.scss';
+import classes from './FormHeader.module.scss';
 import { FormDataType } from '../../../MainPage/FormItem/FormItem';
 
 export const FormHeader = ({
@@ -20,12 +20,13 @@ export const FormHeader = ({
   const [formUser, setFormUser] = useState(user);
 
   return (
-    <section className="form-header">
+    <section className={classes.formHeader}>
       <input
         type="text"
         value={formTitle}
-        className="form-title"
+        className={classes.formTitle}
         id="title"
+        data-hook="form-title"
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
           setFormTitle(event.target.value);
           onChange({
@@ -39,7 +40,7 @@ export const FormHeader = ({
       <input
         type="text"
         placeholder="Form description"
-        className="form-desc"
+        className={classes.formDescription}
         id="desc"
         value={formDesc}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,12 +52,13 @@ export const FormHeader = ({
             user: formUser,
           });
         }}
+        data-hook="form-description"
       />
       <input
         type="text"
         placeholder="Send to"
         required
-        className="user-email"
+        className={classes.userEmail}
         id="user-email"
         value={formUser}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -68,6 +70,7 @@ export const FormHeader = ({
             user: event.target.value,
           });
         }}
+        data-hook="user-email"
       />
     </section>
   );

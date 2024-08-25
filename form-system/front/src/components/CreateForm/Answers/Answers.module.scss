@@ -3,7 +3,7 @@
   font-weight: 100;
 }
 
-.form-answer {
+.formAnswer {
   background: var(--main-bg);
   width: 100%;
   max-width: var(--container-width-xl);
@@ -23,7 +23,18 @@
   fill: var(--btn-on-focus);
 }
 
-.answer-number {
+.answerNumber {
   font-size: var(--font-size-xs);
   color: var(--p-text);
+}
+
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  background: var(--main-bg);
+  margin: var(--spacing-l) 0;
+  border-radius: var(--radius-m);
+  max-width: var(--container-width-xl);
+  width: 100%;
+  padding: var(--spacing-xl);
 }

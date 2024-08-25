@@ -1,4 +1,4 @@
-.answer-form-header {
+.answerFormHeader {
   display: flex;
   flex-direction: column;
   background: var(--main-bg);
@@ -9,32 +9,22 @@
   padding: var(--spacing-xl);
 }
 
-.answer-form-title {
+.answerFormTitle {
   font-size: var(--font-size-xl);
 }
 
-.answer-form-desc,
-.answer-form-title,
-.answer-form-user,
+.answerFormDesc,
+.answerFormTitle,
+.answerFormUser,
 .required {
   margin: var(--spacing-s) 0;
 }
 
-.answer-form-user {
+.answerFormUser {
   font-weight: var(--font-weight-m);
   color: var(--p-text);
 }
 
 .required {
   color: var(--required);
-}
-
-.answer-input-type.radio:focus,
-.answer-input-type.checkbox:focus {
-  width: var(--input-focus-width-s);
-}
-
-.answer-input-type.date,
-.answer-input-type.date:focus {
-  width: var(--container-width-s);
 }

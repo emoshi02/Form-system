@@ -9,7 +9,7 @@ import {
   Rectangle,
   ResponsiveContainer,
 } from 'recharts';
-import './Answers.scss';
+import classes from './Answers.module.scss';
 
 const CONTAINER_HEIGHT = 300;
 const CHART_SIZE = 500;
@@ -266,8 +266,8 @@ const processAnswerData = (
 export const Answers = () => {
   if (!DATA) {
     return (
-      <section className="form-header">
-        <h1 className="answers" id="answers">
+      <section className={classes.formHeader}>
+        <h1 className={classes.answers} id="answers">
           {`0 Answers`}
         </h1>
       </section>
@@ -278,16 +278,20 @@ export const Answers = () => {
 
   return (
     <>
-      <section className="form-header">
-        <h1 className="answers" id="answers">
+      <section className={classes.formHeader}>
+        <h1 className={classes.answers} id="answers" data-hook="answers">
           {`${Object.keys(processedData).length} Answers`}
         </h1>
       </section>
       {Object.values(processedData).map((questionData, index) => {
         return (
-          <section className="form-answer" key={index}>
-            <h2 className="form-question">{questionData.questionName}</h2>
-            <p className="answer-number">{`${questionData.answerCount} Answers`}</p>
+          <section className={classes.formAnswer} key={index}>
+            <h2 className={classes.formQuestion}>
+              {questionData.questionName}
+            </h2>
+            <p
+              className={classes.answerNumber}
+            >{`${questionData.answerCount} Answers`}</p>
             <ResponsiveContainer height={CONTAINER_HEIGHT}>
               <BarChart
                 width={CHART_SIZE}
@@ -305,9 +309,9 @@ export const Answers = () => {
                 <XAxis dataKey="answer" />
                 <YAxis />
                 <Bar
-                  className="bar"
+                  className={classes.bar}
                   dataKey="Number of Votes"
-                  activeBar={<Rectangle className="rectangle" />}
+                  activeBar={<Rectangle className={classes.rectangle} />}
                   fill={BAR_FILL_COLOR}
                 />
               </BarChart>

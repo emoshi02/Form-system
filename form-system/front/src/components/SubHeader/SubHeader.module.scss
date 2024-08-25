@@ -1,4 +1,4 @@
-.secondary-header {
+.secondaryHeader {
   height: var(--container-height-xxs);
   display: flex;
   justify-content: center;
@@ -8,7 +8,7 @@
   background-color: var(--main-bg);
 }
 
-.header-nav-item {
+.headerNavItem {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -18,12 +18,12 @@
   cursor: pointer;
 }
 
-.header-nav-item:hover,
+.headerNavItem:hover,
 .active {
   border-bottom: var(--border-width-s) solid var(--border-bottom);
 }
 
-.header-nav-item-p {
+.headerNavItemP {
   position: absolute;
   top: var(--spacing-xs);
 }

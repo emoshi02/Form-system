@@ -1,4 +1,4 @@
-import './OptionStyle.scss';
+import classes from './OptionStyle.module.scss';
 
 export const OptionBtn = ({
   onAddOption,
@@ -8,9 +8,13 @@ export const OptionBtn = ({
   optionIcon: string;
 }) => {
   return (
-    <span className="option-wrapper">
+    <span className={classes.optionWrapper}>
       <span className="material-symbols-outlined">{optionIcon}</span>
-      <button className="add-option-button" onClick={onAddOption}>
+      <button
+        className={classes.addOptionButton}
+        onClick={onAddOption}
+        data-hook="add-option-button"
+      >
         Add option
       </button>
     </span>

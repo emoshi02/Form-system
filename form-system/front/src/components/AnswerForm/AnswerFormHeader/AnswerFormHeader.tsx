@@ -1,4 +1,4 @@
-import './AnswerFormHeader.scss';
+import classes from './AnswerFormHeader.module.scss';
 
 export const AnswerFormHeader = ({
   title = 'Untitled Form',
@@ -10,11 +10,11 @@ export const AnswerFormHeader = ({
   user?: string;
 }) => {
   return (
-    <section className="answer-form-header">
-      <h1 className="answer-form-title">{title}</h1>
-      <p className="answer-form-desc">{desc}</p>
-      <p className="answer-form-user">{user}</p>
-      <p className="required">* Indicates the Required Question.</p>
+    <section className={classes.answerFormHeader}>
+      <h1 className={classes.answerFormTitle}>{title}</h1>
+      <p className={classes.answerFormDesc}>{desc}</p>
+      <p className={classes.answerFormUser}>{user}</p>
+      <p className={classes.required}>* Indicates the Required Question.</p>
     </section>
   );
 };

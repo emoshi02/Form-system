@@ -1,4 +1,4 @@
-.image-input {
+.imageInput {
   display: none;
 }
 
@@ -14,14 +14,14 @@
   row-gap: var(--spacing-m);
 }
 
-.option-control {
+.optionControl {
   display: flex;
   gap: var(--spacing-l);
   margin: var(--spacing-s) 0;
   flex-direction: column;
 }
 
-.question-footer {
+.questionFooter {
   display: grid;
   grid-template-columns: calc(50% + var(--icon-size) / 2) calc(
       50% - var(--icon-size) / 2
@@ -29,24 +29,24 @@
   justify-items: end;
 }
 
-.question-delete-btn,
-.question-image {
+.questionDeleteButton,
+.questionImage {
   cursor: pointer;
 }
 
-.question-image {
+.questionImage {
   margin-top: calc(var(--spacing-xxs) * 2);
 }
 
-.input-setting-wrapper {
+.inputSettingWrapper {
   display: flex;
   align-items: start;
   width: 100%;
   gap: var(--spacing-m);
 }
 
-.question-input,
-.question-input:focus {
+.questionInput,
+.questionInput:focus {
   width: 50%;
   height: var(--input-height-m);
   resize: none;
@@ -54,31 +54,31 @@
   word-wrap: break-word;
 }
 
-.question-input {
+.questionInput {
   padding: var(--spacing-xs);
 }
 
-.question-image-preview {
+.questionImagePreview {
   width: var(--image-input-height-m);
   height: var(--image-input-width-m);
   object-fit: cover;
 }
 
 @media only screen and (max-width: 675px) {
-  .input-setting-wrapper {
+  .inputSettingWrapper {
     flex-direction: column;
     align-items: unset;
   }
 
-  .question-image {
+  .questionImage {
     margin-left: calc(var(--spacing-xxs) * 2);
   }
 
-  .input-setting-wrapper > * {
+  .inputSettingWrapper > * {
     width: 100%;
   }
 
-  .input-setting-wrapper > *:focus {
+  .inputSettingWrapper > *:focus {
     width: 100%;
   }
 }

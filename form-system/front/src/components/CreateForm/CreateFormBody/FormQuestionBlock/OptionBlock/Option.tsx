@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './OptionStyle.scss';
+import classes from './OptionStyle.module.scss';
 import { OptionBtn } from './OptionBtn';
 import TextareaAutosize from 'react-textarea-autosize';
 
@@ -40,21 +40,27 @@ export const Option = ({ optionIcon, type, onChange, options }: OptProps) => {
   return (
     <>
       {optionValues.map((option, index) => (
-        <span className="option-block" key={index}>
-          <span className="option-wrapper">
+        <span
+          className={classes.optionBlock}
+          key={index}
+          data-hook="option-block"
+        >
+          <span className={classes.optionWrapper}>
             <span className="material-symbols-outlined">{optionIcon}</span>
             <TextareaAutosize
-              className="add-option"
+              className={classes.addOption}
               placeholder={`Option ${index + 1}`}
               value={option}
               onChange={(e) => handleOptionInputChange(index, e.target.value)}
               disabled={type === 'date'}
+              data-hook="add-option"
             />
           </span>
           {optionValues.length > 1 && (
             <button
               onClick={() => handleDeleteBtnClick(index)}
-              className="close-button"
+              className={classes.closeButton}
+              data-hook="close-button"
             >
               <span className="material-symbols-outlined">close</span>
             </button>

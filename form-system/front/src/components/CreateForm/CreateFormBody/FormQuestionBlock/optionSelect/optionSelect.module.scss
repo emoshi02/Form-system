@@ -1,4 +1,4 @@
-.custom-select {
+.customSelect {
   position: relative;
   width: 50%;
   border: var(--border-width-xs) solid var(--input-outline);
@@ -6,7 +6,7 @@
   z-index: 1;
 }
 
-.selected-option {
+.selectedOption {
   display: flex;
   align-items: center;
   padding: var(--spacing-xs);
@@ -25,12 +25,12 @@
   box-shadow: 0 0 var(--shadow-xs) var(--btn-on-focus);
 }
 
-.custom-select.open,
-.custom-select:hover {
+.customSelect.open,
+.customSelect:hover {
   box-shadow: 0 0 var(--shadow-xs) var(--btn-on-focus);
 }
 
-.custom-select.open .options {
+.customSelect.open .options {
   display: flex;
 }
 

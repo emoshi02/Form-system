@@ -1,4 +1,4 @@
-import './SubHeader.scss';
+import classes from './SubHeader.module.scss';
 
 interface SubHeaderProps {
   sections: string[];
@@ -12,15 +12,16 @@ export const SubHeader = ({
   setActiveSectionIndex,
 }: SubHeaderProps) => {
   return (
-    <nav className="secondary-header">
+    <nav className={classes.secondaryHeader}>
       {sections.map((section, index) => (
         <a
-          className={`header-nav-item ${activeSectionIndex === index && 'active'}`}
+          className={`${classes.headerNavItem} ${activeSectionIndex === index && classes.active}`}
           id="header-nav-item-first"
           key={index}
           onClick={() => setActiveSectionIndex(index)}
+          data-hook="header-nav-item"
         >
-          <p className="header-nav-item-p">{section}</p>
+          <p className={classes.headerNavItemP}>{section}</p>
         </a>
       ))}
     </nav>

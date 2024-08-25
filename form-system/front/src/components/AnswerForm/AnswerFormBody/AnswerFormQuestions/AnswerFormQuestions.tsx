@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { OPTIONS } from '../../../CreateForm/CreateFormBody/FormQuestionBlock/constants';
-import './AnswerFormQuestions.scss';
+import classes from './AnswerFormQuestions.module.scss';
+import classNames from 'classnames';
 
 type AnswerFormQuestionProps = {
   title: string;
@@ -46,18 +47,34 @@ export const AnswerFormQuestions = ({
   };
 
   return (
-    <section className="answer-form-question">
-      <span className="question-wrapper">
-        <h2 className="question-item">{title}</h2>
-        {isRequired && <p className="required">{` *`}</p>}
+    <section
+      className={classes.answerFormQuestion}
+      data-hook="answer-form-question"
+    >
+      <span className={classes.questionWrapper}>
+        <h2 className={classes.questionItem}>{title}</h2>
+        {isRequired && <p className={classes.required}>{` *`}</p>}
       </span>
-      {image && <img src={image} className="answer-form-image" />}
+      {image && (
+        <img
+          src={image}
+          className={classes.answerFormImage}
+          data-hook="answer-form-image"
+        />
+      )}
 
       {options.map((option, index) => (
-        <label className="answer-option-wrapper" key={index}>
+        <label
+          className={classes.answerOptionWrapper}
+          key={index}
+          data-hook="answer-option-wrapper"
+        >
           <input
             id={`input-element ${index}`}
-            className={`answer-input-type ${optionSetting.value}`}
+            className={classNames(
+              classes.answerInputType,
+              classes[optionSetting.value],
+            )}
             type={optionSetting.value}
             required={isRequired}
             checked={
@@ -75,6 +92,7 @@ export const AnswerFormQuestions = ({
                   ? () => handleSingleOptionChange(option)
                   : handleDateChange
             }
+            data-hook={`answer-input-type ${optionSetting.value}`}
           />
           {option}
         </label>

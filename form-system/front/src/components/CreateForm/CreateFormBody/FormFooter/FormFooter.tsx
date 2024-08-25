@@ -1,5 +1,5 @@
 import { SubmitButton } from '../../../SubmitButton/SubmitButton';
-import './FormFooter.scss';
+import classes from './FormFooter.module.scss';
 
 export const FormFooter = ({
   onAddQuestionClick,
@@ -7,9 +7,9 @@ export const FormFooter = ({
   onAddQuestionClick: () => void;
 }) => {
   return (
-    <footer className="footer">
+    <footer className={classes.footer}>
       <button onClick={onAddQuestionClick}>
-        <span className="material-symbols-outlined add">add</span>
+        <span className={`material-symbols-outlined ${classes.add}`}>add</span>
       </button>
       <SubmitButton value="Submit" />
     </footer>

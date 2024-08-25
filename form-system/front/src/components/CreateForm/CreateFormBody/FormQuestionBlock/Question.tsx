@@ -3,7 +3,7 @@ import { OPTIONS, REMOVE_IMAGE_TEXT } from './constants';
 import { OptionSelect } from './optionSelect/optionSelect';
 import { Option } from './OptionBlock/Option';
 import { useRef, useState } from 'react';
-import './Question.scss';
+import classes from './Question.module.scss';
 import { QuestionFieldProps } from './FormQuestionBlock';
 import TextareaAutosize from 'react-textarea-autosize';
 
@@ -24,6 +24,7 @@ type QuestionProps = {
 };
 
 export const Question = ({
+  id,
   title,
   index,
   optionType,
@@ -85,30 +86,33 @@ export const Question = ({
   };
 
   return (
-    <section className="question">
-      <span className="input-setting-wrapper">
+    <section className={classes.question}>
+      <span className={classes.inputSettingWrapper}>
         <TextareaAutosize
           placeholder={`Question ${index + 1}`}
-          className="question-input"
+          className={classes.questionInput}
           value={questionTitle}
           onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
             setQuestionTitle(event.target.value);
             onChange(index, 'questions', event.target.value);
           }}
+          data-hook="question-input"
         />
         <span
-          className="material-symbols-outlined question-image"
+          className={`material-symbols-outlined ${classes.questionImage}`}
           onClick={handleImageIconClick}
+          data-hook="question-image"
         >
           image
         </span>
         <input
           type="file"
-          id={`image-input ${index}`}
+          id={`image-input ${id}`}
           ref={imageIconRef}
           accept="image/png, image/jpeg"
-          className="image-input"
+          className={classes.imageInput}
           onChange={handleImageChange}
+          data-hook="image-input"
         />
         <OptionSelect
           options={OPTIONS}
@@ -116,17 +120,22 @@ export const Question = ({
           onChange={(option) => handleOptionChange(option)}
         />
       </span>
-      <div className="image-wrapper" onClick={handleImageClick}>
+      <div
+        className={classes.imageWrapper}
+        onClick={handleImageClick}
+        data-hook="image-wrapper"
+      >
         {imagePreview && (
           <img
             src={imagePreview}
             alt={`Selected ${index}`}
-            className="question-image-preview"
+            className={classes.questionImagePreview}
             onClick={handleImageClick}
+            data-hook="question-image-preview"
           />
         )}
       </div>
-      <span className="option-control">
+      <span className={classes.optionControl}>
         <Option
           optionIcon={optionSettingSelect.optionIcon}
           type={optionSettingSelect.type}
@@ -134,9 +143,9 @@ export const Question = ({
           onChange={handleOptionLengthChanges}
         />
       </span>
-      <span className="question-footer">
+      <span className={classes.questionFooter}>
         <span
-          className="material-symbols-outlined question-delete-btn"
+          className={`material-symbols-outlined ${classes.questionDeleteButton}`}
           onClick={() => onDeleteBtnClick(index)}
         >
           delete

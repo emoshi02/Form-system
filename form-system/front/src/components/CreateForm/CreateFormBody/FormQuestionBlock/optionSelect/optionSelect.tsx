@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import './optionSelect.scss';
+import classes from './optionSelect.module.scss';
 
 export type Option = {
   value: 'radio' | 'checkbox' | 'date';
@@ -48,23 +48,25 @@ export const OptionSelect = ({
 
   return (
     <div
-      className={`custom-select ${dropdownOpen ? 'open' : ''}`}
+      className={`${classes.customSelect} ${dropdownOpen ? classes.open : ''}`}
       ref={customSelectRef}
+      data-hook={`custom-select ${dropdownOpen ? 'open' : ''}`}
     >
       <div
-        className="selected-option"
+        className={classes.selectedOption}
         onClick={() => setDropdownOpen(!dropdownOpen)}
+        data-hook="selected-option"
       >
         <span className="material-symbols-outlined">
           {selectedOption.selectedIcon}
         </span>
         <p>{selectedOption.label}</p>
       </div>
-      <div className="options">
+      <div className={classes.options}>
         {options.map((option) => (
           <div
             key={option.value}
-            className="option"
+            className={classes.option}
             onClick={() => handleOptionClick(option)}
           >
             <span className="material-symbols-outlined">

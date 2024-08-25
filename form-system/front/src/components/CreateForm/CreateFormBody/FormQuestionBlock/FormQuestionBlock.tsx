@@ -134,6 +134,7 @@ export const FormQuestionBlock = ({
     <>
       {questionValues.map((title, index: number) => (
         <Question
+          key={questionIds[index]}
           id={questionIds[index]}
           title={title}
           index={index}
@@ -142,7 +143,6 @@ export const FormQuestionBlock = ({
           isRequired={requiredValues[index]}
           options={optionValues[index]}
           onDeleteBtnClick={() => handleDeleteBtnClick(index)}
-          key={questionIds[index]}
           onChange={updateFormState}
         />
       ))}

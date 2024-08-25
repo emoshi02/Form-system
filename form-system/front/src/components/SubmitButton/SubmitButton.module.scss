@@ -1,13 +1,14 @@
-.btn {
+.button {
   height: var(--button-height-s);
   width: var(--button-width-l);
   border-radius: var(--radius-m);
   color: var(--btn-text-color);
   background-color: var(--btn-bg);
   position: absolute;
+  right: 0;
   cursor: pointer;
 }
 
-.btn:hover {
+.button:hover {
   background-color: var(--btn-on-focus);
 }

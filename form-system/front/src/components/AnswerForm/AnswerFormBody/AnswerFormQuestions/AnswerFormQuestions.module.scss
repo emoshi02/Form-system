@@ -1,4 +1,4 @@
-.answer-form-question {
+.answerFormQuestion {
   background: var(--main-bg);
   width: 100%;
   max-width: var(--container-width-xl);
@@ -10,20 +10,30 @@
   row-gap: var(--spacing-m);
 }
 
-.question-wrapper {
+.questionWrapper {
   display: flex;
   gap: var(--spacing-xxs);
   align-items: center;
 }
 
-.answer-option-wrapper {
+.answerOptionWrapper {
   display: flex;
   gap: var(--spacing-m);
   margin: var(--spacing-s) 0;
 }
 
-.answer-form-image {
+.answerFormImage {
   width: var(--image-input-height-m);
   height: var(--image-input-width-m);
   object-fit: cover;
+}
+
+.answerInputType.radio:focus,
+.answerInputType.checkbox:focus {
+  width: var(--input-focus-width-s);
+}
+
+.answerInputType.date,
+.answerInputType.date:focus {
+  width: var(--container-width-s);
 }

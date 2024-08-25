@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { AnswerFormQuestions } from './AnswerFormQuestions/AnswerFormQuestions';
+import { AnswerFormFooter } from '../AnswerFormFooter/AnswerFormFooter';
+import classes from './AnswerFormBody.module.scss';
 
 type Question = {
   question: string;
@@ -26,6 +28,7 @@ export const AnswerFormBody = ({ questionsData }: AnswerProps) => {
 
   return (
     <form
+      className={classes.form}
       onSubmit={(event: { preventDefault: () => void }) =>
         event.preventDefault()
       }
@@ -48,6 +51,7 @@ export const AnswerFormBody = ({ questionsData }: AnswerProps) => {
           />
         ),
       )}
+      <AnswerFormFooter />
     </form>
   );
 };

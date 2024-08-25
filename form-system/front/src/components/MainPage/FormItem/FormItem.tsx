@@ -1,4 +1,4 @@
-import './FormItem.scss';
+import classes from './FormItem.module.scss';
 import { useNavigate } from 'react-router-dom';
 
 export type FormDataType = {
@@ -26,22 +26,23 @@ export const FormItem = ({
 
   return (
     <div
-      className="form-item-wrapper"
+      className={classes.formItemWrapper}
       onClick={() =>
         navigate(
           `${isAnswerForm ? `/answerForm/${formData.id}` : `/updateForm/${formData.id}`}`,
           { state: { formData } },
         )
       }
+      data-hook="form-item-wrapper"
     >
-      <div className="form-item-image" id={`form-image ${formData.id}`}>
+      <div className={classes.formItemImage} id={`form-image ${formData.id}`}>
         <img
           src="https://ssl.gstatic.com/docs/spreadsheets/forms/forms_icon_2023q4.ico"
           alt={`form ${formData.id}`}
         />
       </div>
-      <div className="form-item-title">
-        <p className="form-item-text">{formData.title}</p>
+      <div className={classes.formItemTitle}>
+        <p className={classes.formItemText}>{formData.title}</p>
         <span
           className="material-symbols-outlined"
           id={`button${formData.id}`}

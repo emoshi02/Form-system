@@ -1,4 +1,4 @@
-.main-page-header {
+.mainPageHeader {
   height: var(--container-height-xs);
   background-color: var(--main-bg);
   display: flex;
@@ -8,28 +8,28 @@
   padding: 0 var(--spacing-xl);
 }
 
-.nav-wrapper {
+.navWrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: var(--spacing-m);
 }
 
-.main-page-body {
+.mainPageBody {
   height: 100vh;
 }
 
-.nav-wrapper,
-.user-icon {
+.navWrapper,
+.userIcon {
   cursor: pointer;
 }
 
-.header-title {
+.headerTitle {
   color: var(--heading-text);
   font-weight: var(--font-weight-m);
   font-size: var(--font-size-m);
 }
 
-.form-icon {
+.formIcon {
   width: var(--button-width-s);
 }
