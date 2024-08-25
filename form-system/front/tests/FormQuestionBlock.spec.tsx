@@ -39,7 +39,7 @@ describe('FormQuestionBlock.tsx', () => {
     expect(newState.isRequired.length).toBe(2);
     expect(newState.options.length).toBe(2);
     expect(
-      container.getElementsByClassName('question-input')[1].innerHTML,
+      container.querySelectorAll('[data-hook="question-input"]')[1].innerHTML,
     ).toBe('');
   });
 
@@ -57,7 +57,7 @@ describe('FormQuestionBlock.tsx', () => {
     const newState = onChangeMock.mock.calls[0][0];
     expect(newState.questions.length).toBe(0);
     expect(
-      container.getElementsByClassName('question-input')[1],
+      container.querySelectorAll('[data-hook="question-input"]')[1],
     ).toBeUndefined();
   });
 
@@ -69,7 +69,7 @@ describe('FormQuestionBlock.tsx', () => {
         </BrowserRouter>,
       );
 
-      const element = container.getElementsByClassName('question-input')[0];
+      const element = container.querySelector('[data-hook="question-input"]')!;
 
       fireEvent.change(element, {
         target: { value: 'Updated question title' },
@@ -110,7 +110,7 @@ describe('FormQuestionBlock.tsx', () => {
 
     const file = new File(['test'], 'test-image.png', { type: 'image/png' });
 
-    fireEvent.change(container.getElementsByClassName('image-input')[0], {
+    fireEvent.change(container.querySelector('[data-hook="image-input"]')!, {
       target: { files: [file] },
     });
 
@@ -119,8 +119,8 @@ describe('FormQuestionBlock.tsx', () => {
     expect(newState.image[0]).toBe('mocked-image-url');
     expect(
       container
-        .getElementsByClassName('question-image-preview')[0]
-        .getAttribute('src'),
+        .querySelector('[data-hook="question-image-preview"]')
+        ?.getAttribute('src'),
     ).toBe('mocked-image-url');
   });
 
@@ -131,7 +131,7 @@ describe('FormQuestionBlock.tsx', () => {
       </BrowserRouter>,
     );
 
-    fireEvent.click(container.getElementsByClassName('switch')[0]);
+    fireEvent.click(container.querySelector('[data-hook="switch"]')!);
 
     expect(onChangeMock).toHaveBeenCalledTimes(1);
     const newState = onChangeMock.mock.calls[0][0];
@@ -139,9 +139,9 @@ describe('FormQuestionBlock.tsx', () => {
     expect(newState.isRequired[0]).toBe(true);
     expect(
       (
-        container.getElementsByClassName(
-          'required-toggle-input',
-        )[0] as HTMLInputElement
+        container.querySelector(
+          '[data-hook="required-toggle-input"]',
+        ) as HTMLInputElement
       ).checked,
     ).toBe(true);
   });
@@ -157,8 +157,8 @@ describe('FormQuestionBlock.tsx', () => {
 
     const newState = onChangeMock.mock.calls[0][0];
     expect(newState.options[0].length).toBe(2);
-    expect(container.getElementsByClassName('add-option')[1].innerHTML).toBe(
-      '',
-    );
+    expect(
+      container.querySelectorAll('[data-hook="add-option"]')[1].innerHTML,
+    ).toBe('');
   });
 });

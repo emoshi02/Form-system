@@ -13,7 +13,9 @@ describe('CreateForm.tsx', () => {
     );
 
     expect(
-      container.getElementsByClassName('form-title')[0].getAttribute('value'),
+      container
+        .querySelector('[data-hook="form-title"]')
+        ?.getAttribute('value'),
     ).toBe('Untitled Form');
   });
 
@@ -55,7 +57,7 @@ describe('CreateForm.tsx', () => {
       </BrowserRouter>,
     );
 
-    const element = container.getElementsByClassName('form-title')[0];
+    const element = container.querySelector('[data-hook="form-title"]')!;
 
     fireEvent.change(element, {
       target: { value: 'Test Title' },

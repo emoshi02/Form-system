@@ -6,12 +6,16 @@ import { BrowserRouter } from 'react-router-dom';
 
 describe('AnswerForm.tsx', () => {
   test('Should render empty form when there are no answers', async () => {
-    const { getByText, container } = render(<AnswerForm formData={null} />);
+    const { getByText, container } = render(
+      <BrowserRouter>
+        <AnswerForm formData={null} />
+      </BrowserRouter>,
+    );
 
     expect(getByText('Untitled Form')).toBeDefined();
     expect(
-      container.getElementsByClassName('answer-form-question'),
-    ).toHaveLength(0);
+      container.querySelector('[data-hook="answer-form-question"]'),
+    ).toBeNull();
   });
 
   test('Null Form on submit prevents default', async () => {
@@ -85,8 +89,8 @@ describe('AnswerForm.tsx', () => {
     );
 
     expect(
-      container.getElementsByClassName('option-wrapper')[0],
-    ).toBeUndefined();
+      container.querySelector('[data-hook="answer-option-wrapper"]'),
+    ).toBeNull();
   });
 
   test('Empty questions should return empty array', async () => {

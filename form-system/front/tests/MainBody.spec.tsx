@@ -16,7 +16,9 @@ describe('MainPageBody.tsx', () => {
         <MainBody activeSectionIndex={0} />
       </BrowserRouter>,
     );
-    fireEvent.click(container.getElementsByClassName('create-form-btn')[0]);
+    fireEvent.click(
+      container.querySelector('[data-hook="create-form-button"]')!,
+    );
     expect(navigateMock).toHaveBeenCalledTimes(1);
     expect(navigateMock).toHaveBeenCalledWith('/createForm');
   });

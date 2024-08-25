@@ -16,7 +16,7 @@ describe('Header.tsx', () => {
       </BrowserRouter>,
     );
 
-    fireEvent.click(container.getElementsByClassName('nav-wrapper')[0]);
+    fireEvent.click(container.querySelector('[data-hook="nav-wrapper"]')!);
     expect(navigateMock).toHaveBeenCalledTimes(1);
     expect(navigateMock).toHaveBeenCalledWith('/main');
   });
@@ -31,7 +31,7 @@ describe('Header.tsx', () => {
     fireEvent.click(getByText('account_circle'));
 
     expect(
-      container.getElementsByClassName('user-modal-wrapper')[0],
+      container.querySelector('[data-hook="user-modal-wrapper"]'),
     ).toBeDefined();
   });
 
@@ -46,8 +46,8 @@ describe('Header.tsx', () => {
     fireEvent.mouseDown(document.body);
 
     expect(
-      container.getElementsByClassName('user-modal-wrapper')[0],
-    ).toBeUndefined();
+      container.querySelector('[data-hook="user-modal-wrapper"]'),
+    ).toBeNull();
   });
 
   test('User modal closes on Cancel button click', async () => {
@@ -61,7 +61,7 @@ describe('Header.tsx', () => {
     fireEvent.click(getByText('Cancel'));
 
     expect(
-      container.getElementsByClassName('user-modal-wrapper')[0],
-    ).toBeUndefined();
+      container.querySelector('[data-hook="user-modal-wrapper"]'),
+    ).toBeNull();
   });
 });

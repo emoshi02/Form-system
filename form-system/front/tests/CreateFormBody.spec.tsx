@@ -30,6 +30,6 @@ describe('CreateFormBody.tsx', () => {
       </BrowserRouter>,
     );
 
-    expect(container.getElementsByClassName('answer-page')[0]).toBeDefined;
+    expect(container.querySelector('[data-hook="answers"]')).toBeDefined;
   });
 });

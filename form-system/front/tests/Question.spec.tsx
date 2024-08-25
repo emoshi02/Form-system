@@ -29,7 +29,7 @@ describe('Question.tsx', () => {
 
     const { container } = render(<Question {...defaultProps} />);
 
-    const element = container.getElementsByClassName('question-image')[0];
+    const element = container.querySelector('[data-hook="question-image"]')!;
     element.addEventListener('click', onClickMock);
 
     fireEvent.click(element);
@@ -44,7 +44,7 @@ describe('Question.tsx', () => {
 
     const { container } = render(<Question {...defaultProps} />);
 
-    const element = container.getElementsByClassName('image-wrapper')[0];
+    const element = container.querySelector('[data-hook="image-wrapper"]')!;
 
     fireEvent.click(element);
 
@@ -56,8 +56,8 @@ describe('Question.tsx', () => {
       null,
     );
     expect(
-      container.getElementsByClassName('question-image-preview')[0],
-    ).toBeUndefined();
+      container.querySelector('[data-hook="question-image-preview"]')!,
+    ).toBeNull();
 
     confirmSpy.mockRestore();
   });

@@ -17,7 +17,9 @@ describe('Toggle.tsx', () => {
       />,
     );
 
-    expect(container.querySelector('.p-text')?.innerHTML).toBe(label);
+    expect(container.querySelector('[data-hook="p-text"]')?.innerHTML).toBe(
+      label,
+    );
 
     expect(container.getElementsByTagName('input')[0].checked).toBe(false);
 
