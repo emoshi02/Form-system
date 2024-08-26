@@ -13,10 +13,18 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const SubHeaderElement: Story = {
+export const SubHeaderActiveFirstElement: Story = {
   args: {
     sections: ['Recent', 'Received'],
     activeSectionIndex: 0,
+    setActiveSectionIndex: fn(),
+  },
+};
+
+export const SubHeaderActiveSecondElement: Story = {
+  args: {
+    sections: ['Recent', 'Received'],
+    activeSectionIndex: 1,
     setActiveSectionIndex: fn(),
   },
 };

@@ -14,4 +14,14 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Main: Story = {};
+export const RecentForms: Story = {};
+
+export const ReceivedForms: Story = {
+  play: () => {
+    (
+      document.querySelectorAll(
+        '[data-hook="header-nav-item"]',
+      )[1] as HTMLAnchorElement
+    ).click();
+  },
+};

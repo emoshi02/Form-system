@@ -10,13 +10,16 @@ const meta = {
     layout: 'fullscreen',
   },
   decorators: [withRouter],
-  play: ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    canvas.getByText('account_circle').click();
-  },
 } satisfies Meta<typeof Header>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const HeaderModalOpen: Story = {};
+export const UserModalClosed: Story = {};
+
+export const UserModalOpen: Story = {
+  play: ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    canvas.getByText('account_circle').click();
+  },
+};

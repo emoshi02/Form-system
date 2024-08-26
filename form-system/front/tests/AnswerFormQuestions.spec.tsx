@@ -50,7 +50,7 @@ describe('AnswerFormQuestions.tsx', () => {
     ).toBeDefined();
   });
 
-  test('Clickink on checked checkbox should uncheck it', async () => {
+  test('Clicking on checked checkbox should uncheck it', async () => {
     const onChangeMock = jest.fn();
 
     const defaultProps = {
