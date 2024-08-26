@@ -29,5 +29,5 @@ jobs:
     - run: cd .\form-system\front\ ; yarn lint
     - run: cd .\form-system\front\ ; yarn build-storybook
     - run: cd .\form-system\front\ ; yarn add chromatic
-    - run: cd .\form-system\front\ ; npx chromatic --project-token="$env:PROJECT_TOKEN"
+    - run: cd .\form-system\front\ ; npx chromatic --project-token="$env:CHROMATIC_PROJECT_TOKEN"
    
