@@ -22,7 +22,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
       env:  
-        PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
+        CHROMATIC_PROJECT_TOKEN: ${{ secrets.PROJECT_TOKEN }}
     - run: cd .\form-system\front\ ; yarn 
     - run: cd .\form-system\front\ ; yarn build
     - run: cd .\form-system\front\ ; yarn test
