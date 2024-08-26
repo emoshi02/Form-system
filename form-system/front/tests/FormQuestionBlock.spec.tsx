@@ -34,10 +34,15 @@ describe('FormQuestionBlock.tsx', () => {
 
     const newState = onChangeMock.mock.calls[0][0];
     expect(newState.questions.length).toBe(2);
+    expect(newState.questions[1]).toBe('');
     expect(newState.optionType.length).toBe(2);
+    expect(newState.optionType[1]).toBe('circle');
     expect(newState.image.length).toBe(2);
+    expect(newState.image[1]).toBeNull();
     expect(newState.isRequired.length).toBe(2);
+    expect(newState.isRequired[1]).toBe(false);
     expect(newState.options.length).toBe(2);
+    expect(newState.options[1]).toStrictEqual(['']);
     expect(
       container.querySelectorAll('[data-hook="question-input"]')[1].innerHTML,
     ).toBe('');

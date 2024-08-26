@@ -70,5 +70,6 @@ describe('CreateForm.tsx', () => {
     });
 
     expect(element.getAttribute('value')).not.toBe('Test Title');
+    expect(element.getAttribute('value')).toBe('New Title');
   });
 });
