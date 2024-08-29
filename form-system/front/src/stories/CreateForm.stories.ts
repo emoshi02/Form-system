@@ -21,7 +21,7 @@ export const Empty: Story = {
 export const Update: Story = {
   args: {
     formData: {
-      id: '11',
+      id: 'e5d80ec7-2b6f-4445-8c32-c2715d671dc6d',
       title: 'Test form',
       desc: 'This is a test form',
       user: 'test@gmail.com',
@@ -37,7 +37,7 @@ export const Update: Story = {
 export const QuestionWithImage: Story = {
   args: {
     formData: {
-      id: '111',
+      id: 'e5d80ec7-2b6f-4445-8c32-c2715d671dc6d',
       title: 'Question with Image Form',
       desc: 'This is a test form',
       user: 'test@gmail.com',
@@ -53,7 +53,7 @@ export const QuestionWithImage: Story = {
 export const RequiredQuestion: Story = {
   args: {
     formData: {
-      id: '1111',
+      id: 'e5d80ec7-2b6f-4445-8c32-c2715d671dc6d',
       title: 'Required Question Form',
       desc: 'This is a test form',
       user: 'test@gmail.com',
@@ -69,7 +69,7 @@ export const RequiredQuestion: Story = {
 export const RadioOptionQuestion: Story = {
   args: {
     formData: {
-      id: '11111',
+      id: 'e5d80ec7-2b6f-4445-8c32-c2715d671dc6d',
       title: 'Radio Question Form',
       desc: 'This is a test form',
       user: 'test@gmail.com',
@@ -85,7 +85,7 @@ export const RadioOptionQuestion: Story = {
 export const CheckboxOptionQuestion: Story = {
   args: {
     formData: {
-      id: '11111',
+      id: 'e5d80ec7-2b6f-4445-8c32-c2715d671dc6d',
       title: 'Checkbox Question Form',
       desc: 'This is a test form',
       user: 'test@gmail.com',
@@ -101,7 +101,7 @@ export const CheckboxOptionQuestion: Story = {
 export const DateOptionQuestion: Story = {
   args: {
     formData: {
-      id: '11111',
+      id: 'e5d80ec7-2b6f-4445-8c32-c2715d671dc6d',
       title: 'Birthday Form',
       desc: 'This is a test form',
       user: 'test@gmail.com',

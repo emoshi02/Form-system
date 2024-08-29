@@ -18,207 +18,207 @@ const BAR_FILL_COLOR = '#673ab7';
 const DATA = [
   {
     answer: ['Lietuvoje'],
-    questionId: 1,
+    questionId: '06866040-f145-4c98-92bf-f5d8d8204b36',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['Lietuvoje', 'Portugalijoje'],
-    questionId: 1,
+    questionId: '06866040-f145-4c98-92bf-f5d8d8204b36',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['Portugalijoje'],
-    questionId: 1,
+    questionId: '06866040-f145-4c98-92bf-f5d8d8204b36',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['Ispanijoje'],
-    questionId: 1,
+    questionId: '06866040-f145-4c98-92bf-f5d8d8204b36',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['Ispanijoje'],
-    questionId: 1,
+    questionId: '06866040-f145-4c98-92bf-f5d8d8204b36',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['Ispanijoje'],
-    questionId: 1,
+    questionId: '06866040-f145-4c98-92bf-f5d8d8204b36',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['Amerikoje'],
-    questionId: 1,
+    questionId: '06866040-f145-4c98-92bf-f5d8d8204b36',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['Amerikoje'],
-    questionId: 1,
+    questionId: '06866040-f145-4c98-92bf-f5d8d8204b36',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['A'],
-    questionId: 2,
+    questionId: '4c1b9453-11e2-4a8d-90a9-24d123786fd3',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['A'],
-    questionId: 2,
+    questionId: '4c1b9453-11e2-4a8d-90a9-24d123786fd3',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['B'],
-    questionId: 2,
+    questionId: '4c1b9453-11e2-4a8d-90a9-24d123786fd3',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['C'],
-    questionId: 2,
+    questionId: '4c1b9453-11e2-4a8d-90a9-24d123786fd3',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['C'],
-    questionId: 2,
+    questionId: '4c1b9453-11e2-4a8d-90a9-24d123786fd3',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['C'],
-    questionId: 2,
+    questionId: '4c1b9453-11e2-4a8d-90a9-24d123786fd3',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['D'],
-    questionId: 2,
+    questionId: '4c1b9453-11e2-4a8d-90a9-24d123786fd3',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['D'],
-    questionId: 2,
+    questionId: '4c1b9453-11e2-4a8d-90a9-24d123786fd3',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['A'],
-    questionId: 3,
+    questionId: '07b6eb3a-ca25-462e-b0f7-4540694e9741',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['A'],
-    questionId: 3,
+    questionId: '07b6eb3a-ca25-462e-b0f7-4540694e9741',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['B'],
-    questionId: 3,
+    questionId: '07b6eb3a-ca25-462e-b0f7-4540694e9741',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['C'],
-    questionId: 3,
+    questionId: '07b6eb3a-ca25-462e-b0f7-4540694e9741',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['C'],
-    questionId: 3,
+    questionId: '07b6eb3a-ca25-462e-b0f7-4540694e9741',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['C'],
-    questionId: 3,
+    questionId: '07b6eb3a-ca25-462e-b0f7-4540694e9741',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['D'],
-    questionId: 3,
+    questionId: '07b6eb3a-ca25-462e-b0f7-4540694e9741',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['D'],
-    questionId: 3,
+    questionId: '07b6eb3a-ca25-462e-b0f7-4540694e9741',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['A'],
-    questionId: 4,
+    questionId: 'a184a25d-462d-4cbe-92fa-9e4703e3cee9',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['A'],
-    questionId: 4,
+    questionId: 'a184a25d-462d-4cbe-92fa-9e4703e3cee9',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['B'],
-    questionId: 4,
+    questionId: 'a184a25d-462d-4cbe-92fa-9e4703e3cee9',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['C'],
-    questionId: 4,
+    questionId: 'a184a25d-462d-4cbe-92fa-9e4703e3cee9',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['C'],
-    questionId: 4,
+    questionId: 'a184a25d-462d-4cbe-92fa-9e4703e3cee9',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['C'],
-    questionId: 4,
+    questionId: 'a184a25d-462d-4cbe-92fa-9e4703e3cee9',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['D'],
-    questionId: 4,
+    questionId: 'a184a25d-462d-4cbe-92fa-9e4703e3cee9',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['D'],
-    questionId: 4,
+    questionId: 'a184a25d-462d-4cbe-92fa-9e4703e3cee9',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['A'],
-    questionId: 5,
+    questionId: '624eb5f0-12d1-4760-823e-6e7e36d9ee4d',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['A'],
-    questionId: 5,
+    questionId: '624eb5f0-12d1-4760-823e-6e7e36d9ee4d',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['B'],
-    questionId: 5,
+    questionId: '624eb5f0-12d1-4760-823e-6e7e36d9ee4d',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['C'],
-    questionId: 5,
+    questionId: '624eb5f0-12d1-4760-823e-6e7e36d9ee4d',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['C'],
-    questionId: 50,
+    questionId: '7034bd23-afd3-4c98-a903-e180adb3b556',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['C'],
-    questionId: 50,
+    questionId: '7034bd23-afd3-4c98-a903-e180adb3b556',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['D'],
-    questionId: 50,
+    questionId: '7034bd23-afd3-4c98-a903-e180adb3b556',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['D'],
-    questionId: 50,
+    questionId: '7034bd23-afd3-4c98-a903-e180adb3b556',
     questionName: 'Kurioje salyje gyvenate?',
   },
   {
     answer: ['D'],
-    questionId: 77,
+    questionId: '33dfc9a9-9dcd-47f5-97d2-e0d71dd3cd8e',
     questionName: 'HAH?',
   },
 ];
@@ -228,7 +228,7 @@ type AnswerType = {
 };
 
 type GroupedDataType = {
-  [questionId: number]: {
+  [questionId: string]: {
     groupedData: AnswerType;
     answerCount: number;
     questionName: string;
@@ -236,7 +236,7 @@ type GroupedDataType = {
 };
 
 const processAnswerData = (
-  data: { answer: string[]; questionId: number; questionName: string }[],
+  data: { answer: string[]; questionId: string; questionName: string }[],
 ) => {
   const groupedData: GroupedDataType = {};
 

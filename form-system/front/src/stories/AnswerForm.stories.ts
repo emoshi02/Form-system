@@ -18,7 +18,7 @@ type Story = StoryObj<typeof meta>;
 export const AnswerRadio: Story = {
   args: {
     formData: {
-      id: '11',
+      id: 'e5d80ec7-2b6f-4445-8c32-c2715d671dc6d',
       title: 'Test form',
       desc: 'This is a test form',
       user: 'test@gmail.com',
@@ -34,7 +34,7 @@ export const AnswerRadio: Story = {
 export const AnswerCheckbox: Story = {
   args: {
     formData: {
-      id: '11',
+      id: 'e5d80ec7-2b6f-4445-8c32-c2715d671dc6d',
       title: 'Test form',
       desc: 'This is a test form',
       user: 'test@gmail.com',
@@ -50,7 +50,7 @@ export const AnswerCheckbox: Story = {
 export const AnswerDate: Story = {
   args: {
     formData: {
-      id: '11',
+      id: 'e5d80ec7-2b6f-4445-8c32-c2715d671dc6d',
       title: 'Test form',
       desc: 'This is a test form',
       user: 'test@gmail.com',
@@ -66,7 +66,7 @@ export const AnswerDate: Story = {
 export const AnswerWithImage: Story = {
   args: {
     formData: {
-      id: '11',
+      id: 'e5d80ec7-2b6f-4445-8c32-c2715d671dc6d',
       title: 'Test form',
       desc: 'This is a test form',
       user: 'test@gmail.com',

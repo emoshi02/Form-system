@@ -52,7 +52,7 @@ describe('AnswerForm.tsx', () => {
 
   test('Empty optionType and image props should get default values', async () => {
     const formData = {
-      id: '1515256',
+      id: 'e5d80ec7-2b6f-4445-8c32-c2715d671dc6',
       title: 'Test form',
       questions: ['Why is it important to write tests?'],
       user: 'test@gmail.com',
@@ -76,7 +76,7 @@ describe('AnswerForm.tsx', () => {
 
   test('Empty options should return empty array', async () => {
     const formData = {
-      id: '121',
+      id: 'e5d80ec7-2b6f-4445-8c32-c2715d671dc6d',
       title: 'Test form',
       questions: ['Why is it important to write tests?'],
       user: 'test@gmail.com',
@@ -95,7 +95,7 @@ describe('AnswerForm.tsx', () => {
 
   test('Empty questions should return empty array', async () => {
     const formData = {
-      id: '121',
+      id: 'e5d80ec7-2b6f-4445-8c32-c2715d671dc6',
       title: 'Test form',
       user: 'test@gmail.com',
     };
