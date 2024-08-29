@@ -15,9 +15,9 @@ type QuestionProps = {
   image: string | null;
   isRequired: boolean;
   options: string[];
-  onDeleteBtnClick: (index: number) => void;
+  onDeleteBtnClick: (questionId: string) => void;
   onChange: (
-    index: number,
+    questionId: string,
     field: QuestionFieldProps,
     value: boolean | string | null | string[],
   ) => void;
@@ -50,7 +50,7 @@ export const Question = ({
 
   const handleOptionChange = (option: (typeof OPTIONS)[0]) => {
     setOptionSettingSelect(option);
-    onChange(index, 'optionType', option.optionIcon);
+    onChange(id, 'optionType', option.optionIcon);
   };
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,7 +59,7 @@ export const Question = ({
       const objectUrl = URL.createObjectURL(file);
       setImagePreview(objectUrl);
       event.target.value = '';
-      onChange(index, 'image', objectUrl);
+      onChange(id, 'image', objectUrl);
     }
   };
 
@@ -72,17 +72,17 @@ export const Question = ({
 
     if (confirm(REMOVE_IMAGE_TEXT)) {
       setImagePreview(null);
-      onChange(index, 'image', null);
+      onChange(id, 'image', null);
     }
   };
 
   const handleToggleChange = (required: boolean) => {
     setIsQuestionRequired(required);
-    onChange(index, 'isRequired', required);
+    onChange(id, 'isRequired', required);
   };
 
   const handleOptionLengthChanges = (newOptions: string[]) => {
-    onChange(index, 'options', newOptions);
+    onChange(id, 'options', newOptions);
   };
 
   return (
@@ -94,7 +94,7 @@ export const Question = ({
           value={questionTitle}
           onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
             setQuestionTitle(event.target.value);
-            onChange(index, 'questions', event.target.value);
+            onChange(id, 'question', event.target.value);
           }}
           data-hook="question-input"
         />
@@ -146,7 +146,7 @@ export const Question = ({
       <span className={classes.questionFooter}>
         <span
           className={`material-symbols-outlined ${classes.questionDeleteButton}`}
-          onClick={() => onDeleteBtnClick(index)}
+          onClick={() => onDeleteBtnClick(id)}
         >
           delete
         </span>

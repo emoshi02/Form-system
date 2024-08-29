@@ -14,7 +14,7 @@ export const Option = ({ optionIcon, type, onChange, options }: OptProps) => {
   const [optionValues, setOptionValues] = useState<string[]>(options);
 
   useEffect(() => {
-    if (type === 'date' && optionValues.length > 1) {
+    if (type === 'date' && optionValues.length >= 1) {
       setOptionValues(['']);
     }
   }, [optionValues.length, type]);

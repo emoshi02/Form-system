@@ -50,11 +50,7 @@ describe('Question.tsx', () => {
 
     expect(confirmSpy).toHaveBeenCalledTimes(1);
     expect(onChangeMock).toHaveBeenCalledTimes(1);
-    expect(onChangeMock).toHaveBeenCalledWith(
-      defaultProps.index,
-      'image',
-      null,
-    );
+    expect(onChangeMock).toHaveBeenCalledWith(defaultProps.id, 'image', null);
     expect(
       container.querySelector('[data-hook="question-image-preview"]')!,
     ).toBeNull();
