@@ -34,11 +34,13 @@ export const Question = ({
   onDeleteBtnClick,
   onChange,
 }: QuestionProps) => {
-  const initialOptionSetting =
-    OPTIONS.find((option) => option.optionIcon === optionType) || OPTIONS[0];
+  const initialOptionSetting = OPTIONS.find(
+    (option) => option.optionIcon === optionType,
+  );
 
-  const [optionSettingSelect, setOptionSettingSelect] =
-    useState(initialOptionSetting);
+  const [optionSettingSelect, setOptionSettingSelect] = useState(
+    initialOptionSetting!,
+  );
   const [questionTitle, setQuestionTitle] = useState(title);
 
   const [imagePreview, setImagePreview] = useState<string | null>(image);
