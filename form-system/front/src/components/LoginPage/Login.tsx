@@ -5,10 +5,10 @@ export const LoginPage = () => {
   return (
     <section className={classes.loginMain}>
       <div className={classes.loginWrapper}>
-        <div className={classes.headerWrapper}>
+        <header className={classes.headerWrapper}>
           <h1 className={classes.heading}>Welcome back</h1>
           <p className={classes.subHeading}>Please enter you Login details.</p>
-        </div>
+        </header>
         <LoginForm />
         <span className={classes.loginFooter}>Form System</span>
       </div>
