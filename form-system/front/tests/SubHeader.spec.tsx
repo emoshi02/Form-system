@@ -14,8 +14,9 @@ describe('SubHeader.tsx', () => {
       />,
     );
 
-    const activeSection =
-      container.getElementsByClassName('header-nav-item')[0];
+    const activeSection = container.querySelector(
+      '[data-hook="header-nav-item"]',
+    )!;
 
     fireEvent.click(activeSection);
 

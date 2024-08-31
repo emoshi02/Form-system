@@ -19,7 +19,7 @@ describe('Option.tsx', () => {
 
     const { container } = render(<Option {...defaultProps} />);
 
-    fireEvent.change(container.getElementsByClassName('add-option')[0], {
+    fireEvent.change(container.querySelector('[data-hook="add-option"]')!, {
       target: { value: 'Updated option text' },
     });
 
@@ -39,7 +39,7 @@ describe('Option.tsx', () => {
 
     const { container } = render(<Option {...defaultProps} />);
 
-    const element = container.getElementsByClassName('close-button')[0];
+    const element = container.querySelector('[data-hook="close-button"]')!;
     fireEvent.click(element);
 
     expect(onChangeMock).toHaveBeenCalledTimes(1);
@@ -59,8 +59,12 @@ describe('Option.tsx', () => {
 
     const { container } = render(<Option {...defaultProps} />);
 
-    expect(container.getElementsByClassName('option-block').length).toBe(1);
-    expect(container.getElementsByClassName('add-option-btn').length).toBe(0);
+    expect(
+      container.querySelectorAll('[data-hook="option-block"]'),
+    ).toHaveLength(1);
+    expect(
+      container.querySelectorAll('[data-hook="add-option-button"]'),
+    ).toHaveLength(0);
   });
 
   test('When option type is changed to date there should be only one option block and other option blocks are cleared ', async () => {
@@ -72,7 +76,11 @@ describe('Option.tsx', () => {
     };
 
     const { container } = render(<Option {...defaultProps} />);
-    expect(container.getElementsByClassName('option-block').length).toBe(1);
-    expect(container.getElementsByClassName('add-option-btn').length).toBe(0);
+    expect(
+      container.querySelectorAll('[data-hook="option-block"]'),
+    ).toHaveLength(1);
+    expect(
+      container.querySelectorAll('[data-hook="add-option-button"]'),
+    ).toHaveLength(0);
   });
 });

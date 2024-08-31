@@ -2,142 +2,128 @@ import { useState } from 'react';
 import { FormFooter } from '../FormFooter/FormFooter';
 import { Question } from './Question';
 import { FormDataType } from '../../../MainPage/FormItem/FormItem';
+import { v4 as uuid } from 'uuid';
 
 export type QuestionFieldProps =
-  | 'questions'
+  | 'question'
   | 'optionType'
   | 'image'
   | 'isRequired'
   | 'options';
 
+type QuestionType = {
+  question: string;
+  optionType: string;
+  image: string | null;
+  isRequired: boolean;
+  options: string[];
+};
+
 export const FormQuestionBlock = ({
   id,
   title,
   questions = [''],
-  optionType = [''],
+  optionType = ['circle'],
   image = [null],
   isRequired = [false],
   options = [['']],
   onChange,
 }: FormDataType & { onChange: (newState: FormDataType) => void }) => {
-  const [questionValues, setQuestionValues] = useState<string[]>(questions);
-  const [optionTypeValues, setOptionTypeValues] =
-    useState<string[]>(optionType);
-  const [imageValues, setImageValues] = useState<(string | null)[]>(image);
-  const [requiredValues, setRequiredValues] = useState<boolean[]>(isRequired);
-  const [optionValues, setOptionValues] = useState<string[][]>(options);
+  const getInitialQuestionData = () => {
+    const initialId = uuid();
 
-  const handleAddOptionBtnClick = () => {
-    const newQuestions = [...questionValues, ''];
-    const newOptionTypes = [...optionTypeValues, 'circle'];
-    const newImages = [...imageValues, null];
-    const newRequired = [...requiredValues, false];
-    const newOptions = [...optionValues, ['']];
-    setQuestionValues(newQuestions);
-    setOptionTypeValues(newOptionTypes);
-    setImageValues(newImages);
-    setRequiredValues(newRequired);
-    setOptionValues(newOptions);
+    return {
+      [initialId]: {
+        question: questions[0],
+        optionType: optionType[0],
+        image: image[0],
+        isRequired: isRequired[0],
+        options: options[0],
+      },
+    };
+  };
 
+  const [questionData, setQuestionData] = useState<
+    Record<string, QuestionType>
+  >(getInitialQuestionData);
+
+  const handleOnChange = (newData: Record<string, QuestionType>) => {
     onChange({
       id,
       title,
-      questions: newQuestions,
-      optionType: newOptionTypes,
-      image: newImages,
-      isRequired: newRequired,
-      options: newOptions,
+      questions: Object.values(newData).map((data) => data.question),
+      optionType: Object.values(newData).map((data) => data.optionType),
+      image: Object.values(newData).map((data) => data.image),
+      isRequired: Object.values(newData).map((data) => data.isRequired),
+      options: Object.values(newData).map((data) => data.options),
     });
   };
 
-  const handleDeleteBtnClick = (index: number) => {
-    const newQuestions = questionValues.filter((_, i) => i !== index);
-    const newOptionTypes = optionTypeValues.filter((_, i) => i !== index);
-    const newImages = imageValues.filter((_, i) => i !== index);
-    const newRequired = requiredValues.filter((_, i) => i !== index);
-    const newOptions = optionValues.filter((_, i) => i !== index);
-    setQuestionValues(newQuestions);
-    setOptionTypeValues(newOptionTypes);
-    setImageValues(newImages);
-    setRequiredValues(newRequired);
-    setOptionValues(newOptions);
+  const handleAddQuestionBtnClick = () => {
+    const newId = uuid();
 
-    onChange({
-      id,
-      title,
-      questions: newQuestions,
-      optionType: newOptionTypes,
-      image: newImages,
-      isRequired: newRequired,
-      options: newOptions,
-    });
+    const newQuestionData = {
+      ...questionData,
+      [newId]: {
+        question: '',
+        optionType: 'circle',
+        image: null,
+        isRequired: false,
+        options: [''],
+      },
+    };
+
+    setQuestionData(newQuestionData);
+
+    handleOnChange(newQuestionData);
+  };
+
+  const handleDeleteBtnClick = (questionId: string) => {
+    const newQuestionData = { ...questionData };
+    delete newQuestionData[questionId];
+    setQuestionData(newQuestionData);
+    handleOnChange(newQuestionData);
   };
 
   const updateFormState = (
-    index: number,
+    questionId: string,
     field: QuestionFieldProps,
     value: string | boolean | null | string[],
   ) => {
-    const newQuestions = [...questionValues];
-    const newOptionTypes = [...optionTypeValues];
-    const newImages = [...imageValues];
-    const newRequired = [...requiredValues];
-    const newOptions = [...optionValues];
-
-    switch (field) {
-      case 'questions':
-        newQuestions[index] = value as string;
-        setQuestionValues(newQuestions);
-        break;
-      case 'optionType':
-        newOptionTypes[index] = value as string;
-        setOptionTypeValues(newOptionTypes);
-        break;
-      case 'image':
-        newImages[index] = value as string | null;
-        setImageValues(newImages);
-        break;
-      case 'isRequired':
-        newRequired[index] = value as boolean;
-        setRequiredValues(newRequired);
-        break;
-      case 'options':
-        newOptions[index] = value as string[];
-        setOptionValues(newOptions);
-        break;
-      /*istanbul ignore next*/
-      default:
-        throw new Error('Unrecognized field type');
-    }
-
-    onChange({
-      id,
-      title,
-      questions: newQuestions,
-      optionType: newOptionTypes,
-      image: newImages,
-      isRequired: newRequired,
-      options: newOptions,
-    });
+    const newQuestionData = {
+      ...questionData,
+      [questionId]: {
+        ...questionData[questionId],
+        [field]: value,
+      },
+    };
+    setQuestionData(newQuestionData);
+    handleOnChange(newQuestionData);
   };
 
   return (
     <>
-      {questionValues.map((title, index: number) => (
-        <Question
-          id={id}
-          title={title}
-          index={index}
-          optionType={optionType[index]}
-          image={image[index]}
-          isRequired={isRequired[index]}
-          options={options[index]}
-          onDeleteBtnClick={handleDeleteBtnClick}
-          key={index}
-          onChange={updateFormState}
-        />
-      ))}
-      <FormFooter onAddQuestionClick={handleAddOptionBtnClick} />
+      {Object.entries(questionData).map(
+        ([questionId, questionValues], index) => {
+          const { question, optionType, image, isRequired, options } =
+            questionValues;
+          return (
+            <Question
+              key={questionId}
+              id={questionId}
+              title={question}
+              index={index}
+              optionType={optionType}
+              image={image}
+              isRequired={isRequired}
+              options={options}
+              onDeleteBtnClick={() => handleDeleteBtnClick(questionId)}
+              onChange={updateFormState}
+            />
+          );
+        },
+      )}
+      <FormFooter onAddQuestionClick={handleAddQuestionBtnClick} />
     </>
   );
 };

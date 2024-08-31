@@ -1,16 +1,16 @@
-import './Login.scss';
+import classes from './Login.module.scss';
 import { LoginForm } from './LoginForm/LoginForm';
 
 export const LoginPage = () => {
   return (
-    <section className="login-main">
-      <div className="login-wrapper">
-        <div className="header-wrapper">
-          <h1 className="heading">Welcome back</h1>
-          <p className="sub-heading">Please enter you Login details.</p>
-        </div>
+    <section className={classes.loginMain}>
+      <div className={classes.loginWrapper}>
+        <header className={classes.headerWrapper}>
+          <h1 className={classes.heading}>Welcome back</h1>
+          <p className={classes.subHeading}>Please enter you Login details.</p>
+        </header>
         <LoginForm />
-        <span className="login-footer">Form System</span>
+        <span className={classes.loginFooter}>Form System</span>
       </div>
     </section>
   );

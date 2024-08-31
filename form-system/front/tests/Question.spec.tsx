@@ -7,7 +7,7 @@ describe('Question.tsx', () => {
   const onDeleteMock = jest.fn();
 
   const defaultProps = {
-    id: 121,
+    id: 'e5d80ec7-2b6f-4445-8c32-c2715d671dc6',
     title: 'Test Form',
     questions: ['Question 1'],
     optionType: 'circle',
@@ -29,7 +29,7 @@ describe('Question.tsx', () => {
 
     const { container } = render(<Question {...defaultProps} />);
 
-    const element = container.getElementsByClassName('question-image')[0];
+    const element = container.querySelector('[data-hook="question-image"]')!;
     element.addEventListener('click', onClickMock);
 
     fireEvent.click(element);
@@ -44,20 +44,16 @@ describe('Question.tsx', () => {
 
     const { container } = render(<Question {...defaultProps} />);
 
-    const element = container.getElementsByClassName('image-wrapper')[0];
+    const element = container.querySelector('[data-hook="image-wrapper"]')!;
 
     fireEvent.click(element);
 
     expect(confirmSpy).toHaveBeenCalledTimes(1);
     expect(onChangeMock).toHaveBeenCalledTimes(1);
-    expect(onChangeMock).toHaveBeenCalledWith(
-      defaultProps.index,
-      'image',
-      null,
-    );
+    expect(onChangeMock).toHaveBeenCalledWith(defaultProps.id, 'image', null);
     expect(
-      container.getElementsByClassName('question-image-preview')[0],
-    ).toBeUndefined();
+      container.querySelector('[data-hook="question-image-preview"]')!,
+    ).toBeNull();
 
     confirmSpy.mockRestore();
   });

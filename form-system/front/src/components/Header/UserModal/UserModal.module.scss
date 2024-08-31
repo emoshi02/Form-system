@@ -1,4 +1,4 @@
-.user-modal-wrapper {
+.userModalWrapper {
   height: var(--container-height-m);
   width: var(--container-width-m);
   background: var(--main-bg);
@@ -15,37 +15,37 @@
   z-index: 4;
 }
 
-.user-modal-icon {
-  font-size: var(--font-size-xxxl);
+.userModalIcon {
+  font-size: var(--font-size-xxxl) !important;
 }
 
-.btn-wrapper {
+.buttonWrapper {
   display: flex;
   column-gap: var(--spacing-xl);
 }
 
-.cancel-btn,
-.action-btn {
+.cancelButton,
+.actionButton {
   height: var(--button-height-xs);
   width: var(--button-width-m);
   border-radius: var(--radius-s);
 }
 
-.cancel-btn {
+.cancelButton {
   border: var(--border-width-xs) solid var(--btn-bg);
 }
 
-.action-btn {
+.actionButton {
   background: var(--btn-bg);
   color: var(--btn-text-color);
 }
 
-.action-btn:hover,
-.cancel-btn:hover {
+.actionButton:hover,
+.cancelButton:hover {
   background: var(--btn-on-focus);
 }
 
-.cancel-btn:hover {
+.cancelButton:hover {
   color: var(--btn-text-color);
   border: var(--border-width-xs) solid var(--btn-on-focus);
 }

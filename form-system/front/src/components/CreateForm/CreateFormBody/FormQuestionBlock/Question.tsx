@@ -3,26 +3,28 @@ import { OPTIONS, REMOVE_IMAGE_TEXT } from './constants';
 import { OptionSelect } from './optionSelect/optionSelect';
 import { Option } from './OptionBlock/Option';
 import { useRef, useState } from 'react';
-import './Question.scss';
+import classes from './Question.module.scss';
 import { QuestionFieldProps } from './FormQuestionBlock';
+import TextareaAutosize from 'react-textarea-autosize';
 
 type QuestionProps = {
-  id: number;
+  id: string;
   title: string;
   index: number;
   optionType: string;
   image: string | null;
   isRequired: boolean;
   options: string[];
-  onDeleteBtnClick: (index: number) => void;
+  onDeleteBtnClick: (questionId: string) => void;
   onChange: (
-    index: number,
+    questionId: string,
     field: QuestionFieldProps,
     value: boolean | string | null | string[],
   ) => void;
 };
 
 export const Question = ({
+  id,
   title,
   index,
   optionType,
@@ -32,11 +34,13 @@ export const Question = ({
   onDeleteBtnClick,
   onChange,
 }: QuestionProps) => {
-  const initialOptionSetting =
-    OPTIONS.find((option) => option.optionIcon === optionType) || OPTIONS[0];
+  const initialOptionSetting = OPTIONS.find(
+    (option) => option.optionIcon === optionType,
+  );
 
-  const [optionSettingSelect, setOptionSettingSelect] =
-    useState(initialOptionSetting);
+  const [optionSettingSelect, setOptionSettingSelect] = useState(
+    initialOptionSetting!,
+  );
   const [questionTitle, setQuestionTitle] = useState(title);
 
   const [imagePreview, setImagePreview] = useState<string | null>(image);
@@ -48,7 +52,7 @@ export const Question = ({
 
   const handleOptionChange = (option: (typeof OPTIONS)[0]) => {
     setOptionSettingSelect(option);
-    onChange(index, 'optionType', option.optionIcon);
+    onChange(id, 'optionType', option.optionIcon);
   };
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,7 +61,7 @@ export const Question = ({
       const objectUrl = URL.createObjectURL(file);
       setImagePreview(objectUrl);
       event.target.value = '';
-      onChange(index, 'image', objectUrl);
+      onChange(id, 'image', objectUrl);
     }
   };
 
@@ -70,45 +74,47 @@ export const Question = ({
 
     if (confirm(REMOVE_IMAGE_TEXT)) {
       setImagePreview(null);
-      onChange(index, 'image', null);
+      onChange(id, 'image', null);
     }
   };
 
   const handleToggleChange = (required: boolean) => {
     setIsQuestionRequired(required);
-    onChange(index, 'isRequired', required);
+    onChange(id, 'isRequired', required);
   };
 
   const handleOptionLengthChanges = (newOptions: string[]) => {
-    onChange(index, 'options', newOptions);
+    onChange(id, 'options', newOptions);
   };
 
   return (
-    <section className="question">
-      <span className="input-setting-wrapper">
-        <input
-          type="text"
+    <section className={classes.question}>
+      <span className={classes.inputSettingWrapper}>
+        <TextareaAutosize
           placeholder={`Question ${index + 1}`}
-          className="question-input"
+          className={classes.questionInput}
           value={questionTitle}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+          onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
             setQuestionTitle(event.target.value);
-            onChange(index, 'questions', event.target.value);
+            onChange(id, 'question', event.target.value);
           }}
+          data-hook="question-input"
         />
         <span
-          className="material-symbols-outlined question-image"
+          className={`material-symbols-outlined ${classes.questionImage}`}
           onClick={handleImageIconClick}
+          data-hook="question-image"
         >
           image
         </span>
         <input
           type="file"
-          id={`image-input ${index}`}
+          id={`image-input ${id}`}
           ref={imageIconRef}
           accept="image/png, image/jpeg"
-          className="image-input"
+          className={classes.imageInput}
           onChange={handleImageChange}
+          data-hook="image-input"
         />
         <OptionSelect
           options={OPTIONS}
@@ -116,17 +122,22 @@ export const Question = ({
           onChange={(option) => handleOptionChange(option)}
         />
       </span>
-      <div className="image-wrapper" onClick={handleImageClick}>
+      <div
+        className={classes.imageWrapper}
+        onClick={handleImageClick}
+        data-hook="image-wrapper"
+      >
         {imagePreview && (
           <img
             src={imagePreview}
             alt={`Selected ${index}`}
-            className="question-image-preview"
+            className={classes.questionImagePreview}
             onClick={handleImageClick}
+            data-hook="question-image-preview"
           />
         )}
       </div>
-      <span className="option-control">
+      <span className={classes.optionControl}>
         <Option
           optionIcon={optionSettingSelect.optionIcon}
           type={optionSettingSelect.type}
@@ -134,10 +145,10 @@ export const Question = ({
           onChange={handleOptionLengthChanges}
         />
       </span>
-      <span className="question-footer">
+      <span className={classes.questionFooter}>
         <span
-          className="material-symbols-outlined question-delete-btn"
-          onClick={() => onDeleteBtnClick(index)}
+          className={`material-symbols-outlined ${classes.questionDeleteButton}`}
+          onClick={() => onDeleteBtnClick(id)}
         >
           delete
         </span>

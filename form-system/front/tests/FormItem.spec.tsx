@@ -21,7 +21,9 @@ describe('FormItem.tsx', () => {
       </BrowserRouter>,
     );
 
-    fireEvent.click(container.getElementsByClassName('form-item-wrapper')[0]);
+    fireEvent.click(
+      container.querySelector('[data-hook="form-item-wrapper"]')!,
+    );
 
     const formData = FORM_DATA;
 
@@ -46,7 +48,9 @@ describe('FormItem.tsx', () => {
       </BrowserRouter>,
     );
 
-    fireEvent.click(container.getElementsByClassName('form-item-wrapper')[0]);
+    fireEvent.click(
+      container.querySelector('[data-hook="form-item-wrapper"]')!,
+    );
 
     const formData = FORM_DATA;
 

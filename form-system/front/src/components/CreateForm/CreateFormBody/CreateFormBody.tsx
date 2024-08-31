@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './CreateFormBody.scss';
+import classes from './CreateFormBody.module.scss';
 import { CreateForm } from './CreateForm';
 import { Answers } from '../Answers/Answers';
 import { FormDataType } from '../../MainPage/FormItem/FormItem';
@@ -18,7 +18,7 @@ export const CreateFormBody = ({
   }, [activeSectionIndex]);
 
   return (
-    <section className="main">
+    <section className={classes.main}>
       {isCreateForm ? <CreateForm formData={formData} /> : <Answers />}
     </section>
   );

@@ -19,13 +19,13 @@ describe('OptionSelect.tsx', () => {
       />,
     );
 
-    fireEvent.click(container.getElementsByClassName('selected-option')[0]);
+    fireEvent.click(container.querySelector('[data-hook="selected-option"]')!);
 
     fireEvent.mouseDown(document.body);
 
     expect(
-      container.getElementsByClassName('custom-select open')[0],
-    ).toBeUndefined();
+      container.querySelector('[data-hook="custom-select open"]'),
+    ).toBeNull();
   });
 
   test('Should close on option select', async () => {
@@ -37,12 +37,12 @@ describe('OptionSelect.tsx', () => {
       />,
     );
 
-    fireEvent.click(container.getElementsByClassName('selected-option')[0]);
+    fireEvent.click(container.querySelector('[data-hook="selected-option"]')!);
 
-    fireEvent.click(container.getElementsByClassName('selected-option')[0]);
+    fireEvent.click(container.querySelector('[data-hook="selected-option"]')!);
 
     expect(
-      container.getElementsByClassName('custom-select open')[0],
-    ).toBeUndefined();
+      container.querySelector('[data-hook="custom-select open"]'),
+    ).toBeNull();
   });
 });

@@ -1,0 +1,26 @@
+.addOption {
+  color: var(--p-text);
+  margin-top: var(--spacing-xxxs);
+  background: var(--main-bg);
+  border-width: 0 0 var(--border-width-xsm) 0;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  resize: none;
+}
+
+.addOptionButton {
+  margin-top: var(--spacing-xxs);
+}
+
+.optionBlock,
+.optionWrapper {
+  display: flex;
+  align-items: start;
+  column-gap: var(--spacing-xl);
+}
+
+.optionWrapper {
+  gap: var(--spacing-m);
+  width: 100%;
+}

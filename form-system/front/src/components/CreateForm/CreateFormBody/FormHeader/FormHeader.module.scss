@@ -1,4 +1,4 @@
-.form-header {
+.formHeader {
   display: flex;
   flex-direction: column;
   background: var(--main-bg);
@@ -9,12 +9,12 @@
   padding: var(--spacing-xl);
 }
 
-.form-title {
+.formTitle {
   font-size: var(--font-size-xl);
 }
 
-.form-desc,
-.form-title,
-#user-email {
+.formDescription,
+.formTitle,
+.userEmail {
   margin: var(--spacing-s) 0;
 }

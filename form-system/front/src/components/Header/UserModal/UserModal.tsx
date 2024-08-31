@@ -1,4 +1,4 @@
-import './UserModal.scss';
+import classes from './UserModal.module.scss';
 import { useNavigate } from 'react-router-dom';
 
 type UserModalProps = {
@@ -9,16 +9,19 @@ export const UserModal: React.FC<UserModalProps> = ({ setOpenModal }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="user-modal-wrapper">
-      <span className="material-symbols-outlined user-modal-icon">
+    <div className={classes.userModalWrapper} data-hook="user-modal-wrapper">
+      <span className={`material-symbols-outlined ${classes.userModalIcon}`}>
         account_circle
       </span>
-      <p className="p-text">Are you sure you want to logout?</p>
-      <span className="btn-wrapper">
-        <button className="cancel-btn" onClick={() => setOpenModal(false)}>
+      <p className={classes.pText}>Are you sure you want to logout?</p>
+      <span className={classes.buttonWrapper}>
+        <button
+          className={classes.cancelButton}
+          onClick={() => setOpenModal(false)}
+        >
           Cancel
         </button>
-        <button className="action-btn" onClick={() => navigate('/')}>
+        <button className={classes.actionButton} onClick={() => navigate('/')}>
           Logout
         </button>
       </span>

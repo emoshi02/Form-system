@@ -1,8 +1,9 @@
 import { SubmitButton } from '../../SubmitButton/SubmitButton';
+import classes from './AnswerFormFooter.module.scss';
 
 export const AnswerFormFooter = () => {
   return (
-    <footer className="footer">
+    <footer className={classes.footer}>
       <SubmitButton value="Submit" />
     </footer>
   );

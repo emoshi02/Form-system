@@ -46,7 +46,7 @@ describe('AnswerFormQuestions.tsx', () => {
     const { container } = render(<AnswerFormQuestions {...defaultProps} />);
 
     expect(
-      container.getElementsByClassName('answer-input-type radio')[0],
+      container.querySelector('[data-hook="answer-input-type radio"]'),
     ).toBeDefined();
   });
 
@@ -92,9 +92,9 @@ describe('AnswerFormQuestions.tsx', () => {
 
     const { container } = render(<AnswerFormQuestions {...defaultProps} />);
 
-    const element = container.getElementsByClassName(
-      'answer-input-type date',
-    )[0];
+    const element = container.querySelector(
+      '[data-hook="answer-input-type date"]',
+    )!;
 
     fireEvent.change(element, { target: { value: '2002-07-05' } });
 
@@ -122,8 +122,8 @@ describe('AnswerFormQuestions.tsx', () => {
 
     expect(
       container
-        .getElementsByClassName('answer-form-image')[0]
-        .getAttribute('src'),
+        .querySelector('[data-hook="answer-form-image"]')
+        ?.getAttribute('src'),
     ).toBe('test.png');
   });
 });

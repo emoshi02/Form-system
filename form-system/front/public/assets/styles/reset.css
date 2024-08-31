@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,7 +18,8 @@
 
 button,
 select,
-input {
+input,
+textarea {
   cursor: pointer;
 }
 
@@ -29,7 +32,8 @@ ol {
   list-style: none;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border-bottom: var(--border-width-xsm) solid var(--border-bottom);
   width: 100%;

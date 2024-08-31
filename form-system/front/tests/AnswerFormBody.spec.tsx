@@ -1,6 +1,7 @@
 import { describe, expect, test } from '@jest/globals';
 import { render, fireEvent } from '@testing-library/react';
 import { AnswerFormBody } from '../src/components/AnswerForm/AnswerFormBody/AnswerFormBody';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('AnswerFormBody.tsx', () => {
   test('Answer Form body state should update correctly', async () => {
@@ -13,7 +14,9 @@ describe('AnswerFormBody.tsx', () => {
     };
 
     const { getByLabelText } = render(
-      <AnswerFormBody questionsData={[defaultProps]} />,
+      <BrowserRouter>
+        <AnswerFormBody questionsData={[defaultProps]} />
+      </BrowserRouter>,
     );
 
     const element = getByLabelText('Yes') as HTMLInputElement;
@@ -33,7 +36,9 @@ describe('AnswerFormBody.tsx', () => {
     };
 
     const { getByLabelText } = render(
-      <AnswerFormBody questionsData={[defaultProps]} />,
+      <BrowserRouter>
+        <AnswerFormBody questionsData={[defaultProps]} />
+      </BrowserRouter>,
     );
 
     const element = getByLabelText('Yes') as HTMLInputElement;

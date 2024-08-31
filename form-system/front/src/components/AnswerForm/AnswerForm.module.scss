@@ -3,9 +3,10 @@
   flex-direction: column;
   align-items: center;
   margin: 0 var(--spacing-xl);
+  position: relative;
 }
 
-.form-image {
+.formImage {
   height: var(--image-height-m);
   max-height: var(--image-height-);
   margin: var(--spacing-s) 0;

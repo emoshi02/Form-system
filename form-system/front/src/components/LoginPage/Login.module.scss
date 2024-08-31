@@ -1,4 +1,4 @@
-.login-main {
+.loginMain {
   position: relative;
   height: 100vh;
   width: 100%;
@@ -8,7 +8,7 @@
   overflow: hidden;
 }
 
-.login-main::before {
+.loginMain::before {
   content: '';
   position: absolute;
   top: 0;
@@ -21,7 +21,7 @@
   z-index: -1;
 }
 
-.login-wrapper {
+.loginWrapper {
   height: 30vw;
   width: 55vw;
   background: var(--main-bg);
@@ -40,21 +40,21 @@
   letter-spacing: var(--letter-spacing-s);
 }
 
-.sub-heading {
+.subHeading {
   font-size: var(--font-size-xs);
   margin-top: var(--spacing-xxs);
   color: var(--heading-text);
 }
 
-.login-form {
+.loginForm {
   margin: var(--spacing-xxl) 0;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xs);
 }
 
-.login-input,
-.login-input:focus {
+.loginInput,
+.loginInput:focus {
   outline: var(--border-width-xs) solid var(--input-outline);
   border-radius: var(--radius-xs);
   height: var(--button-height-s);
@@ -64,11 +64,11 @@
   border: none;
 }
 
-.login-input:focus {
+.loginInput:focus {
   background: var(--input-on-focus);
 }
 
-.login-btn {
+.loginButton {
   width: 100%;
   height: var(--button-height-m);
   color: var(--btn-text-color);
@@ -78,15 +78,15 @@
   font-weight: var(--font-weight-m);
 }
 
-.login-btn:focus {
+.loginButton:focus {
   border: none;
 }
 
-.login-btn:hover {
+.loginButton:hover {
   background-color: var(--btn-on-focus);
 }
 
-.login-footer {
+.loginFooter {
   width: 100%;
   font-size: var(--font-size-xs);
   color: var(--footer-p-color);

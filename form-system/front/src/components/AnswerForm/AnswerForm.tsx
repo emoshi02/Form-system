@@ -1,8 +1,7 @@
 import { FormDataType } from '../MainPage/FormItem/FormItem';
 import { AnswerFormBody } from './AnswerFormBody/AnswerFormBody';
 import { AnswerFormHeader } from './AnswerFormHeader/AnswerFormHeader';
-import './AnswerForm.scss';
-import { AnswerFormFooter } from './AnswerFormFooter/AnswerFormFooter';
+import classes from './AnswerForm.module.scss';
 
 type AnswerFormProps = {
   formData: FormDataType | null;
@@ -11,8 +10,8 @@ type AnswerFormProps = {
 export const AnswerForm = ({ formData }: AnswerFormProps) => {
   if (!formData) {
     return (
-      <section className="main">
-        <img src="/assets/images/form-bg.jpg" className="form-image" />
+      <section className={classes.main}>
+        <img src="/assets/images/form-bg.jpg" className={classes.formImage} />
         <AnswerFormHeader />
         <AnswerFormBody questionsData={[]} />
       </section>
@@ -31,8 +30,8 @@ export const AnswerForm = ({ formData }: AnswerFormProps) => {
   } = formData;
 
   return (
-    <section className="main">
-      <img src="/assets/images/form-bg.jpg" className="form-image" />
+    <section className={classes.main}>
+      <img src="/assets/images/form-bg.jpg" className={classes.formImage} />
       <AnswerFormHeader title={title} desc={desc} user={user} />
       <AnswerFormBody
         questionsData={
@@ -45,7 +44,6 @@ export const AnswerForm = ({ formData }: AnswerFormProps) => {
           })) || []
         }
       />
-      <AnswerFormFooter />
     </section>
   );
 };

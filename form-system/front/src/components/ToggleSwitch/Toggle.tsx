@@ -1,8 +1,9 @@
-import './Toggle.scss';
+import classNames from 'classnames';
+import classes from './Toggle.module.scss';
 
 export const Toggle = ({
   label,
-  isRequired = false,
+  isRequired,
   setRequired,
 }: {
   label: string;
@@ -10,18 +11,21 @@ export const Toggle = ({
   setRequired: (required: boolean) => void;
 }) => {
   return (
-    <span className="toggle-wrapper">
-      <p className="p-text">{label}</p>
-      <label className="switch">
+    <span className={classes.toggleWrapper}>
+      <p className={classes.pText} data-hook="p-text">
+        {label}
+      </p>
+      <label className={classes.switch} data-hook="switch">
         <input
-          className="required-toggle-input"
+          className={classes.requiredToggleInput}
           type="checkbox"
           checked={isRequired}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
             setRequired(event.target.checked)
           }
+          data-hook="required-toggle-input"
         />
-        <span className="slider round"></span>
+        <span className={classNames(classes.slider, classes.round)}></span>
       </label>
     </span>
   );

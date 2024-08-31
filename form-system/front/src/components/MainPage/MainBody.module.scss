@@ -1,4 +1,4 @@
-.create-form-btn {
+.createFormButton {
   width: var(--button-height-l);
   height: var(--button-height-l);
   border-radius: 50%;
@@ -10,19 +10,19 @@
   box-shadow: 0 var(--shadow-xs) var(--shadow-xs) 0 var(--shadow);
 }
 
-.create-form-btn:hover {
+.createFormButton:hover {
   background: var(--create-form-btn-on-focus);
   border-color: var(--create-form-btn-on-focus);
   box-shadow: none;
   transition: box-shadow var(--transition-s) ease-in-out;
 }
 
-.create-form-img {
+.createFormImage {
   width: var(--image-height-s);
   height: var(--image-height-s);
 }
 
-.main-body {
+.mainBody {
   height: calc(
     100vh - var(--container-height-xs) - var(--container-height-xxs)
   );
@@ -32,12 +32,9 @@
   justify-content: space-between;
 }
 
-.create-form {
+.createForm {
   display: flex;
   justify-content: center;
-}
-
-.create-form {
   margin-bottom: var(--spacing-m);
 }
 
