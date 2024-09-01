@@ -21,19 +21,19 @@ Before setting up the project, ensure that the following software is installed o
 
 Clone the repository
 
-- git clone <repository-url>
+- `git clone <repository-url>`
 
 Navigate to the repository
 
-- cd .\form-system-template\form-system\front 
+- `cd .\form-system-template\form-system\front` 
 
 Install dependencies
 
-- yarn
+- `yarn`
 
 Start the development server
 
-- yarn dev
+- `yarn dev`
 
 Access the application by navigating to the provided URL address
 
@@ -41,15 +41,15 @@ Access the application by navigating to the provided URL address
 
 To Run Component Tests
 
-- yarn test
+- `yarn test`
 
 To Run Visual Tests
 
-- yarn storybook
+- `yarn storybook`
 
 To Run Chromatic for Visual Regression Testing
 
-- yarn chromatic
+- `yarn chromatic`
 
 ## Backend Integration.
 
